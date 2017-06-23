@@ -1,38 +1,17 @@
+$accent: #0078d7;
+$accent-contrast: #747474;
 
-// Body
-$body-bg: #f5f8fa;
+$dark-grey: #222;
+$grey: #999;
+$light-grey: #eee;
 
-// Borders
-$laravel-border-color: darken($body-bg, 10%);
-$list-group-border: $laravel-border-color;
-$navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
-$panel-inner-border: $laravel-border-color;
+$fast: #f28a11;
+$slow: #ffba00;
+$preview: #cccc29;
+$releasepreview: #b5b540;
+$pilot: #76b540;
+$broad: #40b57b;
+$ltsc: #40a3b5;
+$leak: #dc5332;
 
-// Brands
-$brand-primary: #3097D1;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
-
-// Typography
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 14px;
-$line-height-base: 1.6;
-$text-color: #636b6f;
-
-// Navbar
-$navbar-default-bg: #fff;
-
-// Buttons
-$btn-default-color: $text-color;
-
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
-
-// Panels
-$panel-default-heading-bg: #fff;
+$font-stack-mono: Menlo, Monaco, Consolas, "Courier New", monospace;
