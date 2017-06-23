@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// General routes
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Mainstage routes
+Route::get('/', 'HomeController@index');
+
+// Backstage routes
+Route::get('/backstage/', 'BackstageController@index');
