@@ -1,4 +1,17 @@
-<p align="center"><img src="https://changewindows.org/assets/logo/logo-light.png" width="100px" height="auto"></p>
+<p align="center">
+    <img src="http://changewindows.org/assets/logo/logo-light.png" width="100px" height="auto">
+
+    <h3 align="center">ChangeWindows</h3>
+
+    <p align="center">
+        Changing Windows one build at a time
+        <br />
+        <br />
+        <a href="https://changewindows.org">ChangeWindows.org</a>
+        &middot;
+        <a href="https://preview.changewindows.org">ChangeWindows.org Preview</a>
+    </p>
+</p>
 
 ## About ChangeWindows
 
