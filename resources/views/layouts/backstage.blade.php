@@ -42,9 +42,9 @@
                             <span class="ellipses">...</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/settings"><i class="fa fa-fw fa-cogs"></i> Settings</a>
+                            <a class="dropdown-item" href="settings"><i class="fa fa-fw fa-cogs"></i> Settings</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/"><i class="fa fa-fw fa-home"></i> Mainstage</a>
+                            <a class="dropdown-item" href=""><i class="fa fa-fw fa-home"></i> Mainstage</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();"><i class="fa fa-fw fa-sign-out"></i>

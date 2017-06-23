@@ -141,6 +141,10 @@
   text-transform: uppercase;
 }
 
+.brand .bold {
+  font-weight: 600;
+}
+
 body {
   margin-top: 60px;
 }
