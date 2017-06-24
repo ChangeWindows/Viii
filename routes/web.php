@@ -16,12 +16,32 @@ Auth::routes();
 
 // Mainstage routes
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('build/{build}', 'BuildController@show')->name('showBuild');
+
 Route::get('milestones', 'MilestoneController@index')->name('milestones');
+
 Route::get('rings', 'RingController@index')->name('rings');
+
 Route::get('year', 'YearController@index')->name('year');
+
 Route::get('settings', 'SettingsController@index')->name('settings');
 Route::get('privacy', 'PrivacyController@index')->name('privacy');
 Route::get('about', 'AboutController@index')->name('about');
 
 // Backstage routes
 Route::get('backstage', 'BackstageController@index')->name('backstage');
+
+Route::get('backstage/builds', 'BuildController@index')->name('buildsManagement');
+Route::get('backstage/builds/create', 'BuildController@create')->name('createBuild');
+Route::get('backstage/builds/{build}', 'BuildController@edit')->name('editBuild');
+Route::get('backstage/builds/delete/{build}', 'BuildController@delete')->name('deleteBuild');
+Route::post('backstage/builds', 'BuildController@store')->name('buildsStore');
+Route::patch('backstage/builds', 'BuildController@patch')->name('buildsPatch');
+Route::delete('backstage/builds', 'BuildController@destroy')->name('buildsDestroy');
+
+Route::get('backstage/releases', 'ReleaseController@index')->name('releasesManagement');
+
+Route::get('backstage/milestones', 'MilestoneController@index')->name('milestonesManagement');
+
+Route::get('backstage/stats', 'StatsController@index')->name('statsMangement');

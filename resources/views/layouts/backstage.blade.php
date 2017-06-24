@@ -24,18 +24,18 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#cwnav" aria-controls="cwnav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand active" href="backstage">
-                <img alt="ChangeWindows logo" src="assets/logo/logo-light.png">
+            <a class="navbar-brand active" href="{{ route('backstage') }}">
+                <img alt="ChangeWindows logo" src="{{ asset('img/logo/logo-light.png') }}">
                 <span class="hidden-sm-down"><span class="brand">Change<span class="bold">Windows</span></span>
             </a>
 
             <div class="collapse navbar-collapse" id="cwnav">
                 <div class="navbar-nav mr-auto mt-lg-0">
-                    <a class="nav-item nav-link" href="backstage/builds">Builds</a>
-                    <a class="nav-item nav-link" href="backstage/releases">Releases</a>
+                    <a class="nav-item nav-link" href="{{ route('buildsManagement') }}">Builds</a>
+                    <a class="nav-item nav-link" href="{{ route('releasesManagement') }}">Releases</a>
                     {{--
-                    <a class="nav-item nav-link" href="backstage/milestones">Milestones</a>
-                    <a class="nav-item nav-link" href="backstage/statistics">Stat<span class="hidden-xs-down">istic</span>s</a>
+                    <a class="nav-item nav-link" href="{{ route('milestonesManagement') }}">Milestones</a>
+                    <a class="nav-item nav-link" href="{{ route('statsManagement') }}">Stat<span class="hidden-xs-down">istic</span>s</a>
                     --}}
                 </div>
                 <div class="navbar-nav my-lg-0">
