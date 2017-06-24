@@ -32,16 +32,16 @@ Route::get('about', 'AboutController@index')->name('about');
 // Backstage routes
 Route::get('backstage', 'BackstageController@index')->name('backstage');
 
-Route::get('backstage/builds', 'BuildController@index')->name('buildsManagement');
+Route::get('backstage/builds', 'BuildController@index')->name('managBuild');
 Route::get('backstage/builds/create', 'BuildController@create')->name('createBuild');
 Route::get('backstage/builds/{build}', 'BuildController@edit')->name('editBuild');
 Route::get('backstage/builds/delete/{build}', 'BuildController@delete')->name('deleteBuild');
-Route::post('backstage/builds', 'BuildController@store')->name('buildsStore');
-Route::patch('backstage/builds', 'BuildController@patch')->name('buildsPatch');
-Route::delete('backstage/builds', 'BuildController@destroy')->name('buildsDestroy');
+Route::post('backstage/builds', 'BuildController@store')->name('storeBuild');
+Route::patch('backstage/builds', 'BuildController@patch')->name('patchBuild');
+Route::delete('backstage/builds', 'BuildController@destroy')->name('destroyBuild');
 
-Route::get('backstage/releases', 'ReleaseController@index')->name('releasesManagement');
+Route::get('backstage/releases', 'ReleaseController@index')->name('manageRelease');
 
-Route::get('backstage/milestones', 'MilestoneController@index')->name('milestonesManagement');
+Route::get('backstage/milestones', 'MilestoneController@index')->name('manageMilestone');
 
-Route::get('backstage/stats', 'StatsController@index')->name('statsMangement');
+Route::get('backstage/stats', 'StatsController@index')->name('manageStat');

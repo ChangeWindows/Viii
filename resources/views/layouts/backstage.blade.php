@@ -31,11 +31,11 @@
 
             <div class="collapse navbar-collapse" id="cwnav">
                 <div class="navbar-nav mr-auto mt-lg-0">
-                    <a class="nav-item nav-link" href="{{ route('buildsManagement') }}">Builds</a>
-                    <a class="nav-item nav-link" href="{{ route('releasesManagement') }}">Releases</a>
+                    <a class="nav-item nav-link" href="{{ route('manageBuild') }}">Builds</a>
+                    <a class="nav-item nav-link" href="{{ route('manageRelease') }}">Releases</a>
                     {{--
-                    <a class="nav-item nav-link" href="{{ route('milestonesManagement') }}">Milestones</a>
-                    <a class="nav-item nav-link" href="{{ route('statsManagement') }}">Stat<span class="hidden-xs-down">istic</span>s</a>
+                    <a class="nav-item nav-link" href="{{ route('manageMilestone') }}">Milestones</a>
+                    <a class="nav-item nav-link" href="{{ route('manageStat') }}">Stat<span class="hidden-xs-down">istic</span>s</a>
                     --}}
                 </div>
                 <div class="navbar-nav my-lg-0">
@@ -65,7 +65,11 @@
         </div>
     </nav>
 
-    @yield('content')
+    <div class="container">
+        <div class="row">
+            @yield('content')
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

@@ -28,7 +28,7 @@ class BuildController extends Controller
     public function store() {
         Build::create(request(['id', 'milestone_id']));
 
-        return redirect()->route('buildsManagement');
+        return redirect()->route('manageBuild');
     }
 
     public function patch() {
@@ -38,12 +38,12 @@ class BuildController extends Controller
 
         $build->save();
 
-        return redirect()->route('buildsManagement');
+        return redirect()->route('manageBuild');
     }
 
     public function destroy() {
         Build::destroy(request('id'));
 
-        return redirect()->route('buildsManagement');
+        return redirect()->route('manageBuild');
     }
 }
