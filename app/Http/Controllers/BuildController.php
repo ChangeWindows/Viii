@@ -8,7 +8,7 @@ use App\Build;
 class BuildController extends Controller
 {
     public function index() {
-        $builds = Build::all();
+        $builds = Build::paginate(100);
 
         return view('backstage.build.index', compact('builds'));
     }
