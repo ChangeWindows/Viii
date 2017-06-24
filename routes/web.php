@@ -15,7 +15,13 @@
 Auth::routes();
 
 // Mainstage routes
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('milestones', 'MilestoneController@index')->name('milestones');
+Route::get('rings', 'RingController@index')->name('rings');
+Route::get('year', 'YearController@index')->name('year');
+Route::get('settings', 'SettingsController@index')->name('settings');
+Route::get('privacy', 'PrivacyController@index')->name('privacy');
+Route::get('about', 'AboutController@index')->name('about');
 
 // Backstage routes
-Route::get('/backstage/', 'BackstageController@index');
+Route::get('backstage', 'BackstageController@index')->name('backstage');

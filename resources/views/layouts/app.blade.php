@@ -31,8 +31,11 @@
 
             <div class="collapse navbar-collapse" id="cwnav">
                 <div class="navbar-nav mr-auto mt-lg-0">
-                    <a class="nav-item nav-link" href="milestones">Milestones</a>
-                    <a class="nav-item nav-link" href="year">Year</a>
+                    {{--
+                    <a class="nav-item nav-link" href="{{ route('milestones') }}">Milestones</a>
+                    <a class="nav-item nav-link" href="{{ route('rings') }}">Rings</a>
+                    <a class="nav-item nav-link" href="{{ route('year') }}">Year</a>
+                    --}}
                     <a class="nav-item nav-link" href="https://medium.com/changewindows">Blog</a>
                 </div>
                 <div class="navbar-nav my-lg-0">
@@ -41,24 +44,32 @@
                             <span class="ellipses">...</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="settings"><i class="fa fa-fw fa-cog"></i> Settings</a>
-                            <a class="dropdown-item" href="about"><i class="fa fa-fw fa-cog"></i> About</a>
-                            <a class="dropdown-item" href="privacy"><i class="fa fa-fw fa-cog"></i> Privacy</a>
+                            {{--
+                            <a class="dropdown-item" href="{{ route('settings') }}"><i class="fa fa-fw fa-cog"></i> Settings</a>
+                            --}}
+                            <a class="dropdown-item" href="{{ route('about') }}"><i class="fa fa-fw fa-cog"></i> About</a>
+                            <a class="dropdown-item" href="{{ route('privacy') }}"><i class="fa fa-fw fa-cog"></i> Privacy</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="backstage"><i class="fa fa-fw fa-cog"></i> Twitter</a>
-                            @if (Auth::check())
+                            <a class="dropdown-item" href="https://twitter.com/changewindows"><i class="fa fa-fw fa-cog"></i> Twitter</a>
+                            @if (Route::has('login'))
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="backstage"><i class="fa fa-fw fa-cog"></i> Backstage</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();"><i class="fa fa-fw fa-cog"></i>
-                                    Logout
-                                </a>
+                                    @if (Auth::check())
+                                        <a class="dropdown-item" href="{{ route('backstage') }}"><i class="fa fa-fw fa-cog"></i> Backstage</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();"><i class="fa fa-fw fa-cog"></i>
+                                            Logout
+                                        </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    @else
+                                        <a class="dropdown-item" href="{{ route('login') }}"><i class="fa fa-fw fa-cog"></i> Login</a>
+                                        <a class="dropdown-item" href="{{ route('register') }}"><i class="fa fa-fw fa-cog"></i> Register</a>
+                                    @endif
+                                </div>
                             @endif
                         </div>
                     </div>

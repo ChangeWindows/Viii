@@ -33,8 +33,10 @@
                 <div class="navbar-nav mr-auto mt-lg-0">
                     <a class="nav-item nav-link" href="backstage/builds">Builds</a>
                     <a class="nav-item nav-link" href="backstage/releases">Releases</a>
+                    {{--
                     <a class="nav-item nav-link" href="backstage/milestones">Milestones</a>
                     <a class="nav-item nav-link" href="backstage/statistics">Stat<span class="hidden-xs-down">istic</span>s</a>
+                    --}}
                 </div>
                 <div class="navbar-nav my-lg-0">
                     <li class="nav-item dropdown ellipse">
@@ -42,9 +44,11 @@
                             <span class="ellipses">...</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="settings"><i class="fa fa-fw fa-cogs"></i> Settings</a>
+                            {{--
+                            <a class="dropdown-item" href="{{ route('settings') }}"><i class="fa fa-fw fa-cogs"></i> Settings</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href=""><i class="fa fa-fw fa-home"></i> Mainstage</a>
+                            --}}
+                            <a class="dropdown-item" href="{{ route('home') }}"><i class="fa fa-fw fa-home"></i> Mainstage</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();"><i class="fa fa-fw fa-sign-out"></i>
