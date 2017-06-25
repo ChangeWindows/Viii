@@ -21,5 +21,13 @@ class DatabaseSeeder extends Seeder
             'id' => '16226',
             'milestone_id' => 'redstone3'
         ]);
+
+        DB::table('releases')->insert([
+            'build_id' => '16226',
+            'build_string' => '10.0.16226.1000',
+            'platform' => '1',
+            'ring' => '2',
+            'release' => '2017-06-22'
+        ]);
     }
 }
