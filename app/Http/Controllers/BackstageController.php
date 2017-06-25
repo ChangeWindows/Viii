@@ -13,7 +13,7 @@ class BackstageController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware( 'auth' );
     }
 
     /**
@@ -23,6 +23,6 @@ class BackstageController extends Controller
      */
     public function index()
     {
-        return view('backstage.index');
+        return view( 'backstage.index' );
     }
 }
