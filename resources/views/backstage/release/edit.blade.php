@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-12">
-    <h1>Edit release {{ $release->build_string }} for {{ $release->platform_name }}</h1>
+    <h1>Edit release {{ $release->string }} for {{ $release->platform_name }} in {{ $release->ring_name }}</h1>
     <form method="POST" action="{{ route('patchRelease') }}">
         {!! method_field('patch') !!}
         {{ csrf_field() }}
