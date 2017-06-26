@@ -23,9 +23,9 @@ class ReleaseController extends Controller
     }
 
     public function edit( Release $release ) {
-        $release->platform_name = Release::getPlatformName( $release->platform );
-        $release->ring_name = Release::getRingName( $release->ring, $release->platform );
-        $release->string = Release::getString( $release->build_string );
+        $release->platform_name = $release->getPlatformName();
+        $release->ring_name = $release->getRingName();
+        $release->string = $release->getString();
 
         return view( 'backstage.release.edit', compact( 'release' ) );
     }
