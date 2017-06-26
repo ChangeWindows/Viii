@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-12">
-    <h1>Edit release {{ $release->string }} for {{ $release->platform_name }} in {{ $release->ring_name }}</h1>
+    <h1>Edit release {{ $release->getString() }} for {{ $release->getPlatformName() }} in {{ $release->getRingName() }}</h1>
     <form method="POST" action="{{ route('patchRelease') }}">
         {!! method_field('patch') !!}
         {{ csrf_field() }}
@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             <label for="build_string">String</label>
-            <input type="text" class="form-control" id="build_string" name="build_string" aria-describedby="build_string" placeholder="Build string" value="{{ $release->build_string }}">
+            <input type="text" class="form-control" id="build_string" name="build_string" aria-describedby="build_string" placeholder="Build string" value="{{ $release->getString( 'full' ) }}">
         </div>
         <div class="form-group">
             <label for="platform">Platform</label>
