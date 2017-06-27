@@ -33,9 +33,7 @@ This is a non-live stage in the sense that there won't be an official place for 
 
 During this fase, we want to have a basic version of ChangeWindows set up, this basically means this:
 
-- Basic home page with timeline
-- Basic management system
-- Login and registration
+- Information parity with ChangeWindows 4.x (builds, releases, milestones, rings, etc.)
 - Basic Cortana support for the ChangeWindows Preview
 
 The support for Cortana may not seem "basic" at all, but since one of the requirements for Hosted Web Apps in the Windows Store is that they utilize the Windows API at least on some level, we've decided to go with Cortana integration.
@@ -44,16 +42,14 @@ The support for Cortana may not seem "basic" at all, but since one of the requir
 
 When the pre-alpha stage is reached, we'll push Alpha 1 to preview.changewindows.org (and thus ChangeWindows Preview). From this point on, our website will be live. At this point, we'll start expanding our website to better feature parity.
 
-Alpha 2 and 3 should establish most of the system we have right now:
+Alpha 2 should establish most of the system we have right now:
 
 - Expand index with rings overview and filters
-- Rings view
-- Milestones
 - Version share
 - Year in review
 - Basic blog
 
-Alpha 4 (and 5) on the other hand will focus on the customization options we provide right now:
+Alpha 3 on the other hand will focus on the customization options we provide right now:
 
 - Personal filter defaults
 - Dark/light theme
