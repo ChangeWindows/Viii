@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBuildsTable extends Migration
+class CreateRingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateBuildsTable extends Migration
      */
     public function up()
     {
-        Schema::create('builds', function (Blueprint $table) {
-            $table->integer('id')->unique();
-            $table->string('milestone_id');
+        Schema::create('rings', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('short');
+            $table->string('acronym');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateBuildsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('builds');
+        Schema::dropIfExists('rings');
     }
 }

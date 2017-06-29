@@ -21,9 +21,6 @@ class CreateMilestonesTable extends Migration
             $table->integer('version');
             $table->string('color');
             $table->text('description');
-            $table->timestamps();
-
-            //$table->foreign('build_id')->references('id')->on('builds');
         });
     }
 

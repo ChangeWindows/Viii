@@ -20,9 +20,6 @@ class CreateReleasesTable extends Migration
             $table->integer('platform');
             $table->integer('ring');
             $table->date('release');
-            $table->timestamps();
-
-            //$table->foreign('build_id')->references('id')->on('builds');
         });
     }
 
