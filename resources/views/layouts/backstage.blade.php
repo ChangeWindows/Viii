@@ -33,8 +33,8 @@
                 <div class="navbar-nav mr-auto mt-lg-0">
                     <a class="nav-item nav-link" href="{{ route('manageBuild') }}">Builds</a>
                     <a class="nav-item nav-link" href="{{ route('manageRelease') }}">Releases</a>
-                    {{--
                     <a class="nav-item nav-link" href="{{ route('manageMilestone') }}">Milestones</a>
+                    {{--
                     <a class="nav-item nav-link" href="{{ route('manageStat') }}">Stat<span class="hidden-xs-down">istic</span>s</a>
                     --}}
                 </div>

@@ -49,5 +49,11 @@ Route::patch('backstage/releases', 'ReleaseController@patch')->name('patchReleas
 Route::delete('backstage/releases', 'ReleaseController@destroy')->name('destroyRelease');
 
 Route::get('backstage/milestones', 'MilestoneController@index')->name('manageMilestone');
+Route::get('backstage/milestones/create', 'MilestoneController@create')->name('createMilestone');
+Route::get('backstage/milestones/{milestone}', 'MilestoneController@edit')->name('editMilestone');
+Route::get('backstage/milestones/delete/{milestone}', 'MilestoneController@delete')->name('deleteMilestone');
+Route::post('backstage/milestones', 'MilestoneController@store')->name('storeMilestone');
+Route::patch('backstage/milestones', 'MilestoneController@patch')->name('patchMilestone');
+Route::delete('backstage/milestones', 'MilestoneController@destroy')->name('destroyMilestone');
 
 Route::get('backstage/stats', 'StatsController@index')->name('manageStat');
