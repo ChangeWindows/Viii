@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="col-md-12">
-    <h1>Milestones <a href="{{ route('createMilestone') }}" class="btn btn-primary pull-right"><i class="fa fa-fw fa-cog"></i> New milestone</a></h1>
+    <h1>
+        Milestones
+        <a href="{{ route('createMilestone') }}" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> New milestone</a>
+    </h1>
 </div>
 @foreach ( $milestones as $milestone )
     <div class="col-md-3">

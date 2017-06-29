@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="col-md-12">
-    <h1>Releases <a href="{{ route('createRelease') }}" class="btn btn-primary pull-right"><i class="fa fa-fw fa-cog"></i> New release</a></h1>
+    <h1>
+        Releases
+        <a href="{{ route('createRelease') }}" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> New release</a>
+    </h1>
 </div>
 @foreach ( $releases as $release )
     <div class="col-md-3">

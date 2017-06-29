@@ -8,7 +8,7 @@
 
 .navbar .navbar-brand,
 .navbar .nav-link {
-  font-weight: 300;
+  font-weight: 400;
   color: #000 !important;
   font-size: 24px !important;
   border-bottom: 4px solid transparent;
@@ -138,6 +138,19 @@
   background: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+.form-control {
+  font-family: inherit;
+}
+
+textarea {
+  height: 100px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.btn {
+  font-family: inherit;
+}
+
 .brand {
   text-transform: uppercase;
 }
@@ -151,6 +164,7 @@ body {
 }
 
 h1 {
-  font-weight: 300;
+  font-size: 35px;
+  font-weight: 700;
 }
 

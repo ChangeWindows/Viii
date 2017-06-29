@@ -3,14 +3,20 @@
 
 // Bootstrap
 @import "navbar";
+@import "form";
+@import "btn";
 
 // ChangeWindows
 @import "brand";
 
+// General
 body {
     margin-top: 60px;
 }
 
+
+// Fonts
 h1 {
-    font-weight: 300;
+    font-size: 35px;
+    font-weight: 700;
 }
