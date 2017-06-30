@@ -9,6 +9,7 @@ use App\Ring;
 class Release extends Model
 {
     protected $fillable = ['build_id', 'build_string', 'platform', 'ring'];
+    public $timestamps = false;
 
     function getPlatformName() {
         return Platform::find( $this->id )->name;

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Milestone extends Model
 {
+    public $incrementing = false;
     protected $fillable = ['id', 'os', 'name', 'codename', 'version', 'color', 'description'];
-    public $incrementing = false; // I am an idiot.
+    public $timestamps = false;
 }
