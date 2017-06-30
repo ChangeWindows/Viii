@@ -56,4 +56,20 @@ Route::post('backstage/milestones', 'MilestoneController@store')->name('storeMil
 Route::patch('backstage/milestones', 'MilestoneController@patch')->name('patchMilestone');
 Route::delete('backstage/milestones', 'MilestoneController@destroy')->name('destroyMilestone');
 
+Route::get('backstage/rings', 'RingController@index')->name('manageRing');
+Route::get('backstage/rings/create', 'RingController@create')->name('createRing');
+Route::get('backstage/rings/{ring}', 'RingController@edit')->name('editRing');
+Route::get('backstage/rings/delete/{ring}', 'RingController@delete')->name('deleteRing');
+Route::post('backstage/rings', 'RingController@store')->name('storeRing');
+Route::patch('backstage/rings', 'RingController@patch')->name('patchRing');
+Route::delete('backstage/rings', 'RingController@destroy')->name('destroyRing');
+
+Route::get('backstage/platforms', 'PlatformController@index')->name('managePlatform');
+Route::get('backstage/platforms/create', 'PlatformController@create')->name('createPlatform');
+Route::get('backstage/platforms/{platform}', 'PlatformController@edit')->name('editPlatform');
+Route::get('backstage/platforms/delete/{platform}', 'PlatformController@delete')->name('deletePlatform');
+Route::post('backstage/platforms', 'PlatformController@store')->name('storePlatform');
+Route::patch('backstage/platforms', 'PlatformController@patch')->name('patchPlatform');
+Route::delete('backstage/platforms', 'PlatformController@destroy')->name('destroyPlatform');
+
 Route::get('backstage/stats', 'StatsController@index')->name('manageStat');

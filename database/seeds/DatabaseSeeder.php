@@ -22,87 +22,96 @@ class DatabaseSeeder extends Seeder
             'milestone_id' => 'redstone3'
         ]);
         
-        DB::table('rings')->insert(
-            [
-                'id' => '1',
-                'name' => 'vNext',
-                'short' => 'vNext',
-                'acronym' => 'vN'
-            ],
-            [
-                'id' => '2',
-                'name' => 'Fast Ring',
-                'short' => 'Fast',
-                'acronym' => 'FR'
-            ],
-            [
-                'id' => '3',
-                'name' => 'Slow Ring',
-                'short' => 'Slow',
-                'acronym' => 'SR'
-            ],
-            [
-                'id' => '4',
-                'name' => 'Preview Ring',
-                'short' => 'Preview',
-                'acronym' => 'PR'
-            ],
-            [
-                'id' => '5',
-                'name' => 'Release Preview Ring',
-                'short' => 'Release Preview',
-                'acronym' => 'RPR'
-            ],
-            [
-                'id' => '6',
-                'name' => 'Semi-Annual Pilot Channel',
-                'short' => 'Pilot',
-                'acronym' => 'SAP'
-            ],
-            [
-                'id' => '7',
-                'name' => 'Semi-Annual Broad Channel',
-                'short' => 'Broad',
-                'acronym' => 'SAB'
-            ],
-            [
-                'id' => '8',
-                'name' => 'Long-Term Support Channel',
-                'short' => 'Long-Term Support',
-                'acronym' => 'LTS'
-            ]
-        );
+        DB::table('rings')->insert([
+            'id' => '1',
+            'name' => 'vNext',
+            'short' => 'vNext',
+            'acronym' => 'vN'
+        ]);
+
+        DB::table('rings')->insert([
+            'id' => '2',
+            'name' => 'Fast Ring',
+            'short' => 'Fast',
+            'acronym' => 'FR'
+        ]);
+
+        DB::table('rings')->insert([
+            'id' => '3',
+            'name' => 'Slow Ring',
+            'short' => 'Slow',
+            'acronym' => 'SR'
+        ]);
+
+        DB::table('rings')->insert([
+            'id' => '4',
+            'name' => 'Preview Ring',
+            'short' => 'Preview',
+            'acronym' => 'PR'
+        ]);
+
+        DB::table('rings')->insert([
+            'id' => '5',
+            'name' => 'Release Preview Ring',
+            'short' => 'Release Preview',
+            'acronym' => 'RPR'
+        ]);
+
+        DB::table('rings')->insert([
+            'id' => '6',
+            'name' => 'Semi-Annual Pilot Channel',
+            'short' => 'Pilot',
+            'acronym' => 'SAP'
+        ]);
+
+        DB::table('rings')->insert([
+            'id' => '7',
+            'name' => 'Semi-Annual Broad Channel',
+            'short' => 'Broad',
+            'acronym' => 'SAB'
+        ]);
+
+        DB::table('rings')->insert([
+            'id' => '8',
+            'name' => 'Long-Term Support Channel',
+            'short' => 'Long-Term Support',
+            'acronym' => 'LTS'
+        ]);
         
-        DB::table('platforms')->insert(
-            [
-                'id' => '1',
-                'name' => 'PC'
-            ],
-            [
-                'id' => '2',
-                'name' => 'Mobile'
-            ],
-            [
-                'id' => '3',
-                'name' => 'Xbox'
-            ],
-            [
-                'id' => '4',
-                'name' => 'Server'
-            ],
-            [
-                'id' => '5',
-                'name' => 'IoT'
-            ],
-            [
-                'id' => '6',
-                'name' => 'Mixed Reality'
-            ],
-            [
-                'id' => '7',
-                'name' => 'Team'
-            ]
-        );
+        DB::table('platforms')->insert([
+            'id' => '1',
+            'name' => 'PC'
+        ]);
+
+        DB::table('platforms')->insert([
+            'id' => '2',
+            'name' => 'Mobile'
+        ]);
+
+        DB::table('platforms')->insert([
+            'id' => '3',
+            'name' => 'Xbox'
+        ]);
+
+        DB::table('platforms')->insert([
+            'id' => '4',
+            'name' => 'Server'
+        ]);
+
+        DB::table('platforms')->insert([
+            'id' => '5',
+            'name' => 'IoT'
+        ]);
+
+        DB::table('platforms')->insert([
+            'id' => '6',
+            'name' => 'Mixed Reality'
+        ]);
+
+        DB::table('platforms')->insert([
+            'id' => '7',
+            'name' => 'Team'
+        ]);
 
         DB::table('releases')->insert([
             'build_id' => '16226',

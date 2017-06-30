@@ -34,6 +34,8 @@
                     <a class="nav-item nav-link" href="{{ route('manageBuild') }}">Builds</a>
                     <a class="nav-item nav-link" href="{{ route('manageRelease') }}">Releases</a>
                     <a class="nav-item nav-link" href="{{ route('manageMilestone') }}">Milestones</a>
+                    <a class="nav-item nav-link" href="{{ route('manageRing') }}">Rings</a>
+                    <a class="nav-item nav-link" href="{{ route('managePlatform') }}">Platforms</a>
                     {{--
                     <a class="nav-item nav-link" href="{{ route('manageStat') }}">Stat<span class="hidden-xs-down">istic</span>s</a>
                     --}}
