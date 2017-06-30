@@ -9,7 +9,7 @@
 </div>
 @foreach ( $rings as $ring )
     <div class="col-md-3">
-        <a href="{{ route('editRing', ['id' => $ring->id]) }}">{{ $ring->name }}</a>
+        <a href="{{ route('editRing', ['id' => $ring->id]) }}">{{ $ring->default_name }}</a>
         <a class="pull-right" href="{{ route('deleteRing', ['id' => $ring->id]) }}"><i class="fa fa-fw fa-trash"></i></a>
     </div>
 @endforeach

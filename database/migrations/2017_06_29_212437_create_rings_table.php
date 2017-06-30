@@ -15,9 +15,15 @@ class CreateRingsTable extends Migration
     {
         Schema::create('rings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('short');
-            $table->string('acronym');
+            $table->string('default_name');
+            $table->string('default_short');
+            $table->string('default_acronym');
+            $table->string('xbox_name');
+            $table->string('xbox_short');
+            $table->string('xbox_acronym');
+            $table->string('other_name');
+            $table->string('other_short');
+            $table->string('other_acronym');
         });
     }
 

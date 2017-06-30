@@ -24,58 +24,106 @@ class DatabaseSeeder extends Seeder
         
         DB::table('rings')->insert([
             'id' => '1',
-            'name' => 'vNext',
-            'short' => 'vNext',
-            'acronym' => 'vN'
+            'default_name' => 'vNext',
+            'default_short' => 'vNext',
+            'default_acronym' => 'vN',
+            'xbox_name' => 'vNext',
+            'xbox_short' => 'vNext',
+            'xbox_acronym' => 'vN',
+            'other_name' => 'vNext',
+            'other_short' => 'vNext',
+            'other_acronym' => 'vN'
         ]);
 
         DB::table('rings')->insert([
             'id' => '2',
-            'name' => 'Fast Ring',
-            'short' => 'Fast',
-            'acronym' => 'FR'
+            'default_name' => 'Fast Ring',
+            'default_short' => 'Fast',
+            'default_acronym' => 'FR',
+            'xbox_name' => 'Alpha Ring',
+            'xbox_short' => 'Alpha',
+            'xbox_acronym' => 'AR',
+            'other_name' => 'Fast Ring',
+            'other_short' => 'Fast',
+            'other_acronym' => 'FR'
         ]);
 
         DB::table('rings')->insert([
             'id' => '3',
-            'name' => 'Slow Ring',
-            'short' => 'Slow',
-            'acronym' => 'SR'
+            'default_name' => 'Slow Ring',
+            'default_short' => 'Slow',
+            'default_acronym' => 'SR',
+            'xbox_name' => 'Beta Ring',
+            'xbox_short' => 'Beta',
+            'xbox_acronym' => 'BR',
+            'other_name' => 'Preview',
+            'other_short' => 'Preview',
+            'other_acronym' => 'Pre'
         ]);
 
         DB::table('rings')->insert([
             'id' => '4',
-            'name' => 'Preview Ring',
-            'short' => 'Preview',
-            'acronym' => 'PR'
+            'default_name' => 'Preview Ring',
+            'default_short' => 'Preview',
+            'default_acronym' => 'PR',
+            'xbox_name' => 'Ring 3',
+            'xbox_short' => 'Ring 3',
+            'xbox_acronym' => 'R3',
+            'other_name' => 'Preview Ring',
+            'other_short' => 'Preview',
+            'other_acronym' => 'PR'
         ]);
 
         DB::table('rings')->insert([
             'id' => '5',
-            'name' => 'Release Preview Ring',
-            'short' => 'Release Preview',
-            'acronym' => 'RPR'
+            'default_name' => 'Release Preview Ring',
+            'default_short' => 'Release Preview',
+            'default_acronym' => 'RPR',
+            'xbox_name' => 'Ring 4',
+            'xbox_short' => 'Ring 4',
+            'xbox_acronym' => 'R4',
+            'other_name' => 'Release Preview Ring',
+            'other_short' => 'Release Preview',
+            'other_acronym' => 'RPR'
         ]);
 
         DB::table('rings')->insert([
             'id' => '6',
-            'name' => 'Semi-Annual Pilot Channel',
-            'short' => 'Pilot',
-            'acronym' => 'SAP'
+            'default_name' => 'Semi-Annual Pilot Channel',
+            'default_short' => 'Pilot',
+            'default_acronym' => 'SAP',
+            'xbox_name' => 'Release',
+            'xbox_short' => 'Release',
+            'xbox_acronym' => 'Rel',
+            'other_name' => 'Semi-Annual Pilot Channel',
+            'other_short' => 'Pilot',
+            'other_acronym' => 'SAP'
         ]);
 
         DB::table('rings')->insert([
             'id' => '7',
-            'name' => 'Semi-Annual Broad Channel',
-            'short' => 'Broad',
-            'acronym' => 'SAB'
+            'default_name' => 'Semi-Annual Broad Channel',
+            'default_short' => 'Broad',
+            'default_acronym' => 'SAB',
+            'xbox_name' => 'Semi-Annual Broad Channel',
+            'xbox_short' => 'Broad',
+            'xbox_acronym' => 'SAB',
+            'other_name' => 'Semi-Annual Broad Channel',
+            'other_short' => 'Broad',
+            'other_acronym' => 'SAB'
         ]);
 
         DB::table('rings')->insert([
             'id' => '8',
-            'name' => 'Long-Term Support Channel',
-            'short' => 'Long-Term Support',
-            'acronym' => 'LTS'
+            'default_name' => 'Long-Term Support Channel',
+            'default_short' => 'Long-Term Support',
+            'default_acronym' => 'LTS',
+            'xbox_name' => 'Long-Term Support Channel',
+            'xbox_short' => 'Long-Term Support',
+            'xbox_acronym' => 'LTS',
+            'other_name' => 'Long-Term Support Channel',
+            'other_short' => 'Long-Term Support',
+            'other_acronym' => 'LTS'
         ]);
         
         DB::table('platforms')->insert([

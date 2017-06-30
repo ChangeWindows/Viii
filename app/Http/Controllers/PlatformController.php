@@ -31,7 +31,7 @@ class PlatformController extends Controller
     }
 
     public function store() {
-        Platform::create( request( ['name', 'short', 'acronym'] ) );
+        Platform::create( request( ['name'] ) );
 
         return redirect()->route( 'managePlatform' );
     }
