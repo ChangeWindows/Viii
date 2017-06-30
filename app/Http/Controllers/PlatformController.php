@@ -39,7 +39,7 @@ class PlatformController extends Controller
     public function patch() {
         $platform = Platform::find( request( 'id' ) );
 
-        $platform->id = request( 'id' );
+        $platform->name = request( 'name' );
 
         $platform->save();
 

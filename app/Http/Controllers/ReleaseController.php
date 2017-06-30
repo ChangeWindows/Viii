@@ -39,7 +39,10 @@ class ReleaseController extends Controller
     public function patch() {
         $release = Release::find( request( 'id' ) );
 
-        $release->id = request( 'id' );
+        $release->build_id = request( 'build_id' );
+        $release->build_string = request( 'build_string' );
+        $release->platform = request( 'platform' );
+        $release->ring = request( 'ring' );
 
         $release->save();
 

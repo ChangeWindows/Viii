@@ -40,6 +40,12 @@ class MilestoneController extends Controller
         $milestone = Milestone::find( request( 'id' ) );
 
         $milestone->id = request( 'id' );
+        $milestone->os = request( 'os' );
+        $milestone->name = request( 'name' );
+        $milestone->codename = request( 'codename' );
+        $milestone->version = request( 'version' );
+        $milestone->color = request( 'color' );
+        $milestone->description = request( 'description' );
 
         $milestone->save();
 
