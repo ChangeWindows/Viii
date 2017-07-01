@@ -12,12 +12,7 @@
         {!! method_field('patch') !!}
         {{ csrf_field() }}
         <input type="hidden" class="form-control" id="id" name="id" aria-describedby="id" value="{{ $release->id }}">
-        <div class="col-lg-4 col-md-6 col-12">
-            <div class="form-group">
-                <label for="build_id">Build</label>
-                <input type="number" class="form-control" id="build_id" name="build_id" aria-describedby="build_id" placeholder="Build" value="{{ $release->build_id }}">
-            </div>
-        </div>
+        <input type="hidden" class="form-control" id="build_id" name="build_id" aria-describedby="build_id" value="{{ $release->build_id }}">
         <div class="col-lg-4 col-md-6 col-12">
             <div class="form-group">
                 <label for="build_string">String</label>

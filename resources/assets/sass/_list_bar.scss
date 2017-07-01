@@ -27,6 +27,15 @@
                     color: #fff;
                 }
             }
+
+            &.list-bar-success {
+                color: $pilot;
+
+                &:hover {
+                    background: $pilot;
+                    color: #fff;
+                }
+            }
         }
     }
 }

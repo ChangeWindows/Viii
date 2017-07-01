@@ -73,7 +73,7 @@
 }
 
 .navbar {
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .navbar .navbar-brand {
@@ -159,6 +159,15 @@ textarea {
 
 .list-bar-group .list-bar .list-bar-item.list-bar-danger:hover {
   background: #dc5332;
+  color: #fff;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-success {
+  color: #76b540;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-success:hover {
+  background: #76b540;
   color: #fff;
 }
 

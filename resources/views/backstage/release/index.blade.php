@@ -4,7 +4,6 @@
 <div class="col-md-12">
     <h1>
         Releases
-        <a href="{{ route('createRelease') }}" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> New release</a>
     </h1>
 </div>
 <div class="col-md-12 list-bar-group">

@@ -10,16 +10,11 @@
             </h1>
         </div>
         {{ csrf_field() }}
-        <div class="col-lg-4 col-md-6 col-12">
-            <div class="form-group">
-                <label for="build_id">Build</label>
-                <input type="number" class="form-control" id="build_id" name="build_id" aria-describedby="build_id" placeholder="Build">
-            </div>
-        </div>
+        <input type="hidden" class="form-control" id="build_id" name="build_id" aria-describedby="build_id" value="{{ $build->id }}">
         <div class="col-lg-4 col-md-6 col-12">
             <div class="form-group">
                 <label for="build_string">String</label>
-                <input type="text" class="form-control" id="build_string" name="build_string" aria-describedby="build_string" placeholder="Build string">
+                <input type="text" class="form-control" id="build_string" name="build_string" aria-describedby="build_string" placeholder="Build string" value="10.0.{{ $build->id }}.">
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-12">

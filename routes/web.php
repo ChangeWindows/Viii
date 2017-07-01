@@ -41,7 +41,7 @@ Route::patch('backstage/builds', 'BuildController@patch')->name('patchBuild');
 Route::delete('backstage/builds', 'BuildController@destroy')->name('destroyBuild');
 
 Route::get('backstage/releases', 'ReleaseController@index')->name('manageRelease');
-Route::get('backstage/releases/create', 'ReleaseController@create')->name('createRelease');
+Route::get('backstage/releases/create/{build}', 'ReleaseController@create')->name('createRelease');
 Route::get('backstage/releases/{release}', 'ReleaseController@edit')->name('editRelease');
 Route::get('backstage/releases/delete/{release}', 'ReleaseController@delete')->name('deleteRelease');
 Route::post('backstage/releases', 'ReleaseController@store')->name('storeRelease');

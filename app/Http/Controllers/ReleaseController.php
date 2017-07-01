@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Release;
+use App\Build;
 
 class ReleaseController extends Controller
 {
@@ -18,8 +19,8 @@ class ReleaseController extends Controller
         return view( 'backstage.release.index', compact( 'releases' ) );
     }
 
-    public function create() {
-        return view( 'backstage.release.create' );
+    public function create( Build $build ) {
+        return view( 'backstage.release.create', compact( 'build' ) );
     }
 
     public function edit( Release $release ) {
@@ -39,7 +40,6 @@ class ReleaseController extends Controller
     public function patch() {
         $release = Release::find( request( 'id' ) );
 
-        $release->build_id = request( 'build_id' );
         $release->build_string = request( 'build_string' );
         $release->platform = request( 'platform' );
         $release->ring = request( 'ring' );
