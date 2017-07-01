@@ -78,7 +78,11 @@
         </div>
     </nav>
 
-    @yield('content')
+    <div class="container content">
+        <div class="row">
+            @yield('content')
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

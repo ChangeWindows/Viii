@@ -63,7 +63,13 @@
 .col-xl-7,
 .col-xl-8,
 .col-xl-9 {
-  padding: 0 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.col-md-3.list-bar-group {
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .navbar {
@@ -95,6 +101,7 @@
 
 .form-control {
   font-family: inherit;
+  border-radius: 0;
 }
 
 textarea {
@@ -104,6 +111,16 @@ textarea {
 
 .btn {
   font-family: inherit;
+  border-radius: 0;
+  border-color: transparent !important;
+}
+
+.btn.btn-primary {
+  background-color: #0078d7;
+}
+
+.btn.btn-primary:hover {
+  background-color: #0064b3;
 }
 
 .brand {
@@ -114,29 +131,33 @@ textarea {
   font-weight: 600;
 }
 
-.list-bar {
-  padding: 0 16px;
+.list-bar-group {
+  padding: 0 18px;
 }
 
-.list-bar .list-bar-item {
+.list-bar-group .list-bar {
+  padding: 0 12px;
+}
+
+.list-bar-group .list-bar .list-bar-item {
   padding: 10px;
-  background: #eee;
+  background: #f2f2f2;
   margin-bottom: 3px;
 }
 
-.list-bar .list-bar-item:hover {
+.list-bar-group .list-bar .list-bar-item:hover {
   text-decoration: none;
 }
 
-.list-bar .list-bar-item.list-bar-default:hover {
-  background: #e7e7e7;
+.list-bar-group .list-bar .list-bar-item.list-bar-default:hover {
+  background: #eaeaea;
 }
 
-.list-bar .list-bar-item.list-bar-danger {
+.list-bar-group .list-bar .list-bar-item.list-bar-danger {
   color: #dc5332;
 }
 
-.list-bar .list-bar-item.list-bar-danger:hover {
+.list-bar-group .list-bar .list-bar-item.list-bar-danger:hover {
   background: #dc5332;
   color: #fff;
 }
@@ -144,5 +165,9 @@ textarea {
 h1 {
   font-size: 35px;
   font-weight: 700;
+}
+
+.container.content {
+  padding: 10px;
 }
 

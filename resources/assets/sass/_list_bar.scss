@@ -1,27 +1,31 @@
-.list-bar {
-    padding: 0 16px;
+.list-bar-group {
+    padding: 0 18px;
 
-    .list-bar-item {
-        padding: 10px;
-        background: #eee;
-        margin-bottom: 3px;
+    .list-bar {
+        padding: 0 12px;
 
-        &:hover {
-            text-decoration: none;
-        }
+        .list-bar-item {
+            padding: 10px;
+            background: #f2f2f2;
+            margin-bottom: 3px;
 
-        &.list-bar-default {
             &:hover {
-                background: #e7e7e7;
+                text-decoration: none;
             }
-        }
 
-        &.list-bar-danger {
-            color: $leak;
+            &.list-bar-default {
+                &:hover {
+                    background: #eaeaea;
+                }
+            }
 
-            &:hover {
-                background: $leak;
-                color: #fff;
+            &.list-bar-danger {
+                color: $leak;
+
+                &:hover {
+                    background: $leak;
+                    color: #fff;
+                }
             }
         }
     }
