@@ -9,8 +9,10 @@
 </div>
 @foreach ( $builds as $build )
     <div class="col-md-3">
-        <a href="{{ route('editBuild', ['id' => $build->id]) }}">{{ $build->id }}</a>
-        <a class="pull-right" href="{{ route('deleteBuild', ['id' => $build->id]) }}"><i class="fa fa-fw fa-trash"></i></a>
+        <div class="row list-bar">
+            <a class="col-10 list-bar-item list-bar-default" href="{{ route('editBuild', ['id' => $build->id]) }}">{{ $build->id }}</a>
+            <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteBuild', ['id' => $build->id]) }}"><i class="fa fa-fw fa-trash"></i></a>
+        </div>
     </div>
 @endforeach
 <div class="col-md-12">

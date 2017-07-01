@@ -1,0 +1,28 @@
+.list-bar {
+    padding: 0 16px;
+
+    .list-bar-item {
+        padding: 10px;
+        background: #eee;
+        margin-bottom: 3px;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &.list-bar-default {
+            &:hover {
+                background: #e7e7e7;
+            }
+        }
+
+        &.list-bar-danger {
+            color: $leak;
+
+            &:hover {
+                background: $leak;
+                color: #fff;
+            }
+        }
+    }
+}

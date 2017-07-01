@@ -9,8 +9,10 @@
 </div>
 @foreach ( $platforms as $platform )
     <div class="col-md-3">
-        <a href="{{ route('editPlatform', ['id' => $platform->id]) }}">{{ $platform->name }}</a>
-        <a class="pull-right" href="{{ route('deletePlatform', ['id' => $platform->id]) }}"><i class="fa fa-fw fa-trash"></i></a>
+        <div class="row list-bar">
+            <a class="col-10 list-bar-item list-bar-default" href="{{ route('editPlatform', ['id' => $platform->id]) }}">{{ $platform->name }}</a>
+            <a class="col-2 list-bar-item list-bar-danger text-center" href="{{  route('deletePlatform', ['id' => $platform->id]) }}"><i class="fa fa-fw fa-trash"></i></a>
+        </div>
     </div>
 @endforeach
 @endsection
