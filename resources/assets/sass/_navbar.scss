@@ -1,4 +1,6 @@
 .navbar {
+    margin-bottom: 10px;
+    
     .navbar-brand, .nav-link {
         &:hover {
         }
@@ -25,6 +27,7 @@
     }
 
     .navbar-nav .dropdown-menu {
+        position: absolute !important;
     }
 
     .ellipse {
