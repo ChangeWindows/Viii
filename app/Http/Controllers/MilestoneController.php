@@ -13,7 +13,7 @@ class MilestoneController extends Controller
     }
     
     public function index() {
-        $milestones = Milestone::paginate( 100 );
+        $milestones = Milestone::orderBy('version', 'desc')->paginate( 100 );
         
         return view( 'backstage.milestone.index', compact( 'milestones' ) );
     }
