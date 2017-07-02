@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-12">
-    <form method="POST" action="{{ route('storePlatform') }}" class="row">
+    <form method="POST" action="{{ route('storePlatform') }}" class="row row-p-10">
         <div class="col-12">
             <h1>
                 New platform

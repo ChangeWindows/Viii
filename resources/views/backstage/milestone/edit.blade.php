@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-12">
-    <form method="POST" action="{{ route('patchMilestone') }}" class="row">
+    <form method="POST" action="{{ route('patchMilestone') }}" class="row row-p-10">
         <div class="col-12">
             <h1>
                 Edit {{ $milestone->name }} version {{ $milestone->version }}
