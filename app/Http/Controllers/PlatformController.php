@@ -38,10 +38,7 @@ class PlatformController extends Controller
 
     public function patch() {
         $platform = Platform::find( request( 'id' ) );
-
-        $platform->name = request( 'name' );
-
-        $platform->save();
+        $milestone->fill( request()->only( ['name'] ) )->save();
 
         return redirect()->route( 'managePlatform' );
     }
