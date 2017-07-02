@@ -14,8 +14,11 @@
             }
 
             &.list-bar-default {
+                color: $accent;
+
                 &:hover {
-                    background: #eaeaea;
+                    background: $accent;
+                    color: #fff;
                 }
             }
 

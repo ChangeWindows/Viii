@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-12">
     <h1>
-        Welcome back, {{ Auth::user()->name }}
+        Hi, {{ Auth::user()->name }}
         <a href="{{ route('createBuild') }}" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> New build</a>
     </h1>
 </div>

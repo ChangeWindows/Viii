@@ -207,8 +207,13 @@ textarea {
   text-decoration: none;
 }
 
+.list-bar-group .list-bar .list-bar-item.list-bar-default {
+  color: #0078d7;
+}
+
 .list-bar-group .list-bar .list-bar-item.list-bar-default:hover {
-  background: #eaeaea;
+  background: #0078d7;
+  color: #fff;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-danger {
