@@ -73,5 +73,3 @@ Route::get('backstage/platforms/delete/{platform}', 'PlatformController@delete')
 Route::post('backstage/platforms', 'PlatformController@store')->name('storePlatform');
 Route::patch('backstage/platforms', 'PlatformController@patch')->name('patchPlatform');
 Route::delete('backstage/platforms', 'PlatformController@destroy')->name('destroyPlatform');
-
-Route::get('backstage/stats', 'StatsController@index')->name('manageStat');
