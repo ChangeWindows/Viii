@@ -30,9 +30,7 @@ Route::get('privacy', 'PrivacyController@index')->name('privacy');
 Route::get('about', 'AboutController@index')->name('about');
 
 // Backstage routes
-Route::get('backstage', 'BackstageController@index')->name('backstage');
-
-Route::get('backstage/builds', 'BuildController@index')->name('manageBuild');
+Route::get('backstage', 'BuildController@index')->name('manageBuild');
 Route::get('backstage/builds/create', 'BuildController@create')->name('createBuild');
 Route::get('backstage/builds/{build}', 'BuildController@show')->name('showBuild');
 Route::get('backstage/builds/edit/{build}', 'BuildController@edit')->name('editBuild');

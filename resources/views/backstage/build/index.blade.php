@@ -3,13 +3,21 @@
 @section('content')
 <div class="col-md-12">
     <h1>
-        Builds
+        Welcome back, {{ Auth::user()->name }}
         <a href="{{ route('createBuild') }}" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> New build</a>
     </h1>
 </div>
 <div class="col-md-12 list-bar-group">
     <div class="row">
         @foreach ( $builds as $build )
+            @if ( $build->milestone_id != $current_milestone )
+                <div class="col-xl-12">
+                    <h2>{{ \App\Milestone::find( $build->milestone_id )->name }}</h2>
+                </div>
+                @php
+                    $current_milestone = $build->milestone_id
+                @endphp
+            @endif
             <div class="col-md-3">
                 <div class="row list-bar">
                     <a class="col-8 list-bar-item list-bar-default" href="{{ route('showBuild', ['id' => $build->id]) }}">{{ $build->id }}</a>

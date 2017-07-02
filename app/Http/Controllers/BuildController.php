@@ -14,9 +14,13 @@ class BuildController extends Controller
     }
     
     public function index() {
-        $builds = Build::paginate( 100 );
+        $builds = Build::orderBy( 'id', 'desc' )
+                ->orderBy( 'milestone_id', 'asc' )
+                ->paginate( 100 );
 
-        return view( 'backstage.build.index', compact( 'builds' ) );
+        $current_milestone = "";
+
+        return view( 'backstage.build.index', compact( 'builds', 'current_milestone' ) );
     }
 
     public function show( Build $build ) {

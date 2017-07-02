@@ -25,7 +25,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand active" href="backstage">
-                <img alt="ChangeWindows logo" src="assets/logo/logo-light.png">
+                <img alt="ChangeWindows logo" src="{{ asset('img/logo/logo-light.png') }}">
                 <span class="hidden-sm-down"><span class="brand">Change<span class="bold">Windows</span></span>
             </a>
 
@@ -54,7 +54,7 @@
                             @if (Route::has('login'))
                                 <div class="dropdown-divider"></div>
                                     @if (Auth::check())
-                                        <a class="dropdown-item" href="{{ route('backstage') }}"><i class="fa fa-fw fa-cog"></i> Backstage</a>
+                                        <a class="dropdown-item" href="{{ route('manageBuild') }}"><i class="fa fa-fw fa-cog"></i> Backstage</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
