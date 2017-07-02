@@ -55,10 +55,7 @@ class BuildController extends Controller
 
     public function patch() {
         $build = Build::find( request( 'id' ) );
-
-        $build->milestone_id = request( 'milestone_id' );
-
-        $build->save();
+        $milestone->fill( request()->only( ['milestone_id'] ) )->save();
 
         return redirect()->route( 'showBuild', ['id' => request( 'id' )] );
     }

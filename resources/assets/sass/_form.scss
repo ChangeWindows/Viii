@@ -3,6 +3,12 @@
     border-radius: 0;
 }
 
+.color-form-control {
+    display: block;
+    width: 100%;
+    height: 39px;
+}
+
 textarea {
     height: 100px;
     font-family: $font-stack-mono;
