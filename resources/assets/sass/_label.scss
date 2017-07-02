@@ -1,0 +1,37 @@
+.label {
+    font-size: 100%;
+    font-weight: 600;
+    padding: .3em .7em .4em 0 !important;
+
+    &.vnext, &.leak {
+        color: $leak;
+    }
+
+    &.fast {
+        color: $fast;
+    }
+
+    &.slow {
+        color: $slow;
+    }
+
+    &.preview {
+        color: $preview;
+    }
+
+    &.releasepreview {
+        color: $releasepreview;
+    }
+
+    &.pilot {
+        color: $pilot;
+    }
+
+    &.broad {
+        color: $broad;
+    }
+
+    &.ltsc {
+        color: $ltsc;
+    }
+}

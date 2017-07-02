@@ -142,6 +142,45 @@ textarea {
   background-color: #659b37;
 }
 
+.label {
+  font-size: 100%;
+  font-weight: 600;
+  padding: .3em .7em .4em 0 !important;
+}
+
+.label.vnext,
+.label.leak {
+  color: #dc5332;
+}
+
+.label.fast {
+  color: #f28a11;
+}
+
+.label.slow {
+  color: #ffba00;
+}
+
+.label.preview {
+  color: #cccc29;
+}
+
+.label.releasepreview {
+  color: #b5b540;
+}
+
+.label.pilot {
+  color: #76b540;
+}
+
+.label.broad {
+  color: #40b57b;
+}
+
+.label.ltsc {
+  color: #40a3b5;
+}
+
 .brand {
   text-transform: uppercase;
 }

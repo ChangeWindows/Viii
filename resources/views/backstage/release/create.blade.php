@@ -11,29 +11,71 @@
         </div>
         {{ csrf_field() }}
         <input type="hidden" class="form-control" id="build_id" name="build_id" aria-describedby="build_id" value="{{ $build->id }}">
-        <div class="col-lg-4 col-md-6 col-12">
+        <div class="col-md-6 col-12">
             <div class="form-group">
                 <label for="build_string">String</label>
                 <input type="text" class="form-control" id="build_string" name="build_string" aria-describedby="build_string" placeholder="Build string" value="10.0.{{ $build->id }}.">
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-12">
-            <div class="form-group">
-                <label for="platform">Platform</label>
-                <input type="number" class="form-control" id="platform" name="platform" aria-describedby="platform" placeholder="Platform">
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12">
-            <div class="form-group">
-                <label for="ring">Ring</label>
-                <input type="number" class="form-control" id="ring" name="ring" aria-describedby="ring" placeholder="Ring">
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12">
+        <div class="col-md-6 col-12">
             <div class="form-group">
                 <label for="release">Date</label>
                 <input type="date" class="form-control" id="release" name="release" aria-describedby="release" placeholder="Date">
             </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <label for="ring" class="control-label extra-margin">PC</label>
+            <div class="checkbox"><label><input type="checkbox" name="pc_vnext" value="1"> <span class="label leak">vNext</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="pc_fast" value="1"> <span class="label fast">Fast Ring</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="pc_slow" value="1"> <span class="label slow">Slow Ring</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="pc_preview" value="1"> <span class="label releasepreview">Release Preview</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="pc_pilot" value="1"> <span class="label pilot">Semi Annual Pilot</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="pc_broad" value="1"> <span class="label broad">Semi Annual Broad</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="pc_ltsc" value="1"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <label for="ring" class="control-label extra-margin">Mobile</label>
+            <div class="checkbox"><label><input type="checkbox" name="mobile_vnext" value="1"> <span class="label leak">vNext</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="mobile_fast" value="1"> <span class="label fast">Fast Ring</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="mobile_slow" value="1"> <span class="label slow">Slow Ring</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="mobile_preview" value="1"> <span class="label releasepreview">Release Preview</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="mobile_pilot" value="1"> <span class="label pilot">Semi Annual Pilot</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="mobile_broad" value="1"> <span class="label broad">Semi Annual Broad</span></label></div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <label for="ring" class="control-label extra-margin">Xbox</label>
+            <div class="checkbox"><label><input type="checkbox" name="xbox_vnext" value="1"> <span class="label leak">vNext</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="xbox_fast" value="1"> <span class="label fast">Alpha Ring</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="xbox_slow" value="1"> <span class="label slow">Beta Ring</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="xbox_preview" value="1"> <span class="label preview">Ring 3</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="xbox_release" value="1"> <span class="label releasepreview">Ring 4</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="xbox_pilot" value="1"> <span class="label pilot">Semi Annual Pilot</span></label></div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <label for="ring" class="control-label extra-margin">Server</label>
+            <div class="checkbox"><label><input type="checkbox" name="server_vnext" value="1"> <span class="label leak">vNext</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="server_broad" value="1"> <span class="label broad">Semi Annual Broad</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="server_ltsc" value="1"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <label for="ring" class="control-label extra-margin">Mixed Reality</label>
+            <div class="checkbox"><label><input type="checkbox" name="reality_vnext" value="1"> <span class="label leak">vNext</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="reality_pilot" value="1"> <span class="label pilot">Semi Annual Pilot</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="reality_broad" value="1"> <span class="label broad">Semi Annual Broad</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="reality_ltsc" value="1"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <label for="ring" class="control-label extra-margin">IoT</label>
+            <div class="checkbox"><label><input type="checkbox" name="iot_vnext" value="1"> <span class="label leak">vNext</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="iot_slow" value="1"> <span class="label slow">Preview Ring</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="iot_pilot" value="1"> <span class="label pilot">Semi Annual Pilot</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="iot_broad" value="1"> <span class="label broad">Semi Annual Broad</span></label></div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <label for="ring" class="control-label extra-margin">Team</label>
+            <div class="checkbox"><label><input type="checkbox" name="team_vnext" value="1"> <span class="label leak">vNext</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="team_pilot" value="1"> <span class="label pilot">Semi Annual Pilot</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="team_broad" value="1"> <span class="label broad">Semi Annual Broad</span></label></div>
         </div>
     </form>
 </div>

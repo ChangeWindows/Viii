@@ -44,7 +44,84 @@ class ReleaseController extends Controller
     }
 
     public function store() {
-        Release::create( request( ['build_id', 'build_string', 'platform', 'ring', 'release'] ) );
+        if ( request ( ['pc_leak'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 1, 'ring' => 1 ) ) );
+        if ( request ( ['pc_fast'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 1, 'ring' => 2 ) ) );
+        if ( request ( ['pc_slow'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 1, 'ring' => 4 ) ) );
+        if ( request ( ['pc_preview'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 1, 'ring' => 5 ) ) );
+        if ( request ( ['pc_pilot'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 1, 'ring' => 6 ) ) );
+        if ( request ( ['pc_broad'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 1, 'ring' => 7 ) ) );
+        if ( request ( ['pc_lts'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 1, 'ring' => 8 ) ) );
+
+        if ( request ( ['mobile_leak'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 2, 'ring' => 1 ) ) );
+        if ( request ( ['mobile_fast'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 2, 'ring' => 2 ) ) );
+        if ( request ( ['mobile_slow'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 2, 'ring' => 3 ) ) );
+        if ( request ( ['mobile_preview'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 2, 'ring' => 5 ) ) );
+        if ( request ( ['mobile_pilot'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 2, 'ring' => 6 ) ) );
+        if ( request ( ['mobile_broad'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 2, 'ring' => 7 ) ) );
+
+        if ( request ( ['xbox_leak'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 3, 'ring' => 1 ) ) );
+        if ( request ( ['xbox_fast'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 3, 'ring' => 2 ) ) );
+        if ( request ( ['xbox_slow'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 3, 'ring' => 3 ) ) );
+        if ( request ( ['xbox_preview'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 3, 'ring' => 4 ) ) );
+        if ( request ( ['xbox_release'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 3, 'ring' => 5 ) ) );
+        if ( request ( ['xbox_pilot'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 3, 'ring' => 6 ) ) );
+
+        if ( request ( ['server_leak'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 4, 'ring' => 1 ) ) );
+        if ( request ( ['server_slow'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 4, 'ring' => 4 ) ) );
+        if ( request ( ['server_broad'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 4, 'ring' => 7 ) ) );
+        if ( request ( ['server_lts'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 4, 'ring' => 8 ) ) );
+
+        if ( request ( ['iot_leak'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 5, 'ring' => 1 ) ) );
+        if ( request ( ['iot_slow'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 5, 'ring' => 4 ) ) );
+        if ( request ( ['iot_pilot'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 5, 'ring' => 6 ) ) );
+        if ( request ( ['iot_broad'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 5, 'ring' => 7 ) ) );
+
+        if ( request ( ['reality_leak'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 6, 'ring' => 1 ) ) );
+        if ( request ( ['reality_slow'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 6, 'ring' => 4 ) ) );
+        if ( request ( ['reality_pilot'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 6, 'ring' => 6 ) ) );
+        if ( request ( ['reality_broad'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 6, 'ring' => 7 ) ) );
+        if ( request ( ['reality_lts'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 6, 'ring' => 8 ) ) );
+
+        if ( request ( ['team_leak'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 7, 'ring' => 1 ) ) );
+        if ( request ( ['team_slow'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 7, 'ring' => 4 ) ) );
+        if ( request ( ['team_pilot'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 7, 'ring' => 6 ) ) );
+        if ( request ( ['team_broad'] ) )
+            Release::create( array_merge( request()->only( ['build_id', 'build_string', 'release'] ), array( 'platform' => 7, 'ring' => 7 ) ) );
 
         return redirect()->route( 'showBuild', ['id' => request( 'build_id' )] );
     }
