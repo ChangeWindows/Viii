@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-12">
-    <h1>Delete build {{ $build->build }}</h1>
+    <h1>Delete {{ $build->build }}</h1>
     <form method="POST" action="{{ route('destroyBuild') }}">
         {!! method_field('delete') !!}
         {{ csrf_field() }}

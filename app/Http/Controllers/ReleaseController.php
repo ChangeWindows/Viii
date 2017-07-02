@@ -31,10 +31,22 @@ class ReleaseController extends Controller
         return view( 'backstage.release.delete', compact( 'release' ) );
     }
 
-    public function store() {
-        Release::create( request( ['build_id', 'build_string', 'platform', 'ring'] ) );
+    public function promote( Release $release ) {
+        Release::create([
+            'build_id'      => $release->build_id,
+            'build_string'  => $release->build_string,
+            'platform'      => $release->platform,
+            'ring'          => $release->ring + 1,
+            'release'       => $release->release
+        ]);
 
-        return redirect()->route( 'manageRelease' );
+        return redirect()->route( 'showBuild', ['id' => $release->build_id] );
+    }
+
+    public function store() {
+        Release::create( request( ['build_id', 'build_string', 'platform', 'ring', 'release'] ) );
+
+        return redirect()->route( 'showBuild', ['id' => request( 'build_id' )] );
     }
 
     public function patch() {
@@ -43,10 +55,11 @@ class ReleaseController extends Controller
         $release->build_string = request( 'build_string' );
         $release->platform = request( 'platform' );
         $release->ring = request( 'ring' );
+        $release->release = request( 'release' );
 
         $release->save();
 
-        return redirect()->route( 'manageRelease' );
+        return redirect()->route( 'showBuild', ['id' => request( 'build_id' )] );
     }
 
     public function destroy() {

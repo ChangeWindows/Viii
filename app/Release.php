@@ -8,24 +8,38 @@ use App\Ring;
 
 class Release extends Model
 {
-    protected $fillable = ['build_id', 'build_string', 'platform', 'ring'];
+    protected $fillable = ['build_id', 'build_string', 'platform', 'ring', 'release'];
     public $timestamps = false;
 
     function getPlatformName() {
-        return Platform::find( $this->id )->name;
+        return Platform::find( $this->platform )->name;
     }
 
-    function getRingName() {
-        switch( $this->platform ) {
-            case 3:
-                return Ring::find( $this->ring )->xbox_name;
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-                return Ring::find( $this->ring )->other_name;
-            default:
-                return Ring::find( $this->ring )->default_name;
+    function getRingName( $version = 'default ') {
+        if ( $version == 'default ') {
+            switch( $this->platform ) {
+                case 3:
+                    return Ring::find( $this->ring )->xbox_name;
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    return Ring::find( $this->ring )->other_name;
+                default:
+                    return Ring::find( $this->ring )->default_name;
+            }
+        } else if ( $version == 'short' ) {
+            switch( $this->platform ) {
+                case 3:
+                    return Ring::find( $this->ring )->xbox_short;
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    return Ring::find( $this->ring )->other_short;
+                default:
+                    return Ring::find( $this->ring )->default_short;
+            }
         }
     }
 

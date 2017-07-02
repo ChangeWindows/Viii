@@ -128,6 +128,14 @@ textarea {
   background-color: #0064b3;
 }
 
+.btn.btn-success {
+  background-color: #76b540;
+}
+
+.btn.btn-success:hover {
+  background-color: #659b37;
+}
+
 .brand {
   text-transform: uppercase;
 }

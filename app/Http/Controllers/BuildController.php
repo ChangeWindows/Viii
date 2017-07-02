@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Build;
+use App\Release;
 
 class BuildController extends Controller
 {
@@ -16,6 +17,18 @@ class BuildController extends Controller
         $builds = Build::paginate( 100 );
 
         return view( 'backstage.build.index', compact( 'builds' ) );
+    }
+
+    public function show( Build $build ) {
+        $releases = Release::where( 'build_id', $build->id )
+                ->orderBy( 'platform', 'asc' )
+                ->orderBy( 'build_string', 'desc' )
+                ->orderBy( 'ring', 'desc' )
+                ->paginate( 100 );
+
+        $current_platform = 0;
+            
+        return view( 'backstage.build.show', compact( 'build', 'releases', 'current_platform' ) );
     }
 
     public function create() {
@@ -43,7 +56,7 @@ class BuildController extends Controller
 
         $build->save();
 
-        return redirect()->route( 'manageBuild' );
+        return redirect()->route( 'showBuild', ['id' => request( 'id' )] );
     }
 
     public function destroy() {

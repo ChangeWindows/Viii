@@ -10,4 +10,12 @@
             background-color: darken( $accent, 7% );
         }
     }
+
+    &.btn-success {
+        background-color: $pilot;
+
+        &:hover {
+            background-color: darken( $pilot, 7% );
+        }
+    }
 }

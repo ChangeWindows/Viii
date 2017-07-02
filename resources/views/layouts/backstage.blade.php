@@ -32,20 +32,16 @@
             <div class="collapse navbar-collapse" id="cwnav">
                 <div class="navbar-nav mr-auto mt-lg-0">
                     <a class="nav-item nav-link" href="{{ route('manageBuild') }}">Builds</a>
-                    <a class="nav-item nav-link" href="{{ route('manageRelease') }}">Releases</a>
                     <a class="nav-item nav-link" href="{{ route('manageMilestone') }}">Milestones</a>
                     <a class="nav-item nav-link" href="{{ route('manageRing') }}">Rings</a>
                     <a class="nav-item nav-link" href="{{ route('managePlatform') }}">Platforms</a>
-                    {{--
-                    <a class="nav-item nav-link" href="{{ route('manageStat') }}">Stat<span class="hidden-xs-down">istic</span>s</a>
-                    --}}
                 </div>
                 <div class="navbar-nav my-lg-0">
                     <li class="nav-item dropdown ellipse">
-                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="" id="ellipses" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="ellipses">...</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ellipses">
                             {{--
                             <a class="dropdown-item" href="{{ route('settings') }}"><i class="fa fa-fw fa-cogs"></i> Settings</a>
                             <div class="dropdown-divider"></div>

@@ -34,7 +34,8 @@ Route::get('backstage', 'BackstageController@index')->name('backstage');
 
 Route::get('backstage/builds', 'BuildController@index')->name('manageBuild');
 Route::get('backstage/builds/create', 'BuildController@create')->name('createBuild');
-Route::get('backstage/builds/{build}', 'BuildController@edit')->name('editBuild');
+Route::get('backstage/builds/{build}', 'BuildController@show')->name('showBuild');
+Route::get('backstage/builds/edit/{build}', 'BuildController@edit')->name('editBuild');
 Route::get('backstage/builds/delete/{build}', 'BuildController@delete')->name('deleteBuild');
 Route::post('backstage/builds', 'BuildController@store')->name('storeBuild');
 Route::patch('backstage/builds', 'BuildController@patch')->name('patchBuild');
@@ -44,6 +45,7 @@ Route::get('backstage/releases', 'ReleaseController@index')->name('manageRelease
 Route::get('backstage/releases/create/{build}', 'ReleaseController@create')->name('createRelease');
 Route::get('backstage/releases/{release}', 'ReleaseController@edit')->name('editRelease');
 Route::get('backstage/releases/delete/{release}', 'ReleaseController@delete')->name('deleteRelease');
+Route::get('backstage/releases/promote/{release}', 'ReleaseController@promote')->name('promoteRelease');
 Route::post('backstage/releases', 'ReleaseController@store')->name('storeRelease');
 Route::patch('backstage/releases', 'ReleaseController@patch')->name('patchRelease');
 Route::delete('backstage/releases', 'ReleaseController@destroy')->name('destroyRelease');
