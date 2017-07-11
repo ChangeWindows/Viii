@@ -15,7 +15,7 @@
 Auth::routes();
 
 // Mainstage routes
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'TimelineController@index')->name('home');
 
 Route::get('build/{build}', 'BuildController@show')->name('showBuild');
 
