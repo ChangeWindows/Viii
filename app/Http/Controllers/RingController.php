@@ -38,7 +38,7 @@ class RingController extends Controller
 
     public function patch() {
         $ring = Ring::find( request( 'id' ) );
-        $milestone->fill( request()->only( ['default_name', 'default_short', 'default_acronym', 'xbox_name', 'xbox_short', 'xbox_acronym', 'other_name', 'other_short', 'other_acronym'] ) )->save();
+        $ring->fill( request()->only( ['default_name', 'default_short', 'default_acronym', 'xbox_name', 'xbox_short', 'xbox_acronym', 'other_name', 'other_short', 'other_acronym'] ) )->save();
 
         return redirect()->route( 'manageRing' );
     }
