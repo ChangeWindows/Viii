@@ -28,7 +28,7 @@
             <div class="checkbox"><label><input type="checkbox" name="pc_vnext" value="1"> <span class="label leak">vNext</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="pc_fast" value="1"> <span class="label fast">Fast Ring</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="pc_slow" value="1"> <span class="label slow">Slow Ring</span></label></div>
-            <div class="checkbox"><label><input type="checkbox" name="pc_preview" value="1"> <span class="label releasepreview">Release Preview</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="pc_preview" value="1"> <span class="label release">Release Preview</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="pc_pilot" value="1"> <span class="label pilot">Semi Annual Pilot</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="pc_broad" value="1"> <span class="label broad">Semi Annual Broad</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="pc_ltsc" value="1"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
@@ -38,7 +38,7 @@
             <div class="checkbox"><label><input type="checkbox" name="mobile_vnext" value="1"> <span class="label leak">vNext</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="mobile_fast" value="1"> <span class="label fast">Fast Ring</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="mobile_slow" value="1"> <span class="label slow">Slow Ring</span></label></div>
-            <div class="checkbox"><label><input type="checkbox" name="mobile_preview" value="1"> <span class="label releasepreview">Release Preview</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="mobile_preview" value="1"> <span class="label release">Release Preview</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="mobile_pilot" value="1"> <span class="label pilot">Semi Annual Pilot</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="mobile_broad" value="1"> <span class="label broad">Semi Annual Broad</span></label></div>
         </div>
@@ -48,7 +48,7 @@
             <div class="checkbox"><label><input type="checkbox" name="xbox_fast" value="1"> <span class="label fast">Alpha Ring</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="xbox_slow" value="1"> <span class="label slow">Beta Ring</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="xbox_preview" value="1"> <span class="label preview">Ring 3</span></label></div>
-            <div class="checkbox"><label><input type="checkbox" name="xbox_release" value="1"> <span class="label releasepreview">Ring 4</span></label></div>
+            <div class="checkbox"><label><input type="checkbox" name="xbox_release" value="1"> <span class="label release">Ring 4</span></label></div>
             <div class="checkbox"><label><input type="checkbox" name="xbox_pilot" value="1"> <span class="label pilot">Semi Annual Pilot</span></label></div>
         </div>
         <div class="col-md-4 col-sm-6">
