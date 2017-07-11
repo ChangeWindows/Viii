@@ -77,13 +77,13 @@ class DatabaseSeeder extends Seeder
         DB::table('rings')->insert([
             'id' => '5',
             'default_name' => 'Release Preview Ring',
-            'default_short' => 'Release Preview',
+            'default_short' => 'Release',
             'default_acronym' => 'RPR',
             'xbox_name' => 'Ring 4',
             'xbox_short' => 'Ring 4',
             'xbox_acronym' => 'R4',
             'other_name' => 'Release Preview Ring',
-            'other_short' => 'Release Preview',
+            'other_short' => 'Release',
             'other_acronym' => 'RPR'
         ]);
 
@@ -116,13 +116,13 @@ class DatabaseSeeder extends Seeder
         DB::table('rings')->insert([
             'id' => '8',
             'default_name' => 'Long-Term Support Channel',
-            'default_short' => 'Long-Term Support',
+            'default_short' => 'LTSC',
             'default_acronym' => 'LTS',
             'xbox_name' => 'Long-Term Support Channel',
-            'xbox_short' => 'Long-Term Support',
+            'xbox_short' => 'LTSC',
             'xbox_acronym' => 'LTS',
             'other_name' => 'Long-Term Support Channel',
-            'other_short' => 'Long-Term Support',
+            'other_short' => 'LTSC',
             'other_acronym' => 'LTS'
         ]);
         
