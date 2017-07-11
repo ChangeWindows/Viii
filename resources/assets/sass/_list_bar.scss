@@ -40,9 +40,42 @@
                 }
             }
 
+            &.list-bar-platform {
+                text-align: center;
+
+                &.list-bar-pc {
+                    background: #0078d7;
+                }
+
+                &.list-bar-mobile {
+                    background: #21c8ff;
+                }
+
+                &.list-bar-xbox {
+                    background: #107c10;
+                }
+
+                &.list-bar-server {
+                    background: #ab59f7;
+                }
+
+                &.list-bar-iot {
+                    background: #e75819;
+                }
+
+                &.list-bar-mixed {
+                    background: #ff9c00;
+                }
+
+                &.list-bar-team {
+                    background: #787878;
+                }
+            }
+
             .list-bar-item-row {
                 margin-left: 0;
                 margin-right: 0;
+                padding: 0;
             }
         }
     }

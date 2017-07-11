@@ -11,12 +11,16 @@ class Release extends Model
     protected $fillable = ['build_id', 'build_string', 'platform', 'ring', 'release'];
     public $timestamps = false;
 
-    function getPlatformName() {
-        return Platform::find( $this->platform )->name;
+    function getPlatformName( $notation = 'default ') {
+        if ( $notation == 'default ') {
+            return Platform::find( $this->platform )->name;
+        } else if ( $notation == 'class' ) {
+            return strtolower( Platform::find( $this->platform )->name );
+        }
     }
 
-    function getRingName( $version = 'default ') {
-        if ( $version == 'default ') {
+    function getRingName( $notation = 'default ') {
+        if ( $notation == 'default ') {
             switch( $this->platform ) {
                 case 3:
                     return Ring::find( $this->ring )->xbox_name;
@@ -28,7 +32,7 @@ class Release extends Model
                 default:
                     return Ring::find( $this->ring )->default_name;
             }
-        } else if ( $version == 'short' ) {
+        } else if ( $notation == 'short' ) {
             switch( $this->platform ) {
                 case 3:
                     return Ring::find( $this->ring )->xbox_short;
@@ -40,7 +44,7 @@ class Release extends Model
                 default:
                     return Ring::find( $this->ring )->default_short;
             }
-        } else if ( $version == 'class' ) {
+        } else if ( $notation == 'class' ) {
             return strtolower( Ring::find( $this->ring )->default_short );
         }
     }

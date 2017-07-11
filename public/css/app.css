@@ -146,6 +146,7 @@ textarea {
   font-size: 100%;
   font-weight: 600;
   padding: .3em .7em .4em 0 !important;
+  text-transform: uppercase;
 }
 
 .label.vnext,
@@ -179,6 +180,13 @@ textarea {
 
 .label.ltsc {
   color: #40a3b5;
+}
+
+.img-responsive.img-platform {
+  margin-top: -8px;
+  margin-bottom: -5px;
+  height: 32px;
+  width: auto;
 }
 
 .brand {
@@ -234,9 +242,42 @@ textarea {
   color: #fff;
 }
 
+.list-bar-group .list-bar .list-bar-item.list-bar-platform {
+  text-align: center;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-pc {
+  background: #0078d7;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-mobile {
+  background: #21c8ff;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-xbox {
+  background: #107c10;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-server {
+  background: #ab59f7;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-iot {
+  background: #e75819;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-mixed {
+  background: #ff9c00;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-team {
+  background: #787878;
+}
+
 .list-bar-group .list-bar .list-bar-item .list-bar-item-row {
   margin-left: 0;
   margin-right: 0;
+  padding: 0;
 }
 
 h1 {

@@ -2,6 +2,7 @@
     font-size: 100%;
     font-weight: 600;
     padding: .3em .7em .4em 0 !important;
+    text-transform: uppercase;
 
     &.vnext, &.leak {
         color: $leak;
