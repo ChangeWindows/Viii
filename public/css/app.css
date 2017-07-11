@@ -165,7 +165,7 @@ textarea {
   color: #cccc29;
 }
 
-.label.releasepreview {
+.label.release {
   color: #b5b540;
 }
 
@@ -232,6 +232,11 @@ textarea {
 .list-bar-group .list-bar .list-bar-item.list-bar-success:hover {
   background: #76b540;
   color: #fff;
+}
+
+.list-bar-group .list-bar .list-bar-item .list-bar-item-row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 h1 {
