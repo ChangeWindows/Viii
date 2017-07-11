@@ -40,6 +40,8 @@ class Release extends Model
                 default:
                     return Ring::find( $this->ring )->default_short;
             }
+        } else if ( $version == 'class' ) {
+            return strtolower( Ring::find( $this->ring )->default_short );
         }
     }
 
