@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="col-md-12">
-    <form method="POST" action="{{ route('storeRelease') }}" class="row row-p-10">
+    <form method="POST" action="{{ route('storeDelta') }}" class="row row-p-10">
         <div class="col-12">
             <h1>
-                New release
+                New delta
                 <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-check"></i> Save</button>
             </h1>
         </div>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Platform;
 use App\Ring;
 
-class Release extends Model
+class Delta extends Model
 {
     protected $dates = ['release'];
     protected $fillable = ['build_id', 'build_string', 'platform', 'ring', 'release'];

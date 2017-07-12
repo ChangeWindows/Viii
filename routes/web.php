@@ -39,14 +39,14 @@ Route::post('backstage/builds', 'BuildController@store')->name('storeBuild');
 Route::patch('backstage/builds', 'BuildController@patch')->name('patchBuild');
 Route::delete('backstage/builds', 'BuildController@destroy')->name('destroyBuild');
 
-Route::get('backstage/releases', 'ReleaseController@index')->name('manageRelease');
-Route::get('backstage/releases/create/{build}', 'ReleaseController@create')->name('createRelease');
-Route::get('backstage/releases/{release}', 'ReleaseController@edit')->name('editRelease');
-Route::get('backstage/releases/delete/{release}', 'ReleaseController@delete')->name('deleteRelease');
-Route::get('backstage/releases/promote/{release}', 'ReleaseController@promote')->name('promoteRelease');
-Route::post('backstage/releases', 'ReleaseController@store')->name('storeRelease');
-Route::patch('backstage/releases', 'ReleaseController@patch')->name('patchRelease');
-Route::delete('backstage/releases', 'ReleaseController@destroy')->name('destroyRelease');
+Route::get('backstage/deltas', 'DeltaController@index')->name('manageDelta');
+Route::get('backstage/deltas/create/{build}', 'DeltaController@create')->name('createDelta');
+Route::get('backstage/deltas/{delta}', 'DeltaController@edit')->name('editDelta');
+Route::get('backstage/deltas/delete/{delta}', 'DeltaController@delete')->name('deleteDelta');
+Route::get('backstage/deltas/promote/{delta}', 'DeltaController@promote')->name('promoteDelta');
+Route::post('backstage/deltas', 'DeltaController@store')->name('storeDelta');
+Route::patch('backstage/deltas', 'DeltaController@patch')->name('patchDelta');
+Route::delete('backstage/deltas', 'DeltaController@destroy')->name('destroyDelta');
 
 Route::get('backstage/milestones', 'MilestoneController@index')->name('manageMilestone');
 Route::get('backstage/milestones/create', 'MilestoneController@create')->name('createMilestone');

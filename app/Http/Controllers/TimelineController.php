@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Release;
+use App\Delta;
 use App\Build;
 
 class TimelineController extends Controller
@@ -13,8 +13,8 @@ class TimelineController extends Controller
     }
     
     public function index() {
-        $releases = Release::orderBy( 'release', 'desc' )->paginate( 100 );
+        $deltas = Delta::orderBy( 'release', 'desc' )->paginate( 100 );
 
-        return view( 'timeline.index', compact( 'releases' ) );
+        return view( 'timeline.index', compact( 'deltas' ) );
     }
 }

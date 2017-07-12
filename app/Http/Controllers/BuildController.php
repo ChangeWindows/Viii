@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Build;
-use App\Release;
+use App\Delta;
 
 class BuildController extends Controller
 {
@@ -24,7 +24,7 @@ class BuildController extends Controller
     }
 
     public function show( Build $build ) {
-        $releases = Release::where( 'build_id', $build->id )
+        $deltas = Delta::where( 'build_id', $build->id )
                 ->orderBy( 'platform', 'asc' )
                 ->orderBy( 'build_string', 'desc' )
                 ->orderBy( 'ring', 'desc' )
@@ -32,7 +32,7 @@ class BuildController extends Controller
 
         $current_platform = 0;
             
-        return view( 'backstage.build.show', compact( 'build', 'releases', 'current_platform' ) );
+        return view( 'backstage.build.show', compact( 'build', 'deltas', 'current_platform' ) );
     }
 
     public function create() {

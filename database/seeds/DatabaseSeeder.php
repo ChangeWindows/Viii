@@ -161,7 +161,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Team'
         ]);
 
-        DB::table('releases')->insert([
+        DB::table('deltas')->insert([
             'build_id' => '16226',
             'build_string' => '10.0.16226.1000',
             'platform' => '1',
