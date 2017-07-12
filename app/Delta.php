@@ -10,6 +10,14 @@ class Delta extends Model
 {
     protected $fillable = ['build_id', 'build_string', 'platform_id', 'changelog'];
     public $timestamps = false;
+    
+    public function builds() {
+        return $this->belongsTo( 'App\Build' );
+    }
+    
+    public function flights() {
+        return $this->hasMany( 'App\Flight' );
+    }
 
     function getPlatformName( $notation = 'default' ) {
         if ( $notation == 'default ') {

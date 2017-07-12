@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Flight extends Model
 {
     protected $dates = ['release', 'ring_id'];
+    
+    public function deltas() {
+        return $this->belongsTo( 'App\Delta' );
+    }
 
     function getPlatformName( $notation = 'default' ) {
         if ( $notation == 'default ') {
