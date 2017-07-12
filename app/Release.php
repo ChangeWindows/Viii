@@ -8,6 +8,7 @@ use App\Ring;
 
 class Release extends Model
 {
+    protected $dates = ['release'];
     protected $fillable = ['build_id', 'build_string', 'platform', 'ring', 'release'];
     public $timestamps = false;
 

@@ -13,7 +13,7 @@ class TimelineController extends Controller
     }
     
     public function index() {
-        $releases = Release::paginate( 100 );
+        $releases = Release::orderBy( 'release', 'desc' )->paginate( 100 );
 
         return view( 'timeline.index', compact( 'releases' ) );
     }
