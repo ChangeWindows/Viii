@@ -13,14 +13,18 @@ class CreateMilestonesTable extends Migration
      */
     public function up()
     {
-        Schema::create('milestones', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('os');
-            $table->string('name');
-            $table->string('codename');
-            $table->integer('version');
-            $table->string('color');
-            $table->text('description');
+        Schema::create( 'milestones', function ( Blueprint $table ) {
+            $table->string( 'id' )->primary();
+            $table->string( 'os' );
+            $table->string( 'name' );
+            $table->string( 'codename' );
+            $table->integer( 'version' );
+            $table->string( 'color' );
+            $table->text( 'description' );
+        });
+
+        Schema::table( 'builds', function ( Blueprint $table ) {
+            $table->foreign( 'milestone_id' )->references( 'id' )->on( 'milestones' )->onDelete( 'cascade' );
         });
     }
 
@@ -31,6 +35,10 @@ class CreateMilestonesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('milestones');
+        Schema::table( 'builds', function ( Blueprint $table ) {
+            $table->dropForeign( 'builds_milestone_id_foreign' );
+        });
+
+        Schema::dropIfExists( 'milestones' );
     }
 }

@@ -13,13 +13,16 @@ class CreateDeltasTable extends Migration
      */
     public function up()
     {
-        Schema::create('deltas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('build_id');
-            $table->string('build_string');
-            $table->integer('platform');
-            $table->integer('ring');
-            $table->date('release');
+        Schema::create( 'deltas' , function ( Blueprint $table ) {
+            $table->increments( 'id' );
+            $table->integer( 'build_id' );
+            $table->string( 'build_string' );
+            $table->integer( 'platform_id' )->unsigned();
+            $table->text( 'changelog' );
+        });
+
+        Schema::table( 'deltas', function ( Blueprint $table ) {
+            $table->foreign( 'build_id' )->references( 'id' )->on( 'builds' )->onDelete( 'cascade' );;
         });
     }
 
@@ -30,6 +33,10 @@ class CreateDeltasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('deltas');
+        Schema::table( 'deltas', function ( Blueprint $table ) {
+            $table->dropForeign( 'deltas_build_id_foreign' );
+        });
+
+        Schema::dropIfExists( 'deltas' );
     }
 }

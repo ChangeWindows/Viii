@@ -13,9 +13,9 @@ class CreateBuildsTable extends Migration
      */
     public function up()
     {
-        Schema::create('builds', function (Blueprint $table) {
-            $table->integer('id')->unique();
-            $table->string('milestone_id');
+        Schema::create( 'builds' , function ( Blueprint $table ) {
+            $table->integer( 'id' )->unique();
+            $table->string( 'milestone_id' );
         });
     }
 
@@ -26,6 +26,6 @@ class CreateBuildsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('builds');
+        Schema::dropIfExists( 'builds' );
     }
 }

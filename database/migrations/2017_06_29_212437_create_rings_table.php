@@ -13,17 +13,17 @@ class CreateRingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rings', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('default_name');
-            $table->string('default_short');
-            $table->string('default_acronym');
-            $table->string('xbox_name');
-            $table->string('xbox_short');
-            $table->string('xbox_acronym');
-            $table->string('other_name');
-            $table->string('other_short');
-            $table->string('other_acronym');
+        Schema::create( 'rings', function ( Blueprint $table ) {
+            $table->increments( 'id' );
+            $table->string( 'default_name' );
+            $table->string( 'default_short' );
+            $table->string( 'default_acronym' );
+            $table->string( 'xbox_name' );
+            $table->string( 'xbox_short' );
+            $table->string( 'xbox_acronym' );
+            $table->string( 'other_name' );
+            $table->string( 'other_short' );
+            $table->string( 'other_acronym' );
         });
     }
 
@@ -34,6 +34,6 @@ class CreateRingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rings');
+        Schema::dropIfExists( 'rings' );
     }
 }

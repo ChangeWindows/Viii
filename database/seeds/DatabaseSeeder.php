@@ -16,11 +16,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'yannick@outlook.com',
             'password' => bcrypt('secret'),
         ]);
-
-        DB::table('builds')->insert([
-            'id' => '16226',
-            'milestone_id' => 'redstone3'
-        ]);
         
         DB::table('rings')->insert([
             'id' => '1',
@@ -161,14 +156,6 @@ class DatabaseSeeder extends Seeder
             'name' => 'Team'
         ]);
 
-        DB::table('deltas')->insert([
-            'build_id' => '16226',
-            'build_string' => '10.0.16226.1000',
-            'platform' => '1',
-            'ring' => '2',
-            'release' => '2017-06-22'
-        ]);
-
         DB::table('milestones')->insert([
             'id' => 'redstone3',
             'os' => 'Windows 10',
@@ -237,6 +224,26 @@ class DatabaseSeeder extends Seeder
             'version' => '1210',
             'color' => '#68217a',
             'description' => 'Windows 8 is the first version of Windows to bring the Modern UI to the desktop and the start of the convergence between all Windows variations.'
+        ]);
+
+        DB::table('builds')->insert([
+            'id' => '16226',
+            'milestone_id' => 'redstone3'
+        ]);
+
+        DB::table('deltas')->insert([
+            'id' => '1',
+            'build_id' => '16226',
+            'build_string' => '10.0.16226.1000',
+            'platform_id' => '1',
+            'changelog' => 'No new features'
+        ]);
+
+        DB::table('flights')->insert([
+            'id' => '1',
+            'delta_id' => '1',
+            'ring_id' => '2',
+            'release' => '2017-06-22'
         ]);
     }
 }

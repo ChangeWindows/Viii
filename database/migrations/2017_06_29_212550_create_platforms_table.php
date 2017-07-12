@@ -13,9 +13,13 @@ class CreatePlatformsTable extends Migration
      */
     public function up()
     {
-        Schema::create('platforms', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
+        Schema::create( 'platforms', function ( Blueprint $table ) {
+            $table->increments( 'id' );
+            $table->string( 'name' );
+        });
+
+        Schema::table( 'deltas' , function ( Blueprint $table ) {
+            $table->foreign( 'platform_id' )->references( 'id' )->on( 'platforms' )->onDelete( 'cascade' );;
         });
     }
 
@@ -26,6 +30,10 @@ class CreatePlatformsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('platforms');
+        Schema::table( 'deltas', function ( Blueprint $table ) {
+            $table->dropForeign( 'deltas_platform_id_foreign' );
+        });
+
+        Schema::dropIfExists( 'platforms' );
     }
 }
