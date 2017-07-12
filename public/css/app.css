@@ -224,6 +224,14 @@ textarea {
   color: #fff;
 }
 
+.list-bar-group .list-bar .list-bar-item.list-bar-grey {
+  color: #0078d7;
+}
+
+.list-bar-group .list-bar .list-bar-item.list-bar-grey:hover {
+  background: #f9f9f9;
+}
+
 .list-bar-group .list-bar .list-bar-item.list-bar-danger {
   color: #dc5332;
 }

@@ -22,6 +22,14 @@
                 }
             }
 
+            &.list-bar-grey {
+                color: $accent;
+
+                &:hover {
+                    background: #f9f9f9;
+                }
+            }
+
             &.list-bar-danger {
                 color: $leak;
 
