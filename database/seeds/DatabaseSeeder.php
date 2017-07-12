@@ -161,6 +161,7 @@ class DatabaseSeeder extends Seeder
             'os' => 'Windows 10',
             'name' => 'Fall Creators Update',
             'codename' => 'Redstone 3',
+            'short' => 'rs3',
             'version' => '1709',
             'color' => '#ffba08',
             'description' => 'The Fall Creators Update is the second and final update for 2017, expected at the end of the year. This update will bring along previously announced features like MyPeople, but also the Fluent design language and an adaptive shell for Mobile.'
@@ -171,6 +172,7 @@ class DatabaseSeeder extends Seeder
             'os' => 'Windows 10',
             'name' => 'Creators Update',
             'codename' => 'Redstone 2',
+            'short' => 'rs2',
             'version' => '1703',
             'color' => '#88b71e',
             'description' => 'The Creators Update is the first update out of 2 for 2017. Although Microsoft heavily focused on creativity during the announcement of the update, there is plenty new across the board, including a new Defender, improved accessibility and more.'
@@ -181,6 +183,7 @@ class DatabaseSeeder extends Seeder
             'os' => 'Windows 10',
             'name' => 'Anniversary Update',
             'codename' => 'Redstone 1',
+            'short' => 'rs1',
             'version' => '1607',
             'color' => '#cb3115',
             'description' => 'The Windows 10 Anniversary Update is released 1 year (give or take 4 days) after the original version of Windows 10 and will be the only update in 2016. It is the first update that will be available to all platforms, that being PC, Mobile, Xbox, Server, Holographic, Team and IoT.'
@@ -191,6 +194,7 @@ class DatabaseSeeder extends Seeder
             'os' => 'Windows 10',
             'name' => 'November Update',
             'codename' => 'Threshold 2',
+            'short' => 'th2',
             'version' => '1511',
             'color' => '#0058af',
             'description' => 'The November Update was the first minor feature update to Windows 10 for PCs and IoT and was released in November 2015. It is also the first build to have a stable Mobile and Xbox release, released to the public in March 2016 and November 2015, respectively.'
@@ -201,6 +205,7 @@ class DatabaseSeeder extends Seeder
             'os' => 'Windows 10',
             'name' => '',
             'codename' => 'Threshold 1',
+            'short' => 'th2',
             'version' => '1507',
             'color' => '#0078d7',
             'description' => 'The original version of Windows 10 is the first version of Windows to utilize the Windows Insider Program for its development. Public previewing started in October 2014. While this version is only stable for PC and IoT, there are also preview builds for Mobile and Server from the Threshold 1 branches, but neither have a stable release.'
@@ -211,6 +216,7 @@ class DatabaseSeeder extends Seeder
             'os' => 'Windows 8.1',
             'name' => '',
             'codename' => 'Blue',
+            'short' => 'bl',
             'version' => '1310',
             'color' => '#00abef',
             'description' => 'Windows 8.1 was a free update to Windows 8 and the start of universal Windows apps as both Windows 8.1 and Windows Phone 8.1 could run the same apps with minor changes.'
@@ -221,6 +227,7 @@ class DatabaseSeeder extends Seeder
             'os' => 'Windows 8',
             'name' => '',
             'codename' => '8',
+            'short' => '8',
             'version' => '1210',
             'color' => '#68217a',
             'description' => 'Windows 8 is the first version of Windows to bring the Modern UI to the desktop and the start of the convergence between all Windows variations.'

@@ -3,13 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Platform;
-use App\Ring;
 
-class Delta extends Model
+class Flight extends Model
 {
-    protected $fillable = ['build_id', 'build_string', 'platform_id', 'changelog'];
-    public $timestamps = false;
+    protected $dates = ['release', 'ring_id'];
 
     function getPlatformName( $notation = 'default' ) {
         if ( $notation == 'default ') {
@@ -47,5 +44,35 @@ class Delta extends Model
             return $kernel;
         elseif ( $type == 'major' )
             return $kernel.'.'.$build;
+    }
+
+    function getRingName( $notation = 'default ') {
+        if ( $notation == 'default ') {
+            switch( $this->platform_id ) {
+                case 3:
+                    return Ring::find( $this->ring_id )->xbox_name;
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    return Ring::find( $this->ring_id )->other_name;
+                default:
+                    return Ring::find( $this->ring_id )->default_name;
+            }
+        } else if ( $notation == 'short' ) {
+            switch( $this->platform_id ) {
+                case 3:
+                    return Ring::find( $this->ring_id )->xbox_short;
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    return Ring::find( $this->ring_id )->other_short;
+                default:
+                    return Ring::find( $this->ring_id )->default_short;
+            }
+        } else if ( $notation == 'class' ) {
+            return strtolower( Ring::find( $this->ring_id )->default_short );
+        }
     }
 }

@@ -18,6 +18,7 @@ class CreateMilestonesTable extends Migration
             $table->string( 'os' );
             $table->string( 'name' );
             $table->string( 'codename' );
+            $table->string( 'short' );
             $table->integer( 'version' );
             $table->string( 'color' );
             $table->text( 'description' );
