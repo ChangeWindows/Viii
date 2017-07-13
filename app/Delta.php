@@ -8,7 +8,7 @@ use App\Ring;
 
 class Delta extends Model
 {
-    protected $fillable = ['build_id', 'build_string', 'platform_id', 'changelog'];
+    protected $fillable = ['build_id', 'build_string', 'changelog', 'platform_id'];
     public $timestamps = false;
     
     public function builds() {

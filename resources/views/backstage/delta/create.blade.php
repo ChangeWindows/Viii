@@ -23,6 +23,12 @@
                 <input type="date" class="form-control" id="release" name="release" aria-describedby="release" placeholder="Date">
             </div>
         </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label for="changelog">Changelog</label>
+                <textarea class="form-control" id="changelog" name="changelog" aria-describedby="changelog" placeholder="Changelog"></textarea>
+            </div>
+        </div>
         <div class="col-md-4 col-sm-6">
             <label for="ring" class="control-label extra-margin">PC</label>
             <div class="checkbox"><label><input type="checkbox" name="pc_vnext" value="1"> <span class="label leak">vNext</span></label></div>

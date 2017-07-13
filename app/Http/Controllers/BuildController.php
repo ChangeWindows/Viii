@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Build;
 use App\Delta;
+use App\Flight;
 
 class BuildController extends Controller
 {
@@ -24,15 +25,16 @@ class BuildController extends Controller
     }
 
     public function show( Build $build ) {
-        $deltas = Delta::where( 'build_id', $build->id )
-                ->orderBy( 'platform', 'asc' )
+        $flights = Flight::join( 'deltas', 'flights.delta_id', '=', 'deltas.id')
+                ->where( 'build_id', $build->id )
+                ->orderBy( 'platform_id', 'asc' )
                 ->orderBy( 'build_string', 'desc' )
-                ->orderBy( 'ring', 'desc' )
+                ->orderBy( 'ring_id', 'desc' )
                 ->paginate( 100 );
 
         $current_platform = 0;
             
-        return view( 'backstage.build.show', compact( 'build', 'deltas', 'current_platform' ) );
+        return view( 'backstage.build.show', compact( 'build', 'flights', 'current_platform' ) );
     }
 
     public function create() {

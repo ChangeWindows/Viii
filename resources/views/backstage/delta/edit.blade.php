@@ -25,16 +25,10 @@
                 <input type="number" class="form-control" id="platform" name="platform" aria-describedby="platform" placeholder="Platform" value="{{ $delta->platform }}">
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-12">
+        <div class="col-12">
             <div class="form-group">
-                <label for="ring">Ring</label>
-                <input type="number" class="form-control" id="ring" name="ring" aria-describedby="ring" placeholder="Ring" value="{{ $delta->ring }}">
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12">
-            <div class="form-group">
-                <label for="release">Date</label>
-                <input type="date" class="form-control" id="release" name="release" aria-describedby="release" placeholder="Date" value="{{ $delta->release }}">
+                <label for="changelog">Changelog</label>
+                <teaxtarea class="form-control" id="changelog" name="changelog" aria-describedby="changelog" placeholder="Changelog">{{ $delta->changelog }}</teaxtarea>
             </div>
         </div>
     </form>

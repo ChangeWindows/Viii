@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flight extends Model
 {
-    protected $dates = ['release'];
+    protected $dates = ['release', 'ring_id', 'delta_id'];
     
     public function deltas() {
         return $this->belongsTo( 'App\Delta', 'delta_id', 'id' );
