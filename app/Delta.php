@@ -23,7 +23,7 @@ class Delta extends Model
         if ( $notation == 'default ') {
             return Platform::find( $this->platform_id )->name;
         } else if ( $notation == 'class' ) {
-            return strtolower( Platform::find( $this->platform_id )->name );
+            return explode( ' ', trim( strtolower( Platform::find( $this->platform_id )->name ) ) )[0];
         }
     }
 
