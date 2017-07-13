@@ -203,7 +203,7 @@ class DatabaseSeeder extends Seeder
         DB::table('milestones')->insert([
             'id' => 'threshold1',
             'os' => 'Windows 10',
-            'name' => '',
+            'name' => 'Windows 10',
             'codename' => 'Threshold 1',
             'short' => 'th2',
             'version' => '1507',
@@ -214,7 +214,7 @@ class DatabaseSeeder extends Seeder
         DB::table('milestones')->insert([
             'id' => 'blue',
             'os' => 'Windows 8.1',
-            'name' => '',
+            'name' => 'Windows 8.1',
             'codename' => 'Blue',
             'short' => 'bl',
             'version' => '1310',
@@ -225,7 +225,7 @@ class DatabaseSeeder extends Seeder
         DB::table('milestones')->insert([
             'id' => 'eight',
             'os' => 'Windows 8',
-            'name' => '',
+            'name' => 'Windows 8',
             'codename' => '8',
             'short' => '8',
             'version' => '1210',
