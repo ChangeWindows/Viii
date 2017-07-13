@@ -16,8 +16,6 @@ class TimelineController extends Controller
     public function index() {
         $flights = Flight::with( ['deltas.builds'] )->orderBy( 'release', 'desc' )->paginate( 100 );
 
-        //dd( $flights );
-
         return view( 'timeline.index', compact( 'flights' ) );
     }
 }
