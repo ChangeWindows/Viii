@@ -11,6 +11,6 @@ class Milestone extends Model
     public $timestamps = false;
     
     public function builds() {
-        return $this->hasMany( 'App\Build' );
+        return $this->hasMany( 'App\Build', 'build_id', 'id' );
     }
 }

@@ -12,11 +12,11 @@ class Delta extends Model
     public $timestamps = false;
     
     public function builds() {
-        return $this->belongsTo( 'App\Build' );
+        return $this->belongsTo( 'App\Build', 'build_id', 'id' );
     }
     
     public function flights() {
-        return $this->hasMany( 'App\Flight' );
+        return $this->hasMany( 'App\Flight', 'flight_id', 'id' );
     }
 
     function getPlatformName( $notation = 'default' ) {

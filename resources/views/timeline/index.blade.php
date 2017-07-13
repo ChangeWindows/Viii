@@ -9,12 +9,12 @@
             </div>
             <div class="col-md-12">
                 <div class="row list-bar">
-                    <div class="col-1 list-bar-item list-bar-platform list-bar-{{ $flight->getPlatformName( 'class' ) }}">
-                        <img class="img-responsive img-platform" alt="{{ $flight->getPlatformName() }}" src="{{ asset('img/platform/'.$flight->getPlatformName( 'class' ).'.png') }}">
+                    <div class="col-1 list-bar-item list-bar-platform list-bar-{{ $flight->deltas->getPlatformName( 'class' ) }}">
+                        <img class="img-responsive img-platform" alt="{{ $flight->deltas->getPlatformName() }}" src="{{ asset('img/platform/'.$flight->deltas->getPlatformName( 'class' ).'.png') }}">
                     </div>
-                    <a class="col-11 list-bar-item list-bar-grey" href="{{ route('showBuild', ['id' => $flight->build]) }}">
+                    <a class="col-11 list-bar-item list-bar-grey" href="{{ route('showBuild', ['id' => $flight->build_id]) }}">
                         <div class="row list-bar-item-row">
-                            <div class="col-4">{{ $flight->getString() }}</div>
+                            <div class="col-4">{{ $flight->deltas->getString() }}</div>
                             <div class="col-8"><span class="label {{ $flight->getRingName( 'class' ) }}">{{ $flight->getRingName( 'short' ) }}</span></div>
                         </div>
                     </a>

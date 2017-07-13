@@ -14,7 +14,7 @@ class TimelineController extends Controller
     }
     
     public function index() {
-        $flights = Flight::with( ['deltas', 'builds', 'milestones', 'platforms', 'rings'] )->orderBy( 'release', 'desc' )->paginate( 100 );
+        $flights = Flight::with( ['deltas.builds'] )->orderBy( 'release', 'desc' )->paginate( 100 );
 
         //dd( $flights );
 

@@ -10,10 +10,10 @@ class Build extends Model
     public $timestamps = false;
     
     public function milestones() {
-        return $this->belongsTo( 'App\Milestone' );
+        return $this->belongsTo( 'App\Milestone', 'milestone_id', 'id' );
     }
     
     public function deltas() {
-        return $this->hasMany( 'App\Delta' );
+        return $this->hasMany( 'App\Delta', 'delta_id', 'id' );
     }
 }

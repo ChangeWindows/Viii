@@ -10,6 +10,6 @@ class Ring extends Model
     public $timestamps = false;
     
     public function flight() {
-        return $this->belongsTo( 'App\Flight' );
+        return $this->belongsTo( 'App\Flight', 'flight_id', 'id' );
     }
 }

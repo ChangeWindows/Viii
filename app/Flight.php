@@ -9,7 +9,11 @@ class Flight extends Model
     protected $dates = ['release', 'ring_id'];
     
     public function deltas() {
-        return $this->belongsTo( 'App\Delta' );
+        return $this->belongsTo( 'App\Delta', 'delta_id', 'id' );
+    }
+    
+    public function rings() {
+        return $this->hasOne( 'App\Ring', 'ring_id', 'id' );
     }
 
     function getPlatformName( $notation = 'default' ) {
