@@ -191,6 +191,7 @@ textarea {
 
 .brand {
   text-transform: uppercase;
+  font-weight: 300;
 }
 
 .brand .bold {
@@ -286,6 +287,17 @@ textarea {
   margin-left: 0;
   margin-right: 0;
   padding: 0;
+}
+
+.login {
+  background-color: #eee;
+}
+
+.login h2 {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  font-size: 40px;
 }
 
 h1 {
