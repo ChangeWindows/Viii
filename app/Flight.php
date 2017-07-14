@@ -56,33 +56,106 @@ class Flight extends Model
             return $kernel.'.'.$build;
     }
 
-    function getRingName( $notation = 'default ') {
-        if ( $notation == 'default ') {
-            switch( $this->platform_id ) {
-                case 3:
-                    return Ring::find( $this->ring_id )->xbox_name;
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                    return Ring::find( $this->ring_id )->other_name;
-                default:
-                    return Ring::find( $this->ring_id )->default_name;
-            }
+    function getRingName( $notation = 'default' ) {
+        if ( $notation == 'id' ) {
+            return $this->ring_id;
         } else if ( $notation == 'short' ) {
-            switch( $this->platform_id ) {
-                case 3:
-                    return Ring::find( $this->ring_id )->xbox_short;
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                    return Ring::find( $this->ring_id )->other_short;
-                default:
-                    return Ring::find( $this->ring_id )->default_short;
-            }
+            if ( $this->ring_id == 1 )
+                return 'Leak';
+            if ( $this->ring_id == 2 )
+                switch ( $this->deltas->platform_id ) {
+                    case 3:
+                        return 'Alpha';
+                    default:
+                        return 'Fast';
+                }
+            if ( $this->ring_id == 3 )
+                switch ( $this->deltas->platform_id ) {
+                    case 1:
+                    case 2:
+                        return 'Slow';
+                    case 3:
+                        return 'Beta';
+                    default:
+                        return 'Preview';
+                }
+            if ( $this->ring_id == 4 )
+                switch ( $this->deltas->platform_id ) {
+                    case 3:
+                        return 'Ring 3';
+                    default:
+                        return 'Preview';
+                }
+            if ( $this->ring_id == 5 )
+                switch ( $this->deltas->platform_id ) {
+                    case 3:
+                        return 'Ring 4';
+                    default:
+                        return 'Release';
+                }
+            if ( $this->ring_id == 6 )
+                return 'Pilot';
+            if ( $this->ring_id == 7 )
+                return 'Broad';
+            if ( $this->ring_id == 8 )
+                return 'LTS';
+        } else if ( $notation == 'default' ) {
+            if ( $this->ring_id == 1 )
+                return 'Leak';
+            if ( $this->ring_id == 2 )
+                switch ( $this->deltas->platform_id ) {
+                    case 3:
+                        return 'Alpha Ring';
+                    default:
+                        return 'Fast Ring';
+                }
+            if ( $this->ring_id == 3 )
+                switch ( $this->deltas->platform_id ) {
+                    case 1:
+                    case 2:
+                        return 'Slow Ring';
+                    case 3:
+                        return 'Beta Ring';
+                    default:
+                        return 'Preview';
+                }
+            if ( $this->ring_id == 4 )
+                switch ( $this->deltas->platform_id ) {
+                    case 3:
+                        return 'Ring 3';
+                    default:
+                        return 'Preview';
+                }
+            if ( $this->ring_id == 5 )
+                switch ( $this->deltas->platform_id ) {
+                    case 3:
+                        return 'Ring 4';
+                    default:
+                        return 'Release Preview';
+                }
+            if ( $this->ring_id == 6 )
+                return 'Semi-Annual Pilot';;
+            if ( $this->ring_id == 7 )
+                return 'Semi-Annual Broad';
+            if ( $this->ring_id == 8 )
+                return 'Long-Term Servicing Channel';
         } else if ( $notation == 'class' ) {
-            return strtolower( Ring::find( $this->ring_id )->default_short );
+            if ( $this->ring_id == 1 )
+                return 'leak';
+            if ( $this->ring_id == 2 )
+                return 'fast';
+            if ( $this->ring_id == 3 )
+                return 'slow';
+            if ( $this->ring_id == 4 )
+                return 'preview';
+            if ( $this->ring_id == 5 )
+                return 'release';
+            if ( $this->ring_id == 6 )
+                return 'pilot';
+            if ( $this->ring_id == 7 )
+                return 'broad';
+            if ( $this->ring_id == 8 )
+                return 'ltsc';
         }
     }
 }

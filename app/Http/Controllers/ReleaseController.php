@@ -21,9 +21,7 @@ class ReleaseController extends Controller
                 ->orderBy( 'platform_id', 'desc' )
                 ->orderBy( 'ring_id', 'desc' )
                 ->paginate( 100 );
-
-        $current_platform = 0;
             
-        return view( 'release.index', compact( 'build', 'flights', 'current_platform' ) );
+        return view( 'release.index', compact( 'build', 'flights' ) );
     }
 }

@@ -20,10 +20,38 @@ class Delta extends Model
     }
 
     function getPlatformName( $notation = 'default' ) {
-        if ( $notation == 'default ') {
-            return Platform::find( $this->platform_id )->name;
+        if ( $notation == 'default' ) {
+            if ( $this->platform_id == 1 )
+                return 'PC';
+            if ( $this->platform_id == 2 )
+                return 'Mobile';
+            if ( $this->platform_id == 3 )
+                return 'Xbox';
+            if ( $this->platform_id == 4 )
+                return 'Server';
+            if ( $this->platform_id == 5 )
+                return 'Mixed Reality';
+            if ( $this->platform_id == 6 )
+                return 'IoT';
+            if ( $this->platform_id == 7 )
+                return 'Team';
         } else if ( $notation == 'class' ) {
-            return explode( ' ', trim( strtolower( Platform::find( $this->platform_id )->name ) ) )[0];
+            if ( $this->platform_id == 1 )
+                return 'pc';
+            if ( $this->platform_id == 2 )
+                return 'mobile';
+            if ( $this->platform_id == 3 )
+                return 'xbox';
+            if ( $this->platform_id == 4 )
+                return 'server';
+            if ( $this->platform_id == 5 )
+                return 'reality';
+            if ( $this->platform_id == 6 )
+                return 'iot';
+            if ( $this->platform_id == 7 )
+                return 'team';
+        } else if ( $notation == 'id' ) {
+            return $this->platform_id;
         }
     }
 
