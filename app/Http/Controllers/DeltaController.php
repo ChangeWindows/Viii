@@ -45,112 +45,14 @@ class DeltaController extends Controller
     }
 
     public function store() {
-        if ( request( ['pc_leak', 'pc_fast', 'pc_slow', 'pc_preview', 'pc_pilot', 'pc_broad', 'pc_lts'] ) ) {
-            $delta = Delta::create( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), array( 'platform_id' => 1 ) ) );
+        foreach( request()->get( 'delta' ) as $platform => $ring ) {
+            $delta = new Delta();
+            $delta->fill( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), [ 'platform_id' => $platform ] ) )->save();
 
-            if ( request( ['pc_leak'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 1, 'delta_id' => $delta->id ) ) );
-            if ( request( ['pc_fast'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 2, 'delta_id' => $delta->id ) ) );
-            if ( request( ['pc_slow'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 4, 'delta_id' => $delta->id ) ) );
-            if ( request( ['pc_preview'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 5, 'delta_id' => $delta->id ) ) );
-            if ( request( ['pc_pilot'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 6, 'delta_id' => $delta->id ) ) );
-            if ( request( ['pc_broad'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 7, 'delta_id' => $delta->id ) ) );
-            if ( request( ['pc_lts'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 8, 'delta_id' => $delta->id ) ) );
-        }
-
-        if ( request( ['mobile_leak', 'mobile_fast', 'mobile_slow', 'mobile_preview', 'mobile_pilot', 'mobile_broad'] ) ) {
-            $delta = Delta::create( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), array( 'platform_id' => 2 ) ) );
-
-            if ( request( ['mobile_leak'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 1, 'delta_id' => $delta->id ) ) );
-            if ( request( ['mobile_fast'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 2, 'delta_id' => $delta->id ) ) );
-            if ( request( ['mobile_slow'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 3, 'delta_id' => $delta->id ) ) );
-            if ( request( ['mobile_preview'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 5, 'delta_id' => $delta->id ) ) );
-            if ( request( ['mobile_pilot'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 6, 'delta_id' => $delta->id ) ) );
-            if ( request( ['mobile_broad'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 7, 'delta_id' => $delta->id ) ) );
-        }
-
-        if ( request( ['xbox_leak', 'xbox_fast', 'xbox_slow', 'xbox_preview', 'xbox_release', 'xbox_pilot'] ) ) {
-            $delta = Delta::create( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), array( 'platform_id' => 3 ) ) );
-
-            if ( request( ['xbox_leak'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 1, 'delta_id' => $delta->id ) ) );
-            if ( request( ['xbox_fast'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 2, 'delta_id' => $delta->id ) ) );
-            if ( request( ['xbox_slow'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 3, 'delta_id' => $delta->id ) ) );
-            if ( request( ['xbox_preview'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 4, 'delta_id' => $delta->id ) ) );
-            if ( request( ['xbox_release'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 5, 'delta_id' => $delta->id ) ) );
-            if ( request( ['xbox_pilot'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 6, 'delta_id' => $delta->id ) ) );
-        }
-
-        if ( request( ['server_leak', 'server_slow', 'server_broad', 'server_lts'] ) ) {
-            $delta = Delta::create( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), array( 'platform_id' => 4 ) ) );
-
-            if ( request( ['server_leak'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 1, 'delta_id' => $delta->id ) ) );
-            if ( request( ['server_slow'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 4, 'delta_id' => $delta->id ) ) );
-            if ( request( ['server_broad'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 7, 'delta_id' => $delta->id ) ) );
-            if ( request( ['server_lts'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 8, 'delta_id' => $delta->id ) ) );
-
-        }
-
-        if ( request( ['iot_leak', 'iot_slow', 'iot_pilot', 'iot_broad'] ) ) {
-            $delta = Delta::create( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), array( 'platform_id' => 5 ) ) );
-
-            if ( request( ['iot_leak'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 1, 'delta_id' => $delta->id ) ) );
-            if ( request( ['iot_slow'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 4, 'delta_id' => $delta->id ) ) );
-            if ( request( ['iot_pilot'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 6, 'delta_id' => $delta->id ) ) );
-            if ( request( ['iot_broad'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 7, 'delta_id' => $delta->id ) ) );
-        }
-
-        if ( request( ['reality_leak', 'reality_slow', 'reality_pilot', 'reality_broad', 'reality_lts'] ) ) {
-            $delta = Delta::create( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), array( 'platform_id' => 6 ) ) );
-
-            if ( request( ['reality_leak'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 1, 'delta_id' => $delta->id ) ) );
-            if ( request( ['reality_slow'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 4, 'delta_id' => $delta->id ) ) );
-            if ( request( ['reality_pilot'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 6, 'delta_id' => $delta->id ) ) );
-            if ( request( ['reality_broad'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 7, 'delta_id' => $delta->id ) ) );
-            if ( request( ['reality_lts'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 8, 'delta_id' => $delta->id ) ) );
-        }
-
-        if ( request( ['team_leak', 'team_slow', 'team_pilot', 'team_broad'] ) ) {
-            $delta = Delta::create( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), array( 'platform_id' => 7 ) ) );
-
-            if ( request( ['team_leak'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 1, 'delta_id' => $delta->id ) ) );
-            if ( request( ['team_slow'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 4, 'delta_id' => $delta->id ) ) );
-            if ( request( ['team_pilot'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 6, 'delta_id' => $delta->id ) ) );
-            if ( request( ['team_broad'] ) )
-                Flight::create( array_merge( request()->only( ['release'] ), array( 'ring_id' => 7, 'delta_id' => $delta->id ) ) );
+            foreach( $ring as $key => $value ) {
+                $flight = new Flight();
+                $flight->fill( ['release' => request( 'release' ), 'ring_id' => $value, 'delta_id' => $delta->id] )->save();
+            }
         }
 
         return redirect()->route( 'showBuild', ['id' => request( 'build_id' )] );
