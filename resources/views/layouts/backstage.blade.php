@@ -33,8 +33,6 @@
                 <div class="navbar-nav mr-auto mt-lg-0">
                     <a class="nav-item nav-link" href="{{ route('manageBuild') }}">Build</a>
                     <a class="nav-item nav-link" href="{{ route('manageMilestone') }}">Milestones</a>
-                    <a class="nav-item nav-link" href="{{ route('manageRing') }}">Rings</a>
-                    <a class="nav-item nav-link" href="{{ route('managePlatform') }}">Platforms</a>
                 </div>
                 <div class="navbar-nav my-lg-0">
                     <li class="nav-item dropdown ellipse">

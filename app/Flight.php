@@ -13,18 +13,6 @@ class Flight extends Model
     public function deltas() {
         return $this->belongsTo( 'App\Delta', 'delta_id', 'id' );
     }
-    
-    public function rings() {
-        return $this->hasOne( 'App\Ring', 'ring_id', 'id' );
-    }
-
-    function getPlatformName( $notation = 'default' ) {
-        if ( $notation == 'default ') {
-            return Platform::find( $this->platform_id )->name;
-        } else if ( $notation == 'class' ) {
-            return strtolower( Platform::find( $this->platform_id )->name );
-        }
-    }
 
     function getString( $type = 'default' ) {
         // Figure out the location of dots
