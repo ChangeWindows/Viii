@@ -17,7 +17,7 @@ Auth::routes();
 // Mainstage routes
 Route::get('/', 'TimelineController@index')->name('home');
 
-Route::get('build/{build}', 'BuildController@show')->name('showBuild');
+Route::get('build/{build}', 'ReleaseController@index')->name('build');
 
 Route::get('milestones', 'MilestoneController@index')->name('milestones');
 
@@ -25,7 +25,6 @@ Route::get('rings', 'RingController@index')->name('rings');
 
 Route::get('year', 'YearController@index')->name('year');
 
-Route::get('settings', 'SettingsController@index')->name('settings');
 Route::get('privacy', 'PrivacyController@index')->name('privacy');
 Route::get('about', 'AboutController@index')->name('about');
 
