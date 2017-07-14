@@ -46,12 +46,10 @@ class DeltaController extends Controller
 
     public function store() {
         foreach( request()->get( 'delta' ) as $platform => $ring ) {
-            $delta = new Delta();
-            $delta->fill( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), [ 'platform_id' => $platform ] ) )->save();
+            $delta = Delta::create( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), array( 'platform_id' => $platform ) ) );
 
             foreach( $ring as $key => $value ) {
-                $flight = new Flight();
-                $flight->fill( ['release' => request( 'release' ), 'ring_id' => $value, 'delta_id' => $delta->id] )->save();
+                Flight::create( ['release' => request( 'release' ), 'ring_id' => $value, 'delta_id' => $delta->id] );
             }
         }
 
