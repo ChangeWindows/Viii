@@ -33,12 +33,21 @@ class DeltaController extends Controller
     }
 
     public function promote( Delta $delta ) {
+        /* This can't be a simple +1
+         * 1 PC      1 => 2 => 3 => 5 => 6 => 7 => 8
+         * 2 Mobile  1 => 2 => 3 => 5 => 6 => 7
+         * 2 Xbox    1 => 2 => 3 => 4 => 5 => 6
+         * 2 Server  1 => 3 => 7 => 8
+         * 2 Mixed   1 => 6 => 7 => 8
+         * 2 IoT     1 => 3 => 6 => 7
+         * 2 Team    1 => 6 => 7
+         */
+
         Delta::create([
             'build_id'      => $delta->build_id,
             'build_string'  => $delta->build_string,
-            'platform'      => $delta->platform,
-            'ring'          => $delta->ring + 1,
-            'release'       => $delta->release
+            'platform_id'    => $delta->platform,
+            'ring_id'        => $delta->ring + 1
         ]);
 
         return redirect()->route( 'showBuild', ['id' => $delta->build_id] );
