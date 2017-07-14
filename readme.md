@@ -21,7 +21,7 @@ ChangeWindows has been around for as long as the Windows Insider Program has bee
 
 This repository is a big shift for ChangeWindows from the previous 4 major versions. Not only is this the first time we're publishing the actual source of our website, we're also using for the first time a framework, in this case Laravel, to build our website. Not only because we're lazy, but also because it makes things a lot simpeler and cleaner.
 
-ChangeWindows 5.0 is still in development when you're reading this. Chances are that you'll find this to be more of a Laravel-repository than anything else. Before we put this major revamp of our website online, we want to have reached feature parity with what we currently have, and that will take a while. We have to catch up with over 2,5 year of development.
+ChangeWindows 5.0 is still in development when you're reading this. Before we put this major revamp of our website online, we want to have reached feature parity with what we currently have, and that will take a while. We have to catch up with over 2,5 year of development.
 
 ## Development goals
 
@@ -44,21 +44,22 @@ When the pre-alpha stage is reached, we'll push Alpha 1 to preview.changewindows
 
 Alpha 2 should establish most of the system we have right now:
 
-- Expand index with rings overview and filters
 - Version share
 - Year in review
 - Basic blog
 
-Alpha 3 on the other hand will focus on the customization options we provide right now:
+Alpha 3 on the other hand will focus on the customization options we provide right now and the once we want to build specifically for this new version of our website:
 
+- Profiles
 - Personal filter defaults
 - Dark/light theme
 - Accent color
 - Platform control
+- Sign up to try out the ChangeWindows Preview Universal Windows Platform App once available
 
 ### Beta stage
 
-As soon as all that is done, we will inter beta-stage, at which point we consider the initial release of ChangeWindows 5 feature complete. From here on, it is bug fixing and probably some repository cleanup to prepare for the full launch.
+As soon as all that is done, we will enter the beta-stage, at which point we consider the initial release of ChangeWindows 5 feature complete. From here on, it is bug fixing and probably some repository cleanup to prepare for the full launch.
 
 ## Contributing
 

@@ -19,13 +19,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-toggleable-xl navbar-light bg-faded" id="navbar">
+    <nav class="navbar navbar-toggleable-xl navbar-inverse bg-primary" id="navbar">
         <div class="container">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#cwnav" aria-controls="cwnav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand active" href="backstage">
-                <img alt="ChangeWindows logo" src="{{ asset('img/logo/logo-light.png') }}">
+                <img alt="ChangeWindows logo" src="{{ asset('img/logo/logo-dark.png') }}">
                 <span class="hidden-sm-down"><span class="brand">Change<span class="bold">Windows</span></span>
             </a>
 
