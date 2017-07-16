@@ -5,7 +5,12 @@
     <div class="row">
         @foreach ( $flights as $flight )
             <div class="col-md-12">
-                {{ $flight->release->diffForHumans() }}
+                @if ( $timestamp != $flight->release->diffForHumans() )
+                    <h2>{{ $flight->release->diffForHumans() }}</h2>
+                @endif
+                @php    
+                    $timestamp = $flight->release->diffForHumans();
+                @endphp
             </div>
             <div class="col-md-12">
                 <div class="row list-bar">
