@@ -43,10 +43,7 @@
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="ellipses">...</span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            {{--
-                            <a class="dropdown-item" href="{{ route('settings') }}"><i class="fa fa-fw fa-cog"></i> Settings</a>
-                            --}}
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="{{ route('about') }}"><i class="fa fa-fw fa-cog"></i> About</a>
                             <a class="dropdown-item" href="{{ route('privacy') }}"><i class="fa fa-fw fa-cog"></i> Privacy</a>
                             <div class="dropdown-divider"></div>

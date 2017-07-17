@@ -80,6 +80,39 @@
                 }
             }
 
+            &.list-bar-indicate {
+                border-left-width: 5px;
+                border-left-style: solid;
+
+                &.list-bar-pc {
+                    border-left-color: #0078d7;
+                }
+
+                &.list-bar-mobile {
+                    border-left-color: #21c8ff;
+                }
+
+                &.list-bar-xbox {
+                    border-left-color: #107c10;
+                }
+
+                &.list-bar-server {
+                    border-left-color: #ab59f7;
+                }
+
+                &.list-bar-iot {
+                    border-left-color: #e75819;
+                }
+
+                &.list-bar-reality {
+                    border-left-color: #ff9c00;
+                }
+
+                &.list-bar-team {
+                    border-left-color: #787878;
+                }
+            }
+
             .list-bar-item-row {
                 margin-left: 0;
                 margin-right: 0;

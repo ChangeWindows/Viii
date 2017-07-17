@@ -11,17 +11,17 @@
 <div class="col-md-12 list-bar-group">
     <div class="row">
         @foreach ( $flights as $flight )
-            @if ( $flight->platform != $current_platform )
+            @if ( $flight->deltas->getString( 'delta' ) != $current_delta )
                 <div class="col-xl-12">
-                    <h2>{{ \App\Platform::find( $flight->platform )->name }}</h2>
+                    <h2>{{ $flight->deltas->getString( 'delta' ) }}</h2>
                 </div>
-                @php
-                    $current_platform = $flight->platform
-                @endphp
             @endif
+            @php    
+                $current_delta = $flight->deltas->getString( 'delta' );
+            @endphp
             <div class="col-xl-3 col-lg-4 col-sm-6">
                 <div class="row list-bar">
-                    <a class="col-8 list-bar-item list-bar-default" href="{{ route('editDelta', ['id' => $flight->id]) }}">{{ $flight->getString( 'delta' ).'  '.$flight->getRingName( 'short' ) }}</a>
+                    <a class="col-8 list-bar-item list-bar-default list-bar-indicate list-bar-{{ $flight->deltas->getPlatformName( 'class' ) }}" href="{{ route('editDelta', ['id' => $flight->id]) }}">{{ $flight->getRingName( 'short' ) }}</a>
                     <a class="col-2 list-bar-item list-bar-success text-center" href="{{ route('promoteDelta', ['id' => $flight->id]) }}"><i class="fa fa-fw fa-angle-double-up"></i></a>
                     <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteDelta', ['id' => $flight->id]) }}"><i class="fa fa-fw fa-trash"></i></a>
                 </div>
