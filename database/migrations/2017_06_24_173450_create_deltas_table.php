@@ -15,8 +15,10 @@ class CreateDeltasTable extends Migration
     {
         Schema::create( 'deltas' , function ( Blueprint $table ) {
             $table->increments( 'id' );
+            $table->integer( 'major' );
+            $table->integer( 'minor' );
             $table->integer( 'build_id' );
-            $table->string( 'build_string' );
+            $table->integer( 'delta' );
             $table->integer( 'platform_id' )->unsigned();
             $table->text( 'changelog' );
         });

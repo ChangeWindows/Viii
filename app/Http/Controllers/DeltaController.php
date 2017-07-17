@@ -54,8 +54,10 @@ class DeltaController extends Controller
     }
 
     public function store() {
+        $string = Delta::splitString( request()->get( 'build_string' ) );
+
         foreach( request()->get( 'delta' ) as $platform => $ring ) {
-            $delta = Delta::create( array_merge( request()->only( ['build_id', 'build_string', 'changelog'] ), array( 'platform_id' => $platform ) ) );
+            $delta = Delta::create( array_merge( request()->only( ['build_id', 'changelog'] ), array( 'platform_id' => $platform, 'major' => $string['major'], 'minor' => $string['minor'], 'build' => $string['build'], 'delta' => $string['delta'] ) ) );
 
             foreach( $ring as $key => $value ) {
                 Flight::create( ['release' => request( 'release' ), 'ring_id' => $value, 'delta_id' => $delta->id] );
@@ -67,7 +69,10 @@ class DeltaController extends Controller
 
     public function patch() {
         $delta = Delta::find( request( 'id' ) );
-        $milestone->fill( request()->only( ['build_string', 'platform', 'ring', 'release'] ) )->save();
+
+        $string = Delta::splitString( request()->get( 'build_string' ) );
+
+        $milestone->fill( array_merge( request()->only( ['build_string', 'platform', 'ring', 'release'] ), array( 'major' => $string['major'], 'minor' => $string['minor'], 'build' => $string['build'], 'delta' => $string['delta'] ) ) )->save();
 
         return redirect()->route( 'showBuild', ['id' => request( 'build_id' )] );
     }

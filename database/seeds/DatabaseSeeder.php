@@ -240,8 +240,10 @@ class DatabaseSeeder extends Seeder
 
         DB::table('deltas')->insert([
             'id' => '1',
+            'major' => '10',
+            'minor' => '0',
             'build_id' => '16226',
-            'build_string' => '10.0.16226.1000',
+            'delta' => '1000',
             'platform_id' => '1',
             'changelog' => 'No new features'
         ]);

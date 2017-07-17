@@ -27,7 +27,7 @@ class BuildController extends Controller
     public function show( Build $build ) {
         $flights = Flight::join( 'deltas', 'flights.delta_id', '=', 'deltas.id')
                 ->where( 'build_id', $build->id )
-                ->orderBy( 'deltas.build_string', 'desc' )
+                ->orderBy( 'deltas.delta', 'desc' )
                 ->orderBy( 'deltas.platform_id', 'asc' )
                 ->orderBy( 'flights.ring_id', 'asc' )
                 ->paginate( 100 );
