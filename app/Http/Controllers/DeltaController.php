@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Delta;
 use App\Build;
 use App\Flight;
+use Carbon\Carbon;
 
 class DeltaController extends Controller
 {
@@ -32,7 +33,9 @@ class DeltaController extends Controller
         return view( 'backstage.delta.delete', compact( 'delta' ) );
     }
 
-    public function promote( Delta $delta ) {
+    public function promote( Flight $flight ) {
+        $delta = Delta::find( $flight->delta_id );
+
         /* This isn't a simple +1 maths exercise
          * 1 PC      1 => 2 => 3 =>      5 => 6 => 7 => 8
          * 2 Mobile  1 => 2 => 3 =>      5 => 6 => 7
@@ -43,9 +46,9 @@ class DeltaController extends Controller
          * 7 Team    1 =>                     6 => 7
          */
 
-        $ring = $delta->ring;
+        $ring = $flight->ring_id;
 
-        switch ( $delta->ring ) {
+        switch ( $flight->ring_id ) {
             case 1:
                 switch ( $delta->platform_id ) {
                     case 4:
@@ -113,13 +116,10 @@ class DeltaController extends Controller
                 break;
         }
 
-        Delta::create([
-            'build_id'      => $delta->build_id,
-            'major'         => $delta->major,
-            'minor'         => $delta->minor,
-            'delta'         => $delta->delta,
-            'platform_id'   => $delta->platform_id,
-            'ring_id'       => $ring
+        Flight::create([
+            'release'      => Carbon::now(),
+            'ring_id'      => $ring,
+            'delta_id'     => $flight->delta_id
         ]);
 
         return redirect()->route( 'showBuild', ['id' => $delta->build_id] );

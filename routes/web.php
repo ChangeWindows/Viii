@@ -42,7 +42,7 @@ Route::get('backstage/deltas', 'DeltaController@index')->name('manageDelta');
 Route::get('backstage/deltas/create/{build}', 'DeltaController@create')->name('createDelta');
 Route::get('backstage/deltas/{delta}', 'DeltaController@edit')->name('editDelta');
 Route::get('backstage/deltas/delete/{delta}', 'DeltaController@delete')->name('deleteDelta');
-Route::get('backstage/deltas/promote/{delta}', 'DeltaController@promote')->name('promoteDelta');
+Route::get('backstage/deltas/promote/{flight}', 'DeltaController@promote')->name('promoteDelta');
 Route::post('backstage/deltas', 'DeltaController@store')->name('storeDelta');
 Route::patch('backstage/deltas', 'DeltaController@patch')->name('patchDelta');
 Route::delete('backstage/deltas', 'DeltaController@destroy')->name('destroyDelta');
