@@ -115,7 +115,9 @@ class DeltaController extends Controller
 
         Delta::create([
             'build_id'      => $delta->build_id,
-            'build_string'  => $delta->build_string,
+            'major'         => $delta->major,
+            'minor'         => $delta->minor,
+            'delta'         => $delta->delta,
             'platform_id'   => $delta->platform_id,
             'ring_id'       => $ring
         ]);
