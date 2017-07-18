@@ -146,4 +146,49 @@ class Flight extends Model
                 return 'ltsc';
         }
     }
+
+    function canPromote() {
+        $delta = Delta::find( $this->delta_id );
+
+        /*
+         * 1 PC      1 => 2 => 3 =>      5 => 6 => 7 => 8
+         * 2 Mobile  1 => 2 => 3 =>      5 => 6 => 7
+         * 3 Xbox    1 => 2 => 3 => 4 => 5 => 6
+         * 4 Server  1 =>      3 =>                7 => 8
+         * 5 Mixed   1 =>                     6 => 7 => 8
+         * 6 IoT     1 =>      3 =>           6 => 7
+         * 7 Team    1 =>                     6 => 7
+         */
+
+        switch ( $this->ring_id ) {
+            case 6:
+                switch ( $delta->platform_id ) {
+                    case 3:
+                        return false;
+                        break;
+                    default:
+                        return true;
+                        break;
+                }
+                break;
+            case 7:
+                switch ( $delta->platform_id ) {
+                    case 2:
+                    case 6:
+                    case 7:
+                        return false;
+                        break;
+                    default:
+                        return true;
+                        break;
+                }
+                break;
+            case 8:
+                return false;
+                break;
+            default:
+                return true;
+                break;
+        }
+    }
 }
