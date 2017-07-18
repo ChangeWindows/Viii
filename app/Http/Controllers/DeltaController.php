@@ -33,21 +33,91 @@ class DeltaController extends Controller
     }
 
     public function promote( Delta $delta ) {
-        /* This can't be a simple +1
-         * 1 PC      1 => 2 => 3 => 5 => 6 => 7 => 8
-         * 2 Mobile  1 => 2 => 3 => 5 => 6 => 7
-         * 2 Xbox    1 => 2 => 3 => 4 => 5 => 6
-         * 2 Server  1 => 3 => 7 => 8
-         * 2 Mixed   1 => 6 => 7 => 8
-         * 2 IoT     1 => 3 => 6 => 7
-         * 2 Team    1 => 6 => 7
+        /* This isn't a simple +1 maths exercise
+         * 1 PC      1 => 2 => 3 =>      5 => 6 => 7 => 8
+         * 2 Mobile  1 => 2 => 3 =>      5 => 6 => 7
+         * 3 Xbox    1 => 2 => 3 => 4 => 5 => 6
+         * 4 Server  1 =>      3 =>                7 => 8
+         * 5 Mixed   1 =>                     6 => 7 => 8
+         * 6 IoT     1 =>      3 =>           6 => 7
+         * 7 Team    1 =>                     6 => 7
          */
+
+        $ring = $delta->ring;
+
+        switch ( $delta->ring ) {
+            case 1:
+                switch ( $delta->platform_id ) {
+                    case 4:
+                    case 6:
+                        $ring = 3;
+                        break;
+                    case 5:
+                    case 7:
+                        $ring = 6;
+                        break;
+                    default:
+                        $ring = 2;
+                        break;
+                }
+                break;
+            case 2:
+                $ring = 3;
+                break;
+            case 3:
+                switch ( $delta->platform_id ) {
+                    case 3:
+                        $ring = 4;
+                        break;
+                    case 4:
+                        $ring = 7;
+                        break;
+                    case 6:
+                        $ring = 6;
+                        break;
+                    default:
+                        $ring = 5;
+                        break;
+                }
+                break;
+            case 4:
+                $ring = 5;
+                break;
+            case 5:
+                $ring = 6;
+                break;
+            case 6:
+                switch ( $delta->platform_id ) {
+                    case 3:
+                        $ring = 6;
+                        break;
+                    default:
+                        $ring = 7;
+                        break;
+                }
+                break;
+            case 7:
+                switch ( $delta->platform_id ) {
+                    case 1:
+                    case 4:
+                    case 5:
+                        $ring = 8;
+                        break;
+                    default:
+                        $ring = 7;
+                        break;
+                }
+                break;
+            case 8:
+                $ring = 8;
+                break;
+        }
 
         Delta::create([
             'build_id'      => $delta->build_id,
             'build_string'  => $delta->build_string,
-            'platform_id'    => $delta->platform,
-            'ring_id'        => $delta->ring + 1
+            'platform_id'   => $delta->platform_id,
+            'ring_id'       => $ring
         ]);
 
         return redirect()->route( 'showBuild', ['id' => $delta->build_id] );
