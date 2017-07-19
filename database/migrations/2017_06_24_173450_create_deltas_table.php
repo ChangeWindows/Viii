@@ -20,7 +20,7 @@ class CreateDeltasTable extends Migration
             $table->integer( 'build_id' );
             $table->integer( 'delta' );
             $table->integer( 'platform_id' )->unsigned();
-            $table->text( 'changelog' );
+            $table->text( 'changelog' )->nullable();
         });
 
         Schema::table( 'deltas', function ( Blueprint $table ) {
