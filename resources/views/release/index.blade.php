@@ -9,10 +9,14 @@
 <div class="col-md-12 list-bar-group">
     <div class="row">
         @foreach ( $flights as $flight )
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="row list-bar">
-                    <a class="col-12 list-bar-item list-bar-default" href="{{ route('editDelta', ['id' => $flight->id]) }}">{{ $flight->getString( 'delta' ).'  '.$flight->getRingName( 'short' ) }}</a>
-                </div>
+            <div class="col-xl-12">
+                <h2>{{ $flight->deltas->getString( 'full' ) }}</h2>
+                @if ( $flight->deltas->getString( 'delta' ) != $current_delta )
+                    <a href="{{ route('editDelta', ['id' => $flight->id]) }}">{{ $flight->getRingName( 'short' ).': '.$flight->release }}</a>
+                @endif
+                @php    
+                    $current_delta = $flight->deltas->getString( 'delta' );
+                @endphp
             </div>
         @endforeach
     </div>
