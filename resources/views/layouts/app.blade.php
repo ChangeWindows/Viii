@@ -50,7 +50,7 @@
                             <a class="dropdown-item" href="https://twitter.com/changewindows"><i class="fa fa-fw fa-cog"></i> Twitter</a>
                             @if (Route::has('login'))
                                 <div class="dropdown-divider"></div>
-                                    @if (Auth::check())
+                                    @auth
                                         <a class="dropdown-item" href="{{ route('manageBuild') }}"><i class="fa fa-fw fa-cog"></i> Backstage</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -62,10 +62,11 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                    @else
+                                    @endauth
+                                    @guest
                                         <a class="dropdown-item" href="{{ route('login') }}"><i class="fa fa-fw fa-cog"></i> Login</a>
                                         <a class="dropdown-item" href="{{ route('register') }}"><i class="fa fa-fw fa-cog"></i> Register</a>
-                                    @endif
+                                    @endauth
                                 </div>
                             @endif
                         </div>
