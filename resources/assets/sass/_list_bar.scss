@@ -52,31 +52,31 @@
                 text-align: center;
 
                 &.list-bar-pc {
-                    background: #0078d7;
+                    background: $pc;
                 }
 
                 &.list-bar-mobile {
-                    background: #21c8ff;
+                    background: $mobile;
                 }
 
                 &.list-bar-xbox {
-                    background: #107c10;
+                    background: $xbox;
                 }
 
                 &.list-bar-server {
-                    background: #ab59f7;
+                    background: $server;
                 }
 
                 &.list-bar-iot {
-                    background: #e75819;
+                    background: $iot;
                 }
 
                 &.list-bar-reality {
-                    background: #ff9c00;
+                    background: $reality;
                 }
 
                 &.list-bar-team {
-                    background: #787878;
+                    background: $team;
                 }
             }
 
@@ -85,31 +85,31 @@
                 border-left-style: solid;
 
                 &.list-bar-pc {
-                    border-left-color: #0078d7;
+                    border-left-color: $pc;
                 }
 
                 &.list-bar-mobile {
-                    border-left-color: #21c8ff;
+                    border-left-color: $mobile;
                 }
 
                 &.list-bar-xbox {
-                    border-left-color: #107c10;
+                    border-left-color: $xbox;
                 }
 
                 &.list-bar-server {
-                    border-left-color: #ab59f7;
+                    border-left-color: $server;
                 }
 
                 &.list-bar-iot {
-                    border-left-color: #e75819;
+                    border-left-color: $iot;
                 }
 
                 &.list-bar-reality {
-                    border-left-color: #ff9c00;
+                    border-left-color: $reality;
                 }
 
                 &.list-bar-team {
-                    border-left-color: #787878;
+                    border-left-color: $team;
                 }
             }
 
