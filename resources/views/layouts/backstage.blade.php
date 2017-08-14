@@ -60,14 +60,16 @@
             </div>
         </div>
     </nav>
-
-    <div class="container content">
-        <div class="row">
-            @yield('content')
+    <div class="jumbotron accent">
+        <div class="container">
+            @yield( 'jumbotron' )
         </div>
     </div>
-
-    <!-- Scripts -->
+    <div class="container content">
+        <div class="row">
+            @yield( 'content' )
+        </div>
+    </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

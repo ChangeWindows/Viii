@@ -1,5 +1,9 @@
 .navbar {
     margin-bottom: 0;
+
+    &.bg-primary {
+        background-color: $accent !important;
+    }
     
     .navbar-brand, .nav-link {
         &:hover {

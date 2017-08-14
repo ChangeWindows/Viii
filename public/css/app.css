@@ -81,6 +81,10 @@
   margin-bottom: 0;
 }
 
+.navbar.bg-primary {
+  background-color: #0078d7 !important;
+}
+
 .navbar .navbar-brand {
   font-weight: 300;
 }
@@ -187,6 +191,25 @@ textarea {
   margin-bottom: -5px;
   height: 32px;
   width: auto;
+}
+
+.jumbotron {
+  border-radius: 0;
+}
+
+.jumbotron.accent {
+  background-color: #0078d7;
+  color: #fff;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.jumbotron.accent h1 {
+  font-size: 60px;
+}
+
+.jumbotron.accent .container {
+  padding: 0;
 }
 
 .brand {
