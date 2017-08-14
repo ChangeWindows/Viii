@@ -11,65 +11,57 @@
     <title>Backstage</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome-core.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome-light.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome-brands.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-toggleable-xl navbar-inverse bg-primary" id="navbar">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#cwnav" aria-controls="cwnav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand active" href="{{ route('home') }}">
-                <img alt="ChangeWindows logo" src="{{ asset('img/logo/logo-dark.png') }}">
-                <span class="hidden-sm-down"><span class="brand">Change<span class="bold">Windows</span></span>
-            </a>
-
-            <div class="collapse navbar-collapse" id="cwnav">
-                <div class="navbar-nav mr-auto mt-lg-0">
-                    <a class="nav-item nav-link" href="{{ route('manageBuild') }}">Build</a>
-                    <a class="nav-item nav-link" href="{{ route('manageMilestone') }}">Milestones</a>
-                </div>
-                <div class="navbar-nav my-lg-0">
-                    <li class="nav-item dropdown ellipse">
-                        <a class="nav-link dropdown-toggle" href="" id="ellipses" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="ellipses">...</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ellipses">
-                            {{--
-                            <a class="dropdown-item" href="{{ route('settings') }}"><i class="fa fa-fw fa-cogs"></i> Settings</a>
-                            <div class="dropdown-divider"></div>
-                            --}}
-                            <a class="dropdown-item" href="{{ route('home') }}"><i class="fa fa-fw fa-home"></i> Mainstage</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"><i class="fa fa-fw fa-sign-out"></i>
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 cw-sidebar" id="navbar">
+                <div class="contrast">
+                    <div class="noise">
+                        <div class="logo">
+                            <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-dark.png') }}"></a>
+                        </div>
+                        <div class="list-group">
+                            <a href="{{ route('manageMilestone') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-home"></i> <span class="title">Backstage</span></a>
+                            <a href="{{ route('manageBuild') }}" class="list-group-item active"><i class="fal fa-fw fa-industry"></i> <span class="title">Builds</span></a>
+                            <a href="{{ route('manageMilestone') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-plane"></i> <span class="title">Flights</span></a>
+                            <a href="{{ route('manageMilestone') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-ship"></i> <span class="title">Milestones</span></a>
+                            <a href="{{ route('manageMilestone') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-bullhorn"></i> <span class="title">Stories</span></a>
+                            <a href="{{ route('manageMilestone') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-chart-pie"></i> <span class="title">Statistics</span></a>
+                            <a href="{{ route('manageMilestone') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-cog"></i> <span class="title">Settings</span></a>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col cw-content">
+                <div class="background">
+                    <div class="contrast">
+                        <div class="noise">
+                            <div class="jumbotron">
+                                @yield( 'jumbotron' )
+                                <div class="toolbar">
+                                    @yield( 'toolbar' )
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content container-fluid">
+                    <div class="row">
+                        @yield( 'content' )
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-    <div class="jumbotron accent">
-        <div class="container">
-            @yield( 'jumbotron' )
-        </div>
+        <script src="{{ asset('js/app.js') }}"></script>
     </div>
-    <div class="container content">
-        <div class="row">
-            @yield( 'content' )
-        </div>
-    </div>
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

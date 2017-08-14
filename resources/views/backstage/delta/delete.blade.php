@@ -7,7 +7,7 @@
         {!! method_field('delete') !!}
         {{ csrf_field() }}
         <input type="hidden" id="id" name="id" value="{{ $delta->id }}">
-        <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-trash"></i> Delete delta</button>
+        <button type="submit" class="btn btn-primary"><i class="fal fa-fw fa-trash-alt"></i> Delete delta</button>
     </form>
 </div>
 @endsection

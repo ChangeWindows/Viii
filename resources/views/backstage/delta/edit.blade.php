@@ -6,7 +6,7 @@
         <div class="col-12">
             <h1>
                 Edit {{ $delta->getString() }} for {{ $delta->getPlatformName() }} in {{ $delta->getRingName() }}
-                <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-check"></i> Save</button>
+                <button type="submit" class="btn btn-primary pull-right"><i class="fal fa-fw fa-check"></i> Save</button>
             </h1>
         </div>
         {!! method_field('patch') !!}

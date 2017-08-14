@@ -1,12 +1,15 @@
 @extends('layouts.backstage')
 
+@section('jumbotron')
+<h1>Builds</h1>
+<!--<h1>Hello {{ Auth::user()->name }}</h1>-->
+@endsection
+
+@section('toolbar')
+<a href="{{ route('createBuild') }}" class="btn btn-default"><i class="fal fa-fw fa-plus"></i> New build</a>
+@endsection
+
 @section('content')
-<div class="col-md-12">
-    <h1>
-        Hi, {{ Auth::user()->name }}
-        <a href="{{ route('createBuild') }}" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> New build</a>
-    </h1>
-</div>
 <div class="col-md-12 list-bar-group">
     <div class="row">
         @foreach ( $builds as $build )
@@ -21,8 +24,8 @@
             <div class="col-md-3">
                 <div class="row list-bar">
                     <a class="col-8 list-bar-item list-bar-default" href="{{ route('showBuild', ['id' => $build->id]) }}">{{ $build->id }}</a>
-                    <a class="col-2 list-bar-item list-bar-success text-center" href="{{ route('createDelta', ['build' => $build->id]) }}"><i class="fa fa-fw fa-plus"></i></a>
-                    <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteBuild', ['id' => $build->id]) }}"><i class="fa fa-fw fa-trash"></i></a>
+                    <a class="col-2 list-bar-item list-bar-success text-center" href="{{ route('createDelta', ['build' => $build->id]) }}"><i class="fal fa-fw fa-plus"></i></a>
+                    <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteBuild', ['id' => $build->id]) }}"><i class="fal fa-fw fa-trash-alt"></i></a>
                 </div>
             </div>
         @endforeach

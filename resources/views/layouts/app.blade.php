@@ -11,11 +11,11 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -44,17 +44,17 @@
                             <span class="ellipses">...</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('about') }}"><i class="fa fa-fw fa-cog"></i> About</a>
-                            <a class="dropdown-item" href="{{ route('privacy') }}"><i class="fa fa-fw fa-cog"></i> Privacy</a>
+                            <a class="dropdown-item" href="{{ route('about') }}"><i class="fal fa-fw fa-cog"></i> About</a>
+                            <a class="dropdown-item" href="{{ route('privacy') }}"><i class="fal fa-fw fa-cog"></i> Privacy</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="https://twitter.com/changewindows"><i class="fa fa-fw fa-cog"></i> Twitter</a>
+                            <a class="dropdown-item" href="https://twitter.com/changewindows"><i class="fal fa-fw fa-cog"></i> Twitter</a>
                             <div class="dropdown-divider"></div>
                                 @auth
-                                    <a class="dropdown-item" href="{{ route('manageBuild') }}"><i class="fa fa-fw fa-cog"></i> Backstage</a>
+                                    <a class="dropdown-item" href="{{ route('manageBuild') }}"><i class="fal fa-fw fa-cog"></i> Backstage</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();"><i class="fa fa-fw fa-cog"></i>
+                                                    document.getElementById('logout-form').submit();"><i class="fal fa-fw fa-cog"></i>
                                         Logout
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -62,8 +62,8 @@
                                     </form>
                                 @endauth
                                 @guest
-                                    <a class="dropdown-item" href="{{ route('login') }}"><i class="fa fa-fw fa-cog"></i> Login</a>
-                                    <a class="dropdown-item" href="{{ route('register') }}"><i class="fa fa-fw fa-cog"></i> Register</a>
+                                    <a class="dropdown-item" href="{{ route('login') }}"><i class="fal fa-fw fa-cog"></i> Login</a>
+                                    <a class="dropdown-item" href="{{ route('register') }}"><i class="fal fa-fw fa-cog"></i> Register</a>
                                 @endauth
                             </div>
                         </div>

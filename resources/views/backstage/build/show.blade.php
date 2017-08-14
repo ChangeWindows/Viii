@@ -4,8 +4,8 @@
 <div class="col-md-12">
     <h1>
         {{ $build->id }}
-        <a class="btn btn-primary pull-right" href="{{ route('editBuild', ['build' => $build->id]) }}"><i class="fa fa-fw fa-pencil"></i> Edit</a>
-        <a class="btn btn-success pull-right" href="{{ route('createDelta', ['build' => $build->id]) }}"><i class="fa fa-fw fa-plus"></i> New delta</a>
+        <a class="btn btn-primary pull-right" href="{{ route('editBuild', ['build' => $build->id]) }}"><i class="fal fa-fw fa-pencil"></i> Edit</a>
+        <a class="btn btn-success pull-right" href="{{ route('createDelta', ['build' => $build->id]) }}"><i class="fal fa-fw fa-plus"></i> New delta</a>
     </h1>
 </div>
 <div class="col-md-12 list-bar-group">
@@ -32,9 +32,9 @@
                 <div class="row list-bar">
                     <a class="col-{{ $main_col }} list-bar-item list-bar-default list-bar-indicate list-bar-{{ $flight->deltas->getPlatformName( 'class' ) }}" href="{{ route('editDelta', ['id' => $flight->id]) }}">{{ $flight->getRingName( 'short' ) }}</a>
                     @if ( $main_col == 8 )
-                        <a class="col-2 list-bar-item list-bar-success text-center" href="{{ route('promoteDelta', ['id' => $flight->id]) }}"><i class="fa fa-fw fa-angle-double-up"></i></a>
+                        <a class="col-2 list-bar-item list-bar-success text-center" href="{{ route('promoteDelta', ['id' => $flight->id]) }}"><i class="fal fa-fw fa-angle-double-up"></i></a>
                     @endif
-                    <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteDelta', ['id' => $flight->id]) }}"><i class="fa fa-fw fa-trash"></i></a>
+                    <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteDelta', ['id' => $flight->id]) }}"><i class="fal fa-fw fa-trash-alt"></i></a>
                 </div>
             </div>
         @endforeach

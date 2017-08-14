@@ -6,7 +6,7 @@
         <div class="col-12">
             <h1>
                 New milestone
-                <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-check"></i> Save</button>
+                <button type="submit" class="btn btn-primary pull-right"><i class="fal fa-fw fa-check"></i> Save</button>
             </h1>
         </div>
         {{ csrf_field() }}

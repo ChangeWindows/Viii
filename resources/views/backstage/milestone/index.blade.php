@@ -57,7 +57,7 @@
         </div>
         <div class="col-12">
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-fw fa-plus"></i> Add</button>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fal fa-fw fa-plus"></i> Add</button>
             </div>
         </div>
     </form>
@@ -74,7 +74,7 @@
             <div class="col-md-4">
                 <div class="row list-bar list-bar-border">
                     <a class="col-10 list-bar-item list-bar-default {{ $milestone->id }}" href="{{ route('editMilestone', ['id' => $milestone->id]) }}">{{ $milestone->version.' &middot; '.$milestone->name }}</a>
-                    <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteMilestone', ['id' => $milestone->id]) }}"><i class="fa fa-fw fa-trash"></i></a>
+                    <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteMilestone', ['id' => $milestone->id]) }}"><i class="fal fa-fw fa-trash-alt"></i></a>
                 </div>
             </div>
         @endforeach

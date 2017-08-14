@@ -1,18 +1,34 @@
 .jumbotron {
     border-radius: 0;
+    color: #fff;
+    padding: 0;
+    padding: 30px 23px;
 
-    &.accent {
-        background-color: $accent;
-        color: #fff;
-        padding: 15px 0;
-        margin: 0;
+    h1 {
+        font-size: 55px;
+        margin-bottom: 20px;
+    }
 
-        h1 {
-            font-size: 60px;
+    .toolbar {
+        .btn {
+            &.btn-default {
+                background-color: none;
+                color: #fff;
+                padding: 10px 15px;
+                border-radius: 99px;
+
+                .fa-fw {
+                    margin-right: 10px;
+                }
+
+                &:hover {
+                    background-color: rgba(255,255,255,.15);
+                }
+            }
         }
+    }
 
-        .container {
-            padding: 0;
-        }
+    .container {
+        padding: 0;
     }
 }
