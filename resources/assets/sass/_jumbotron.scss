@@ -6,11 +6,13 @@
 
     h1 {
         font-size: 55px;
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
 
     .toolbar {
         .btn {
+            margin-top: 20px;
+            
             &.btn-default {
                 background-color: none;
                 color: #fff;

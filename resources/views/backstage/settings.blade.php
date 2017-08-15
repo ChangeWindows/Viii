@@ -5,7 +5,6 @@
 @endsection
 
 @section('toolbar')
-<a href="http://studio384.be" class="btn btn-default"><i class="fal fa-fw fa-globe"></i> studio384</a>
 @endsection
 
 @section('content')

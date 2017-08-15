@@ -21,67 +21,59 @@
     <link href="{{ asset('css/font-awesome-brands.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-toggleable-xl navbar-inverse bg-primary" id="navbar">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#cwnav" aria-controls="cwnav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand active" href="backstage">
-                <img alt="ChangeWindows logo" src="{{ asset('img/logo/logo-dark.png') }}">
-                <span class="hidden-sm-down"><span class="brand">Change<span class="bold">Windows</span></span>
-            </a>
-
-            <div class="collapse navbar-collapse" id="cwnav">
-                <div class="navbar-nav mr-auto mt-lg-0">
-                    {{--
-                    <a class="nav-item nav-link" href="{{ route('milestones') }}">Milestones</a>
-                    <a class="nav-item nav-link" href="{{ route('rings') }}">Rings</a>
-                    <a class="nav-item nav-link" href="{{ route('year') }}">Year</a>
-                    --}}
-                    <a class="nav-item nav-link" href="https://medium.com/changewindows">Blog</a>
-                </div>
-                <div class="navbar-nav my-lg-0">
-                    <li class="nav-item dropdown ellipse">
-                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="ellipses">...</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('about') }}"><i class="fal fa-fw fa-cog"></i> About</a>
-                            <a class="dropdown-item" href="{{ route('privacy') }}"><i class="fal fa-fw fa-cog"></i> Privacy</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="https://twitter.com/changewindows"><i class="fal fa-fw fa-cog"></i> Twitter</a>
-                            <div class="dropdown-divider"></div>
-                                @auth
-                                    <a class="dropdown-item" href="{{ route('manageBuild') }}"><i class="fal fa-fw fa-cog"></i> Backstage</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();"><i class="fal fa-fw fa-cog"></i>
-                                        Logout
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                @endauth
-                                @guest
-                                    <a class="dropdown-item" href="{{ route('login') }}"><i class="fal fa-fw fa-cog"></i> Login</a>
-                                    <a class="dropdown-item" href="{{ route('register') }}"><i class="fal fa-fw fa-cog"></i> Register</a>
-                                @endauth
-                            </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 cw-sidebar" id="navbar">
+                <div class="contrast">
+                    <div class="noise">
+                        <div class="logo">
+                            <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-dark.png') }}"></a>
+                        </div>
+                        <div class="list-group">
+                            <a href="{{ route('home') }}" class="list-group-item {{ Request::is('/') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-home"></i> <span class="title">Timeline</span></a>
+                            <a href="{{ route('milestones') }}" class="list-group-item {{ Request::is('milestones*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-map-signs"></i> <span class="title">Milestones</span></a>
+                            <a href="{{ route('rings') }}" class="list-group-item {{ Request::is('rings*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-bullseye"></i> <span class="title">Rings</span></a>
+                            <a href="{{ route('year') }}" class="list-group-item {{ Request::is('year*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-calendar-alt"></i> <span class="title">Year in review</span></a>
+                            <a href="{{ route('stories') }}" class="list-group-item {{ Request::is('stories*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-bullhorn"></i> <span class="title">Stories</span></a>
+                            <a href="http://medium.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-medium"></i> <span class="title">Medium</span></a>
+                            <a href="http://twitter.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-twitter"></i> <span class="title">Twitter</span></a>
+                            @auth
+                                <a href="{{ route('manageHome') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-paw"></i> <span class="title">Backstage</span></a>
+                                <a href="{{ route('logout') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-sign-out"></i> <span class="title">Sign out</span></a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            @endauth
+                            @guest
+                                <a href="{{ route('login') }}" class="list-group-item {{ Request::is('login') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-sign-in"></i> <span class="title">Sign in</span></a>
+                                <a href="{{ route('register') }}" class="list-group-item {{ Request::is('register') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-user-plus"></i> <span class="title">Register</span></a>
+                            @endauth
+                            <a href="{{ route('about') }}" class="list-group-item {{ Request::is('about') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-info-circle"></i> <span class="title">About</span></a>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col cw-content">
+                <div class="background">
+                    <div class="contrast">
+                        <div class="noise">
+                            <div class="jumbotron">
+                                @yield( 'jumbotron' )
+                                <div class="toolbar">
+                                    @yield( 'toolbar' )
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content container-fluid">
+                    <div class="row">
+                        @yield( 'content' )
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-
-    <div class="container content">
-        <div class="row">
-            @yield('content')
-        </div>
+        <script src="{{ asset('js/app.js') }}"></script>
     </div>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

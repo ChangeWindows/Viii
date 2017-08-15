@@ -202,7 +202,11 @@ textarea {
 
 .jumbotron h1 {
   font-size: 55px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.jumbotron .toolbar .btn {
+  margin-top: 20px;
 }
 
 .jumbotron .toolbar .btn.btn-default {
@@ -453,7 +457,7 @@ h2 {
   border-left-color: #0078d7;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .cw-sidebar {
     max-width: 50px;
     min-width: 50px;

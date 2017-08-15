@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
+@section('jumbotron')
+<h1>Windows 10 build 10.0.{{ $build->id }}</h1>
+@endsection
+
+@section('toolbar')
+@endsection
+
 @section('content')
-<div class="col-md-12">
-    <h1>
-        Windows 10 build 10.0.{{ $build->id }}
-    </h1>
-</div>
 <div class="col-md-12 list-bar-group">
     <div class="row">
         @foreach ( $flights as $flight )

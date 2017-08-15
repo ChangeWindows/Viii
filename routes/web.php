@@ -25,6 +25,8 @@ Route::get('rings', 'RingController@index')->name('rings');
 
 Route::get('year', 'YearController@index')->name('year');
 
+Route::get('stories', 'YearController@index')->name('stories');
+
 Route::get('privacy', 'PrivacyController@index')->name('privacy');
 Route::get('about', 'AboutController@index')->name('about');
 
