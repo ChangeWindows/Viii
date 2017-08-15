@@ -2,7 +2,6 @@
 
 @section('jumbotron')
 <h1>Builds</h1>
-<!--<h1>Hello {{ Auth::user()->name }}</h1>-->
 @endsection
 
 @section('toolbar')
