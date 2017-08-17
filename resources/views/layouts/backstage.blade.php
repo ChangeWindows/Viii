@@ -22,9 +22,9 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row cw-row">
             <div class="col-sm-3 col-md-2 cw-sidebar" id="navbar">
-                <div class="contrast">
+                <div class="contrast-40">
                     <div class="noise">
                         <div class="logo">
                             <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-dark.png') }}"></a>
@@ -42,9 +42,9 @@
                 </div>
             </div>
             <div class="col cw-content">
-                <div class="background">
-                    <div class="contrast">
-                        <div class="noise">
+                <div class="flexing">
+                    <div class="row row-jumbotron contrast-70">
+                        <div class="col noise">
                             <div class="jumbotron">
                                 @yield( 'jumbotron' )
                                 <div class="toolbar">
@@ -53,10 +53,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="content container-fluid">
-                    <div class="row">
-                        @yield( 'content' )
+                    <div class="row row-main contrast-90">
+                        <div class="col noise">
+                            <div class="content container-fluid">
+                                <div class="row">
+                                    @yield( 'content' )
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

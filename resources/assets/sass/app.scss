@@ -18,8 +18,12 @@
 // General
 html, body {
     height: 100%;
-    background: #000;
     color: #fff;
+}
+
+.cw-row {
+    background-image: url( "/moana/public/images/background.jpg" );
+    background-size: cover;
 }
 
 // Fonts
@@ -41,21 +45,19 @@ h2 {
 
 // Main structure
 .cw-sidebar {
-    background-image: url( "/moana/public/images/background.jpg" );
-    background-size: cover;
     padding: 0;
     height: 100vh;
     max-width: 320px;
     min-width: 320px;
     position: sticky;
 
-    .contrast {
+    .contrast-40 {
         background: rgba(0,0,0,.4);
     }
 
     .noise {
-        background-image: url( "/moana/public/images/noise.png" );
         height: 100vh;
+        background-image: url( "/moana/public/images/noise.png" );
     }
 
     .logo {
@@ -123,29 +125,45 @@ h2 {
 
 .cw-content {
     padding: 0;
+    max-width: 100% !important;
 
     .background {
-        /*background-image: url( "/moana/public/images/background.jpg" );
-        background-size: cover;*/
         background-color: #333;
     }
 
     .jumbotron {
-        background: transparent;
+        background: rgba(0,0,0,0);
         margin-bottom: 0;
     }
+    
+    .contrast-70 {
+        background: rgba(0,0,0,.6);
+    }
+    
+    .contrast-90 {
+        background: rgba(0,0,0,.95);
+    }
+    
+    .row-jumbotron {
+        margin: 0;
+    }
 
-    .contrast {
-        background: rgba(0,0,0,.7);
+    .row-main {
+        margin: 0;
+        flex: 1 1 auto;
+    }
+
+    .flexing {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
     }
 
     .noise {
         background-image: url( "/moana/public/images/noise.png" );
-        height: 100%;
     }
-}
 
-.cw-content {
-    padding: 0;
-    max-width: 100% !important;
+    .content {
+        height: auto;
+    }
 }

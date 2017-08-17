@@ -197,7 +197,7 @@ textarea {
   border-radius: 0;
   color: #fff;
   padding: 0;
-  padding: 30px 23px;
+  padding: 30px;
 }
 
 .jumbotron h1 {
@@ -375,8 +375,12 @@ textarea {
 html,
 body {
   height: 100%;
-  background: #000;
   color: #fff;
+}
+
+.cw-row {
+  background-image: url("/moana/public/images/background.jpg");
+  background-size: cover;
 }
 
 h1 {
@@ -395,8 +399,6 @@ h2 {
 }
 
 .cw-sidebar {
-  background-image: url("/moana/public/images/background.jpg");
-  background-size: cover;
   padding: 0;
   height: 100vh;
   max-width: 320px;
@@ -405,13 +407,13 @@ h2 {
   position: sticky;
 }
 
-.cw-sidebar .contrast {
+.cw-sidebar .contrast-40 {
   background: rgba(0, 0, 0, 0.4);
 }
 
 .cw-sidebar .noise {
-  background-image: url("/moana/public/images/noise.png");
   height: 100vh;
+  background-image: url("/moana/public/images/noise.png");
 }
 
 .cw-sidebar .logo {
@@ -476,11 +478,10 @@ h2 {
 
 .cw-content {
   padding: 0;
+  max-width: 100% !important;
 }
 
 .cw-content .background {
-  /*background-image: url( "/moana/public/images/background.jpg" );
-        background-size: cover;*/
   background-color: #333;
 }
 
@@ -489,17 +490,41 @@ h2 {
   margin-bottom: 0;
 }
 
-.cw-content .contrast {
-  background: rgba(0, 0, 0, 0.7);
+.cw-content .contrast-70 {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.cw-content .contrast-90 {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.cw-content .row-jumbotron {
+  margin: 0;
+}
+
+.cw-content .row-main {
+  margin: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.cw-content .flexing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  height: 100%;
 }
 
 .cw-content .noise {
   background-image: url("/moana/public/images/noise.png");
-  height: 100%;
 }
 
-.cw-content {
-  padding: 0;
-  max-width: 100% !important;
+.cw-content .content {
+  height: auto;
 }
 
