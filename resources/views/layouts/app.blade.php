@@ -22,9 +22,9 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row cw-row">
             <div class="col-sm-3 col-md-2 cw-sidebar" id="navbar">
-                <div class="contrast">
+                <div class="contrast-40">
                     <div class="noise">
                         <div class="logo">
                             <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-dark.png') }}"></a>
@@ -34,8 +34,7 @@
                             <a href="{{ route('milestones') }}" class="list-group-item {{ Request::is('milestones*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-map-signs"></i> <span class="title">Milestones</span></a>
                             <a href="{{ route('rings') }}" class="list-group-item {{ Request::is('rings*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-bullseye"></i> <span class="title">Rings</span></a>
                             <a href="{{ route('year') }}" class="list-group-item {{ Request::is('year*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-calendar-alt"></i> <span class="title">Year in review</span></a>
-                            <a href="{{ route('stories') }}" class="list-group-item {{ Request::is('stories*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-bullhorn"></i> <span class="title">Stories</span></a>
-                            <a href="http://medium.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-medium"></i> <span class="title">Medium</span></a>
+                            <a href="http://medium.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-medium"></i> <span class="title">Stories</span></a>
                             <a href="http://twitter.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-twitter"></i> <span class="title">Twitter</span></a>
                             @auth
                                 <a href="{{ route('manageHome') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-paw"></i> <span class="title">Backstage</span></a>
@@ -54,9 +53,9 @@
                 </div>
             </div>
             <div class="col cw-content">
-                <div class="background">
-                    <div class="contrast">
-                        <div class="noise">
+                <div class="flexing">
+                    <div class="row row-jumbotron contrast-70">
+                        <div class="col noise">
                             <div class="jumbotron">
                                 @yield( 'jumbotron' )
                                 <div class="toolbar">
@@ -65,10 +64,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="content container-fluid">
-                    <div class="row">
-                        @yield( 'content' )
+                    <div class="row row-main contrast-90">
+                        <div class="col noise">
+                            <div class="content container-fluid">
+                                <div class="row">
+                                    @yield( 'content' )
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -34,7 +34,8 @@
                             <a href="{{ route('manageBuild') }}" class="list-group-item {{ Request::is('backstage/builds*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-industry"></i> <span class="title">Builds</span></a>
                             <a href="{{ route('manageFlights') }}" class="list-group-item {{ Request::is('backstage/flights*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-plane"></i> <span class="title">Flights</span></a>
                             <a href="{{ route('manageMilestone') }}" class="list-group-item {{ Request::is('backstage/milestones*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-map-signs"></i> <span class="title">Milestones</span></a>
-                            <a href="{{ route('manageStories') }}" class="list-group-item {{ Request::is('backstage/stories*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-bullhorn"></i> <span class="title">Stories</span></a>
+                            <a href="http://medium.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-medium"></i> <span class="title">Stories</span></a>
+                            <a href="http://twitter.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-twitter"></i> <span class="title">Twitter</span></a>
                             <a href="http://changewindows.org/stats/index.php" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-chart-pie"></i> <span class="title">Statistics</span></a>
                             <a href="{{ route('manageSettings') }}" class="list-group-item {{ Request::is('backstage/settings') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-cog"></i> <span class="title">Settings</span></a>
                         </div>
