@@ -20,7 +20,7 @@
     <link href="{{ asset('css/font-awesome-light.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome-brands.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="light">
     <div class="container-fluid">
         <div class="row cw-row">
             <div class="col-sm-3 col-md-2 cw-sidebar" id="navbar">
@@ -44,7 +44,7 @@
             </div>
             <div class="col cw-content">
                 <div class="flexing">
-                    <div class="row row-jumbotron contrast-70">
+                    <div class="row row-jumbotron contrast-40">
                         <div class="col noise">
                             <div class="jumbotron">
                                 @yield( 'jumbotron' )
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row row-main contrast-90">
+                    <div class="row row-main contrast-95">
                         <div class="col noise">
                             <div class="content container-fluid">
                                 <div class="row">

@@ -1,0 +1,102 @@
+.cw-sidebar {
+    padding: 0 !important;
+    height: 100vh;
+    max-width: 320px;
+    min-width: 320px;
+    position: sticky;
+
+    .noise {
+        height: 100vh;
+        background-image: url( "/moana/public/images/noise.png" );
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        
+        .img-logo {
+            height: 32px;
+            width: auto;
+            margin: 40px 0 30px;
+        }
+    }
+
+    .list-group {
+        .list-group-item {
+            background: none;
+            border-radius: 0;
+            border-width: 1px;
+            border-style: solid;
+            border-color: transparent;
+            padding: 0;
+
+            .fa-fw {
+                padding: 15px 15px 15px 11px;
+                border-left: 5px solid transparent;
+            }
+
+            .title {
+                padding: 9px 9px 9px 21px;
+            }
+
+            &.active {
+                .fa-fw {
+                    border-left-color: $accent;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .cw-sidebar {
+        max-width: 50px;
+        min-width: 50px;
+        
+        .logo {
+            .img-logo {
+                height: 20px;
+                width: auto;
+                margin: 15px;
+            }
+        }
+
+        .title {
+            display: none;
+        }
+    }
+}
+
+.cw-content {
+    padding: 0 !important;
+    max-width: 100% !important;
+
+    .jumbotron {
+        background: transparent;
+        margin-bottom: 0;
+    }
+    
+    .row-jumbotron {
+        margin: 0;
+    }
+
+    .row-main {
+        margin: 0;
+        flex: 1 1 auto;
+        box-shadow: 0 0 30px rgba(0,0,0,.3);
+    }
+
+    .flexing {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+    }
+
+    .noise {
+        background-image: url( "/moana/public/images/noise.png" );
+    }
+
+    .content {
+        height: auto;
+    }
+}

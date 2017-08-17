@@ -1,9 +1,9 @@
 // General
 @import "variables";
+@import "layout";
 
 // Bootstrap
 @import "grid";
-@import "navbar";
 @import "form";
 @import "btn";
 @import "label";
@@ -15,10 +15,13 @@
 @import "list_bar";
 @import "login";
 
+// Themes
+@import "light";
+@import "dark";
+
 // General
 html, body {
     height: 100%;
-    color: #fff;
 }
 
 .cw-row {
@@ -41,129 +44,4 @@ h2 {
 // Container
 .content {
     padding: 20px 30px !important;
-}
-
-// Main structure
-.cw-sidebar {
-    padding: 0;
-    height: 100vh;
-    max-width: 320px;
-    min-width: 320px;
-    position: sticky;
-
-    .contrast-40 {
-        background: rgba(0,0,0,.4);
-    }
-
-    .noise {
-        height: 100vh;
-        background-image: url( "/moana/public/images/noise.png" );
-    }
-
-    .logo {
-        display: flex;
-        justify-content: center;
-        
-        .img-logo {
-            height: 32px;
-            width: auto;
-            margin: 40px 0 30px;
-        }
-    }
-
-    .list-group {
-        .list-group-item {
-            background: none;
-            color: #fff;
-            border-radius: 0;
-            border-width: 1px;
-            border-style: solid;
-            border-color: transparent;
-            padding: 0;
-
-            .fa-fw {
-                padding: 15px 15px 15px 11px;
-                border-left: 5px solid transparent;
-            }
-
-            .title {
-                padding: 9px 9px 9px 21px;
-            }
-
-            &:hover {
-                background-color: rgba(255,255,255,.1);
-                border-color: rgba(255,255,255,.7);
-            }
-
-            &.active {
-                .fa-fw {
-                    border-left-color: $accent;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    .cw-sidebar {
-        max-width: 50px;
-        min-width: 50px;
-        
-        .logo {
-            .img-logo {
-                height: 20px;
-                width: auto;
-                margin: 15px;
-            }
-        }
-
-        .title {
-            display: none;
-        }
-    }
-}
-
-.cw-content {
-    padding: 0;
-    max-width: 100% !important;
-
-    .background {
-        background-color: #333;
-    }
-
-    .jumbotron {
-        background: rgba(0,0,0,0);
-        margin-bottom: 0;
-    }
-    
-    .contrast-70 {
-        background: rgba(0,0,0,.6);
-    }
-    
-    .contrast-90 {
-        background: rgba(0,0,0,.95);
-    }
-    
-    .row-jumbotron {
-        margin: 0;
-    }
-
-    .row-main {
-        margin: 0;
-        flex: 1 1 auto;
-    }
-
-    .flexing {
-        display: flex;
-        flex-flow: column;
-        height: 100%;
-    }
-
-    .noise {
-        background-image: url( "/moana/public/images/noise.png" );
-    }
-
-    .content {
-        height: auto;
-    }
 }

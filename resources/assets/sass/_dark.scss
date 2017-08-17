@@ -1,0 +1,33 @@
+// Dark theme
+.dark {
+    color: #fff;
+    
+    .cw-sidebar {
+        .list-group {
+            .list-group-item {
+                color: #fff;
+
+                &:hover {
+                    background-color: rgba(255,255,255,.1);
+                    border-color: rgba(255,255,255,.7);
+                }
+            }
+        }
+    }
+
+    .cw-content {
+        .btn {
+            &.btn-default {
+                color: #fff;
+            }
+        }
+    }
+
+    .contrast-40 {
+        background: rgba(0,0,0,.4);
+    }
+    
+    .contrast-95 {
+        background: rgba(0,0,0,.95);
+    }
+}
