@@ -144,7 +144,7 @@ class DeltaController extends Controller
 
         $string = Delta::splitString( request()->get( 'build_string' ) );
 
-        $delta->fill( array_merge( request()->only( ['build_string', 'platform', 'ring', 'release'] ), array( 'major' => $string['major'], 'minor' => $string['minor'], 'build' => $string['build'], 'delta' => $string['delta'] ) ) )->save();
+        $delta->fill( array_merge( request()->only( ['build_string', 'platform', 'ring', 'release', 'changelog'] ), array( 'major' => $string['major'], 'minor' => $string['minor'], 'build' => $string['build'], 'delta' => $string['delta'] ) ) )->save();
 
         return redirect()->route( 'showBuild', ['id' => request( 'build_id' )] );
     }

@@ -48,6 +48,8 @@ Route::post('backstage/deltas', 'DeltaController@store')->name('storeDelta');
 Route::patch('backstage/deltas', 'DeltaController@patch')->name('patchDelta');
 Route::delete('backstage/deltas', 'DeltaController@destroy')->name('destroyDelta');
 
+Route::get('backstage/flight/{flight}', 'FlightController@edit')->name('editFlight');
+
 Route::get('backstage/milestones', 'MilestoneController@index')->name('manageMilestone');
 Route::get('backstage/milestones/{milestone}', 'MilestoneController@edit')->name('editMilestone');
 Route::get('backstage/milestones/delete/{milestone}', 'MilestoneController@delete')->name('deleteMilestone');
