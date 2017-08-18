@@ -25,9 +25,7 @@
         .list-group-item {
             background: none;
             border-radius: 0;
-            border-width: 1px;
-            border-style: solid;
-            border-color: transparent;
+            border: 1px solid transparent;
             padding: 0;
 
             .fa-fw {
@@ -84,6 +82,7 @@
         margin: 0;
         flex: 1 1 auto;
         box-shadow: 0 0 30px rgba(0,0,0,.3);
+        z-index: 100;
     }
 
     .flexing {
@@ -98,5 +97,13 @@
 
     .content {
         height: auto;
+    }
+
+    .row-height {
+        margin: 0;
+    }
+
+    .height-25 {
+        height: 25px;
     }
 }

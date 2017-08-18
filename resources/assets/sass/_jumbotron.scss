@@ -1,7 +1,7 @@
 .jumbotron {
     border-radius: 0;
     padding: 0;
-    padding: 30px;
+    padding: 30px 20px;
 
     h1 {
         font-size: 55px;
@@ -13,7 +13,7 @@
             margin-top: 20px;
 
             &.btn-default {
-                background-color: none;
+                background-color: transparent;
                 padding: 10px 15px;
                 border-radius: 99px;
 

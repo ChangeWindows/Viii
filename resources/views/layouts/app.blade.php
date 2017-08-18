@@ -27,7 +27,7 @@
                 <div class="contrast-40">
                     <div class="noise">
                         <div class="logo">
-                            <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-dark.png') }}"></a>
+                            <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-light.png') }}"></a>
                         </div>
                         <div class="list-group">
                             <a href="{{ route('home') }}" class="list-group-item {{ Request::is('/') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-home"></i> <span class="title">Timeline</span></a>
@@ -76,6 +76,7 @@
                 </div>
             </div>
         </div>
+        @yield( 'modals' )
         <script src="{{ asset('js/app.js') }}"></script>
     </div>
 </body>

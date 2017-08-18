@@ -9,6 +9,6 @@
 
 @section('content')
 <div class="col">
-    <h2>Welcome to Backstage</h2>
+    <h2>Backstage</h2>
 </div>
 @endsection

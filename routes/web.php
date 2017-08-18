@@ -25,16 +25,13 @@ Route::get('rings', 'RingController@index')->name('rings');
 
 Route::get('year', 'YearController@index')->name('year');
 
-Route::get('stories', 'YearController@index')->name('stories');
-
-Route::get('privacy', 'PrivacyController@index')->name('privacy');
 Route::get('about', 'AboutController@index')->name('about');
+Route::get('privacy', 'AboutController@privacy')->name('privacy');
 
 // Backstage routes
 Route::get('backstage', 'BackstageController@index')->name('manageHome');
 
 Route::get('backstage/builds', 'BuildController@index')->name('manageBuild');
-Route::get('backstage/builds/create', 'BuildController@create')->name('createBuild');
 Route::get('backstage/builds/{build}', 'BuildController@show')->name('showBuild');
 Route::get('backstage/builds/edit/{build}', 'BuildController@edit')->name('editBuild');
 Route::get('backstage/builds/delete/{build}', 'BuildController@delete')->name('deleteBuild');
@@ -52,15 +49,10 @@ Route::patch('backstage/deltas', 'DeltaController@patch')->name('patchDelta');
 Route::delete('backstage/deltas', 'DeltaController@destroy')->name('destroyDelta');
 
 Route::get('backstage/milestones', 'MilestoneController@index')->name('manageMilestone');
-Route::get('backstage/milestones/create', 'MilestoneController@create')->name('createMilestone');
 Route::get('backstage/milestones/{milestone}', 'MilestoneController@edit')->name('editMilestone');
 Route::get('backstage/milestones/delete/{milestone}', 'MilestoneController@delete')->name('deleteMilestone');
 Route::post('backstage/milestones', 'MilestoneController@store')->name('storeMilestone');
 Route::patch('backstage/milestones', 'MilestoneController@patch')->name('patchMilestone');
 Route::delete('backstage/milestones', 'MilestoneController@destroy')->name('destroyMilestone');
-
-Route::get('backstage/flights', 'BuildController@index')->name('manageFlights');
-
-Route::get('backstage/stories', 'BuildController@index')->name('manageStories');
 
 Route::get('backstage/settings', 'BackstageController@settings')->name('manageSettings');

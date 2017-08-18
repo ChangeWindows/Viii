@@ -38,14 +38,6 @@ class BuildController extends Controller
         return view( 'backstage.build.show', compact( 'build', 'flights', 'current_delta' ) );
     }
 
-    public function create() {
-        return view( 'backstage.build.create');
-    }
-
-    public function edit( Build $build ) {
-        return view( 'backstage.build.edit', compact( 'build' ) );
-    }
-
     public function delete( Build $build ) {
         return view( 'backstage.build.delete', compact( 'build' ) );
     }

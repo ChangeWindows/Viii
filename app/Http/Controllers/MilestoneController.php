@@ -18,10 +18,6 @@ class MilestoneController extends Controller
         return view( 'backstage.milestone.index', compact( 'milestones' ) );
     }
 
-    public function create() {
-        return view( 'backstage.milestone.create' );
-    }
-
     public function edit( Milestone $milestone ) {
         return view( 'backstage.milestone.edit', compact( 'milestone' ) );
     }
@@ -31,14 +27,14 @@ class MilestoneController extends Controller
     }
 
     public function store() {
-        Milestone::create( request( ['id', 'os', 'name', 'codename', 'version', 'color', 'description'] ) );
+        Milestone::create( request( ['id', 'os', 'name', 'codename', 'short', 'version', 'color', 'description'] ) );
 
         return redirect()->route( 'manageMilestone' );
     }
 
     public function patch() {
         $milestone = Milestone::find( request( 'id' ) );
-        $milestone->fill( request()->only( ['os' ,'name' ,'codename' ,'version' ,'color' ,'description'] ) )->save();
+        $milestone->fill( request()->only( ['os', 'name', 'codename', 'short', 'version', 'color', 'description'] ) )->save();
 
         return redirect()->route( 'manageMilestone' );
     }

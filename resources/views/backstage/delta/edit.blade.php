@@ -1,14 +1,12 @@
 @extends('layouts.backstage')
 
+@section('jumbotron')
+<h1>Edit {{ $delta->getString() }} for {{ $delta->getPlatformName() }}</h1>
+@endsection
+
 @section('content')
 <div class="col-md-12">
     <form method="POST" action="{{ route('patchDelta') }}" class="row row-p-10">
-        <div class="col-12">
-            <h1>
-                Edit {{ $delta->getString() }} for {{ $delta->getPlatformName() }} in {{ $delta->getRingName() }}
-                <button type="submit" class="btn btn-primary pull-right"><i class="fal fa-fw fa-check"></i> Save</button>
-            </h1>
-        </div>
         {!! method_field('patch') !!}
         {{ csrf_field() }}
         <input type="hidden" class="form-control" id="id" name="id" aria-describedby="id" value="{{ $delta->id }}">
@@ -28,8 +26,11 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="changelog">Changelog</label>
-                <teaxtarea class="form-control" id="changelog" name="changelog" aria-describedby="changelog" placeholder="Changelog">{{ $delta->changelog }}</teaxtarea>
+                <textarea class="form-control" id="changelog" name="changelog" aria-describedby="changelog" placeholder="Changelog">{{ $delta->changelog }}</textarea>
             </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary"><i class="fal fa-fw fa-check"></i> Save</button>
         </div>
     </form>
 </div>

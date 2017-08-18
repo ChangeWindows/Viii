@@ -9,6 +9,7 @@
 @import "label";
 @import "img";
 @import "jumbotron";
+@import "modal";
 
 // ChangeWindows
 @import "brand";
@@ -41,7 +42,30 @@ h2 {
     margin-top: 10px;
 }
 
+.h2-delete {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.h3-delete {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 210px;
+}
+
+.h4-delete {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
 // Container
 .content {
     padding: 20px 30px !important;
 }
+
+// Font Awesome 5 beta 3 fix
+.fa, .fas, .far, .fal, .fab {
+    vertical-align: 0 !important;
+ }

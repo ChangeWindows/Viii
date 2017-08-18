@@ -30,9 +30,7 @@
 .cw-sidebar .list-group .list-group-item {
   background: none;
   border-radius: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
+  border: 1px solid transparent;
   padding: 0;
 }
 
@@ -87,6 +85,7 @@
           flex: 1 1 auto;
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 
 .cw-content .flexing {
@@ -106,6 +105,14 @@
 
 .cw-content .content {
   height: auto;
+}
+
+.cw-content .row-height {
+  margin: 0;
+}
+
+.cw-content .height-25 {
+  height: 25px;
 }
 
 .col,
@@ -275,7 +282,7 @@ textarea {
 .jumbotron {
   border-radius: 0;
   padding: 0;
-  padding: 30px;
+  padding: 30px 20px;
 }
 
 .jumbotron h1 {
@@ -288,7 +295,7 @@ textarea {
 }
 
 .jumbotron .toolbar .btn.btn-default {
-  background-color: none;
+  background-color: transparent;
   padding: 10px 15px;
   border-radius: 99px;
 }
@@ -303,6 +310,37 @@ textarea {
 
 .jumbotron .container {
   padding: 0;
+}
+
+.modal-dialog {
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-dialog .modal-content {
+  border-radius: 0;
+  border: 1px solid #0078d7;
+}
+
+.modal-dialog .modal-content .modal-header {
+  border: none;
+  padding: 0;
+}
+
+.modal-dialog .modal-content .modal-header .close {
+  padding: 12px 10px;
+  margin-top: -35px;
+  margin-bottom: 0;
+}
+
+.modal-dialog .modal-content .modal-header .modal-title {
+  font-weight: 700;
+  font-size: 35px;
+  padding: 15px;
+}
+
+.modal-dialog .modal-content .col-12:last-child .form-group {
+  margin-bottom: 0;
 }
 
 .brand {
@@ -324,7 +362,7 @@ textarea {
 
 .list-bar-group .list-bar .list-bar-item {
   padding: 10px;
-  background: #f2f2f2;
+  background: #fff;
   margin-bottom: 3px;
 }
 
@@ -520,7 +558,33 @@ h2 {
   margin-top: 10px;
 }
 
+.h2-delete {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.h3-delete {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 210px;
+}
+
+.h4-delete {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
 .content {
   padding: 20px 30px !important;
+}
+
+.fa,
+.fas,
+.far,
+.fal,
+.fab {
+  vertical-align: 0 !important;
 }
 
