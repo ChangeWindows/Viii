@@ -20,9 +20,18 @@
     <link href="{{ asset('css/font-awesome-light.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome-brands.css') }}" rel="stylesheet">
 </head>
-<body class="login">
-
-    @yield('content')
+<body class="light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs">
+                <div class="cw-form contrast-40">
+                    <div class="noise">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

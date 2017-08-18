@@ -26,28 +26,33 @@
             <div class="col-sm-3 col-md-2 cw-sidebar" id="navbar">
                 <div class="contrast-40">
                     <div class="noise">
-                        <div class="logo">
-                            <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-light.png') }}"></a>
-                        </div>
-                        <div class="list-group">
-                            <a href="{{ route('home') }}" class="list-group-item {{ Request::is('/') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-home"></i> <span class="title">Timeline</span></a>
-                            <a href="{{ route('milestones') }}" class="list-group-item {{ Request::is('milestones*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-map-signs"></i> <span class="title">Milestones</span></a>
-                            <a href="{{ route('rings') }}" class="list-group-item {{ Request::is('rings*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-bullseye"></i> <span class="title">Rings</span></a>
-                            <a href="{{ route('year') }}" class="list-group-item {{ Request::is('year*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-calendar-alt"></i> <span class="title">Year in review</span></a>
-                            <a href="http://medium.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-medium"></i> <span class="title">Stories</span></a>
-                            <a href="http://twitter.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-twitter"></i> <span class="title">Twitter</span></a>
-                            @auth
-                                <a href="{{ route('manageHome') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-paw"></i> <span class="title">Backstage</span></a>
-                                <a href="{{ route('logout') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-sign-out"></i> <span class="title">Sign out</span></a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            @endauth
-                            @guest
-                                <a href="{{ route('login') }}" class="list-group-item {{ Request::is('login') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-sign-in"></i> <span class="title">Sign in</span></a>
-                                <a href="{{ route('register') }}" class="list-group-item {{ Request::is('register') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-user-plus"></i> <span class="title">Register</span></a>
-                            @endauth
-                            <a href="{{ route('about') }}" class="list-group-item {{ Request::is('about') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-info-circle"></i> <span class="title">About</span></a>
+                        <div class="flexing">
+                            <div class="logo">
+                                <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-light.png') }}"></a>
+                            </div>
+                            <div class="list-group">
+                                <a href="{{ route('home') }}" class="list-group-item {{ Request::is('/') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-home"></i> <span class="title">Timeline</span></a>
+                                <a href="{{ route('milestones') }}" class="list-group-item {{ Request::is('milestones*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-map-signs"></i> <span class="title">Milestones</span></a>
+                                <a href="{{ route('rings') }}" class="list-group-item {{ Request::is('rings*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-bullseye"></i> <span class="title">Rings</span></a>
+                                <a href="{{ route('year') }}" class="list-group-item {{ Request::is('year*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-calendar-alt"></i> <span class="title">Year in review</span></a>
+                                <a href="http://medium.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-medium"></i> <span class="title">Stories</span></a>
+                                <a href="http://twitter.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-twitter"></i> <span class="title">Twitter</span></a>
+                            </div>
+                            <div class="list-group-gap"></div>
+                            <div class="list-group">
+                                @auth
+                                    <a href="{{ route('manageHome') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-tachometer-alt"></i> <span class="title">Backstage</span></a>
+                                    <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fal fa-fw fa-sign-out"></i> <span class="title">Sign out</span></a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                @endauth
+                                @guest
+                                    <a href="{{ route('login') }}" class="list-group-item {{ Request::is('login') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-sign-in"></i> <span class="title">Sign in</span></a>
+                                    <a href="{{ route('register') }}" class="list-group-item {{ Request::is('register') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-user-plus"></i> <span class="title">Register</span></a>
+                                @endauth
+                                <a href="{{ route('about') }}" class="list-group-item {{ Request::is('about') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-info-circle"></i> <span class="title">About</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -71,6 +76,11 @@
                                     @yield( 'content' )
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row row-height contrast-40">
+                        <div class="col noise">
+                            <div class="height-25"></div>
                         </div>
                     </div>
                 </div>

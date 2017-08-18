@@ -3,8 +3,17 @@
   min-height: 100vh;
   max-width: 320px;
   min-width: 320px;
-  position: -webkit-sticky;
-  position: sticky;
+}
+
+.cw-sidebar .flexing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  min-height: 100%;
 }
 
 .cw-sidebar .contrast-40 {
@@ -14,6 +23,12 @@
 .cw-sidebar .contrast-40 .noise {
   height: 100vh;
   background-image: url("/moana/public/images/noise.png");
+}
+
+.cw-sidebar .list-group-gap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .cw-sidebar .logo {
@@ -118,6 +133,32 @@
 
 .cw-content .height-25 {
   height: 25px;
+}
+
+.cw-form {
+  margin-top: 150px;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.cw-form .noise {
+  background-image: url("/moana/public/images/noise.png");
+  padding: 15px;
+}
+
+.cw-form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 35px;
+}
+
+.cw-form .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.cw-form .col {
+  padding: 0;
 }
 
 .col,
@@ -481,17 +522,6 @@ textarea {
   padding: 0;
 }
 
-.login {
-  background-color: #eee;
-}
-
-.login h2 {
-  text-align: center;
-  margin-top: 70px;
-  margin-bottom: 20px;
-  font-size: 40px;
-}
-
 .light {
   color: #222;
 }
@@ -517,6 +547,10 @@ textarea {
   background: rgba(255, 255, 255, 0.95);
 }
 
+.light .cw-form.contrast-40 {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 .dark {
   color: #fff;
 }
@@ -540,6 +574,10 @@ textarea {
 
 .dark .contrast-95 {
   background: rgba(0, 0, 0, 0.95);
+}
+
+.dark .cw-form.contrast-40 {
+  background: rgba(0, 0, 0, 0.4);
 }
 
 body {

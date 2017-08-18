@@ -30,4 +30,10 @@
     .contrast-95 {
         background: rgba(0,0,0,.95);
     }
+    
+    .cw-form {
+        &.contrast-40 {
+            background: rgba(0,0,0,.4);
+        }
+    }
 }

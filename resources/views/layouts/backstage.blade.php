@@ -26,17 +26,27 @@
             <div class="col-sm-3 col-md-2 cw-sidebar" id="navbar">
                 <div class="contrast-40">
                     <div class="noise">
-                        <div class="logo">
-                            <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-light.png') }}"></a>
-                        </div>
-                        <div class="list-group">
-                            <a href="{{ route('manageHome') }}" class="list-group-item {{ Request::is('backstage') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-home"></i> <span class="title">Backstage</span></a>
-                            <a href="{{ route('manageBuild') }}" class="list-group-item {{ Request::is('backstage/builds*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-industry"></i> <span class="title">Builds</span></a>
-                            <a href="{{ route('manageMilestone') }}" class="list-group-item {{ Request::is('backstage/milestones*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-map-signs"></i> <span class="title">Milestones</span></a>
-                            <a href="http://medium.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-medium"></i> <span class="title">Stories</span></a>
-                            <a href="http://twitter.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-twitter"></i> <span class="title">Twitter</span></a>
-                            <a href="http://changewindows.org/stats/index.php" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-chart-pie"></i> <span class="title">Piwik</span></a>
-                            <a href="{{ route('manageSettings') }}" class="list-group-item {{ Request::is('backstage/settings') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-cog"></i> <span class="title">Settings</span></a>
+                        <div class="flexing">
+                            <div class="logo">
+                                <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-light.png') }}"></a>
+                            </div>
+                            <div class="list-group">
+                                <a href="{{ route('manageHome') }}" class="list-group-item {{ Request::is('backstage') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-tachometer-alt"></i> <span class="title">Backstage</span></a>
+                                <a href="{{ route('manageBuild') }}" class="list-group-item {{ Request::is('backstage/builds*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-industry"></i> <span class="title">Builds</span></a>
+                                <a href="{{ route('manageMilestone') }}" class="list-group-item {{ Request::is('backstage/milestones*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-map-signs"></i> <span class="title">Milestones</span></a>
+                                <a href="http://medium.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-medium"></i> <span class="title">Stories</span></a>
+                                <a href="http://twitter.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-twitter"></i> <span class="title">Twitter</span></a>
+                                <a href="http://changewindows.org/stats/index.php" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-chart-pie"></i> <span class="title">Piwik</span></a>
+                                <a href="{{ route('manageSettings') }}" class="list-group-item {{ Request::is('backstage/settings') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-cog"></i> <span class="title">Settings</span></a>
+                            </div>
+                            <div class="list-group-gap"></div>
+                            <div class="list-group">
+                                <a href="{{ route('home') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-home"></i> <span class="title">Mainstage</span></a>
+                                <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fal fa-fw fa-sign-out"></i> <span class="title">Sign out</span></a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

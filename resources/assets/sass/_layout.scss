@@ -3,7 +3,12 @@
     min-height: 100vh;
     max-width: 320px;
     min-width: 320px;
-    position: sticky;
+    
+    .flexing {
+        display: flex;
+        flex-flow: column;
+        min-height: 100%;
+    }
 
     .contrast-40 {
         min-height: 100%;
@@ -12,6 +17,10 @@
             height: 100vh;
             background-image: url( "/moana/public/images/noise.png" );
         }
+    }
+
+    .list-group-gap {
+        flex: 1 1 auto;
     }
 
     .logo {
@@ -110,5 +119,30 @@
 
     .height-25 {
         height: 25px;
+    }
+}
+
+.cw-form {
+    margin-top: 150px;
+    box-shadow: 0 0 30px rgba(0,0,0,.3);
+    
+    .noise {
+        background-image: url( "/moana/public/images/noise.png" );
+        padding: 15px;
+    }
+    
+    h2 {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 35px;
+    }
+
+    .form-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .col {
+        padding: 0;
     }
 }
