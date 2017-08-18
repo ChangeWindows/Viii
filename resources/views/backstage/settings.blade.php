@@ -19,7 +19,7 @@
             <p>
                 ChangeWindows 5.0-alpha.0<br />
                 Laravel 5.4.33<br />
-                Font Awesome 5.0.0-beta.3<br />
+                Font Awesome 5.0.0-beta.4<br />
                 Bootstrap 4.0.0-beta.1<br />
                 jQuery Slim 3.2.1
             </p>
