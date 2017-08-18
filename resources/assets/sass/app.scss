@@ -21,13 +21,16 @@
 @import "dark";
 
 // General
-html, body {
-    height: 100%;
-}
-
-.cw-row {
+body {
+    min-height: 100%;
     background-image: url( "/moana/public/images/background.jpg" );
     background-size: cover;
+}
+
+html,
+.container-fluid,
+.cw-row {
+    min-height: 100%;
 }
 
 // Fonts

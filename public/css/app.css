@@ -1,13 +1,17 @@
 .cw-sidebar {
   padding: 0 !important;
-  height: 100vh;
+  min-height: 100vh;
   max-width: 320px;
   min-width: 320px;
   position: -webkit-sticky;
   position: sticky;
 }
 
-.cw-sidebar .noise {
+.cw-sidebar .contrast-40 {
+  min-height: 100%;
+}
+
+.cw-sidebar .contrast-40 .noise {
   height: 100vh;
   background-image: url("/moana/public/images/noise.png");
 }
@@ -66,7 +70,8 @@
 
 .cw-content {
   padding: 0 !important;
-  max-width: 100% !important;
+  max-width: 100%;
+  min-height: 100%;
 }
 
 .cw-content .jumbotron {
@@ -96,7 +101,7 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  height: 100%;
+  min-height: 100%;
 }
 
 .cw-content .noise {
@@ -537,14 +542,16 @@ textarea {
   background: rgba(0, 0, 0, 0.95);
 }
 
-html,
 body {
-  height: 100%;
-}
-
-.cw-row {
+  min-height: 100%;
   background-image: url("/moana/public/images/background.jpg");
   background-size: cover;
+}
+
+html,
+.container-fluid,
+.cw-row {
+  min-height: 100%;
 }
 
 h1 {

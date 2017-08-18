@@ -1,13 +1,17 @@
 .cw-sidebar {
     padding: 0 !important;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 320px;
     min-width: 320px;
     position: sticky;
 
-    .noise {
-        height: 100vh;
-        background-image: url( "/moana/public/images/noise.png" );
+    .contrast-40 {
+        min-height: 100%;
+        
+        .noise {
+            height: 100vh;
+            background-image: url( "/moana/public/images/noise.png" );
+        }
     }
 
     .logo {
@@ -67,7 +71,8 @@
 
 .cw-content {
     padding: 0 !important;
-    max-width: 100% !important;
+    max-width: 100%;
+    min-height: 100%;
 
     .jumbotron {
         background: transparent;
@@ -88,7 +93,7 @@
     .flexing {
         display: flex;
         flex-flow: column;
-        height: 100%;
+        min-height: 100%;
     }
 
     .noise {
