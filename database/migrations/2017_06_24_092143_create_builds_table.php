@@ -21,6 +21,7 @@ class CreateBuildsTable extends Migration
             $table->integer( 'delta' );
             $table->integer( 'platform_id' );
             $table->string( 'milestone_id' );
+            $table->date( 'vnext' )->nullable();
             $table->date( 'skip' )->nullable();
             $table->date( 'fast' )->nullable();
             $table->date( 'slow' )->nullable();

@@ -287,6 +287,10 @@ textarea {
 
 .label.vnext,
 .label.leak {
+  color: #ba3515;
+}
+
+.label.skip {
   color: #dc5332;
 }
 
@@ -434,11 +438,11 @@ textarea {
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-danger {
-  color: #dc5332;
+  color: #ba3515;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-danger:hover {
-  background: #dc5332;
+  background: #ba3515;
   color: #fff;
 }
 
@@ -475,7 +479,7 @@ textarea {
   background: #e75819;
 }
 
-.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-reality {
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-mixed {
   background: #ff9c00;
 }
 
@@ -508,7 +512,7 @@ textarea {
   border-left-color: #e75819;
 }
 
-.list-bar-group .list-bar .list-bar-item.list-bar-indicate.list-bar-reality {
+.list-bar-group .list-bar .list-bar-item.list-bar-indicate.list-bar-mixed {
   border-left-color: #ff9c00;
 }
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Build extends Model
 {
-    protected $fillable = ['id', 'major', 'minor', 'build', 'delta', 'platform_id', 'milestone_id', 'skip', 'fast', 'slow', 'preview', 'release', 'pilot', 'broad', 'lts', 'changelog'];
+    protected $fillable = ['id', 'major', 'minor', 'build', 'delta', 'platform_id', 'milestone_id', 'vnext', 'skip', 'fast', 'slow', 'preview', 'release', 'pilot', 'broad', 'lts', 'changelog'];
     public $timestamps = false;
     
     public function milestones() {
@@ -30,7 +30,7 @@ class Build extends Model
             if ( $this->platform_id == 7 )
                 return 'Team';
         } else if ( $notation == 'class' ) {
-            return explode( ' ', trim( getPlatform() ) )[0]; // Not sure this even works...
+            return strtolower( explode( ' ', trim( $this->getPlatform() ) )[0] ); // Not sure this even works...
         } else if ( $notation == 'id' ) {
             return $this->platform_id;
         }
@@ -38,17 +38,17 @@ class Build extends Model
 
     function getString( $type = 'default' ) {
         if ( $type == 'full' )
-            return $this->major.'.'.$this->minor.'.'.$this->build_id.'.'.$this->delta;
+            return $this->major.'.'.$this->minor.'.'.$this->build.'.'.$this->delta;
         elseif ( $type == 'default' )
-            return $this->build_id.'.'.$this->delta;
+            return $this->build.'.'.$this->delta;
         elseif ( $type == 'build' )
-            return $this->build_id;
+            return $this->build;
         elseif ( $type == 'delta' )
             return $this->delta;
         elseif ( $type == 'kernel' )
             return $this->major.'.'.$this->minor;
         elseif ( $type == 'major' )
-            return $this->major.'.'.$this->minor.'.'.$this->build_id;
+            return $this->major.'.'.$this->minor.'.'.$this->build;
     }
 
     static function splitString( $build_string ) {
@@ -81,13 +81,13 @@ class Build extends Model
     
     function canPromote() {
         /*
-        * 1 PC      1 => 2 => 3 =>      5 => 6 => 7 => 8
-        * 2 Mobile  1 => 2 => 3 =>      5 => 6 => 7
-        * 3 Xbox    1 => 2 => 3 => 4 => 5 => 6
-        * 4 Server  1 =>      3 =>                7 => 8
-        * 5 Mixed   1 =>                     6 => 7 => 8
-        * 6 IoT     1 =>      3 =>           6 => 7
-        * 7 Team    1 =>                     6 => 7
+        * 1 PC      0 => 1=> 2 => 3 =>      5 => 6 => 7 => 8
+        * 2 Mobile  0 =>     2 => 3 =>      5 => 6 => 7
+        * 3 Xbox    0 =>     2 => 3 => 4 => 5 => 6
+        * 4 Server  0 =>          3 =>                7 => 8
+        * 5 Mixed   0 =>                         6 => 7 => 8
+        * 6 IoT     0 =>          3 =>           6 => 7
+        * 7 Team    0 =>                         6 => 7
         */
 
         if ( isset ( $this->lts ) ) {

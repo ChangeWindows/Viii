@@ -95,10 +95,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('builds')->insert([
+            'major' => '10',
+            'minor' => '0',
             'build' => '16273',
+            'delta' => '1000',
             'platform_id' => '1',
             'milestone_id' => 'redstone3',
-            'initial_delta' => '1000',
+            'vnext' => '2017-06-22',
+            'skip' => '2017-06-22',
             'fast' => '2017-06-22',
             'slow' => '2017-06-22',
             'preview' => '2017-06-22',
@@ -107,14 +111,6 @@ class DatabaseSeeder extends Seeder
             'broad' => '2017-06-22',
             'lts' => '2017-06-22',
             'changelog' => 'Fixes and enhancements'
-        ]);
-
-        DB::table('kb')->insert([
-            'id' => '1',
-            'build_id' => '1',
-            'kb' => '2330574',
-            'release' => '2017-06-22',
-            'changelog' => 'No new features'
         ]);
     }
 }
