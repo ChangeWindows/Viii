@@ -15,10 +15,13 @@ class CreateBuildsTable extends Migration
     {
         Schema::create( 'builds' , function ( Blueprint $table ) {
             $table->increments( 'id' );
+            $table->integer( 'major' );
+            $table->integer( 'minor' );
             $table->integer( 'build' );
+            $table->integer( 'delta' );
             $table->integer( 'platform_id' );
             $table->string( 'milestone_id' );
-            $table->integer( 'initial_delta' );
+            $table->date( 'skip' )->nullable();
             $table->date( 'fast' )->nullable();
             $table->date( 'slow' )->nullable();
             $table->date( 'preview' )->nullable();

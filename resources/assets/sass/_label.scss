@@ -7,6 +7,10 @@
     &.vnext, &.leak {
         color: $leak;
     }
+    
+    &.skip {
+        color: $skip;
+    }
 
     &.fast {
         color: $fast;
