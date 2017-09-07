@@ -2,38 +2,33 @@
 
 namespace App;
 
+use App\Traits\SingleTableInheritance;
 use Illuminate\Database\Eloquent\Model;
 
 class Build extends Model
 {
+    use SingleTableInheritance;
+
+    protected $stiKey = 'platform_id';
+
+    protected $stiChildren = [
+        1 => \App\Pc::class,
+        2 => \App\Mobile::class,
+        3 => \App\Xbox::class,
+        4 => \App\Server::class,
+        5 => \App\MixedReality::class,
+        6 => \App\IoT::class,
+        7 => \App\Team::class,
+    ];
+
+    protected $table = 'builds';
+
     protected $fillable = ['id', 'major', 'minor', 'build', 'delta', 'platform_id', 'milestone_id', 'vnext', 'skip', 'fast', 'slow', 'preview', 'release', 'pilot', 'broad', 'lts', 'changelog'];
+
     public $timestamps = false;
     
     public function milestones() {
         return $this->belongsTo( 'App\Milestone', 'milestone_id', 'id' );
-    }
-    
-    function getPlatform( $notation = 'default' ) {
-        if ( $notation == 'default' ) {
-            if ( $this->platform_id == 1 )
-                return 'PC';
-            if ( $this->platform_id == 2 )
-                return 'Mobile';
-            if ( $this->platform_id == 3 )
-                return 'Xbox';
-            if ( $this->platform_id == 4 )
-                return 'Server';
-            if ( $this->platform_id == 5 )
-                return 'Mixed Reality';
-            if ( $this->platform_id == 6 )
-                return 'IoT';
-            if ( $this->platform_id == 7 )
-                return 'Team';
-        } else if ( $notation == 'class' ) {
-            return strtolower( explode( ' ', trim( $this->getPlatform() ) )[0] ); // Not sure this even works...
-        } else if ( $notation == 'id' ) {
-            return $this->platform_id;
-        }
     }
 
     function getString( $type = 'default' ) {
@@ -77,37 +72,5 @@ class Build extends Model
         $string['delta'] = $delta;
 
         return $string;
-    }
-    
-    function canPromote() {
-        /*
-        * 1 PC      0 => 1=> 2 => 3 =>      5 => 6 => 7 => 8
-        * 2 Mobile  0 =>     2 => 3 =>      5 => 6 => 7
-        * 3 Xbox    0 =>     2 => 3 => 4 => 5 => 6
-        * 4 Server  0 =>          3 =>                7 => 8
-        * 5 Mixed   0 =>                         6 => 7 => 8
-        * 6 IoT     0 =>          3 =>           6 => 7
-        * 7 Team    0 =>                         6 => 7
-        */
-
-        if ( isset ( $this->lts ) ) {
-            return false; // Any platform that is on LTS can't promote
-        } else {
-            switch ( $this->platform_id ) {
-                case 2:
-                case 6:
-                case 7:
-                    if ( isset( $this->broad ) )
-                        return false;
-                    break;
-                case 3:
-                    if ( isset( $this->pilot ) )
-                        return false;
-                    break;
-                default:
-                    return true;
-                    break;
-            }
-        }
     }
 }
