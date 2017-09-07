@@ -18,6 +18,6 @@ class Xbox extends Build
      */
     public function canPromote()
     {
-        return (bool) !isset($this->pilot);
+        return ( bool ) !isset( $this->pilot );
     }
 }

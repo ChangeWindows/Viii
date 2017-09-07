@@ -18,6 +18,6 @@ class Server extends Build
      */
     public function canPromote()
     {
-        return (bool) !isset($this->lts);
+        return ( bool ) !isset( $this->lts );
     }
 }
