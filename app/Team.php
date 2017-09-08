@@ -8,9 +8,17 @@ class Team extends Build
      * @param string $notation
      * @return string
      */
-    public function getPlatform( $notation = 'default' )
+    public function getPlatformName()
     {
         return 'Team';
+    }
+    /**
+     * @param string $notation
+     * @return string
+     */
+    public function getPlatformClass()
+    {
+        return 'team';
     }
 
     /**

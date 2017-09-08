@@ -8,9 +8,17 @@ class MixedReality extends Build
      * @param string $notation
      * @return string
      */
-    public function getPlatform( $notation = 'default' )
+    public function getPlatformName()
     {
         return 'Mixed Reality';
+    }
+    /**
+     * @param string $notation
+     * @return string
+     */
+    public function getPlatformClass()
+    {
+        return 'mixed';
     }
 
     /**

@@ -8,9 +8,17 @@ class Xbox extends Build
      * @param string $notation
      * @return string
      */
-    public function getPlatform( $notation = 'default' )
+    public function getPlatformName()
     {
         return 'Xbox';
+    }
+    /**
+     * @param string $notation
+     * @return string
+     */
+    public function getPlatformClass()
+    {
+        return 'xbox';
     }
 
     /**

@@ -8,9 +8,17 @@ class IoT extends Build
      * @param string $notation
      * @return string
      */
-    public function getPlatform( $notation = 'default' )
+    public function getPlatformName()
     {
         return 'IoT';
+    }
+    /**
+     * @param string $notation
+     * @return string
+     */
+    public function getPlatformClass()
+    {
+        return 'iot';
     }
 
     /**

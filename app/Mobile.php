@@ -8,9 +8,17 @@ class Mobile extends Build
      * @param string $notation
      * @return string
      */
-    public function getPlatform( $notation = 'default' )
+    public function getPlatformName()
     {
         return 'Mobile';
+    }
+    /**
+     * @param string $notation
+     * @return string
+     */
+    public function getPlatformClass()
+    {
+        return 'mobile';
     }
 
     /**
