@@ -22,8 +22,8 @@
             @endif
             <div class="col-md-3">
                 <div class="row list-bar">
-                    <a class="col-8 list-bar-item list-bar-default" href="{{ route('showBuild', ['id' => $build->id]) }}">{{ $build->getString() }}</a>
-                    <a class="col-2 list-bar-item list-bar-success text-center" href="{{ route('createDelta', ['build' => $build->id]) }}"><i class="fal fa-fw fa-plus"></i></a>
+                    <a class="col-8 list-bar-item list-bar-default" href="{{ route('editBuild', ['id' => $build->id]) }}">{{ $build->getString() }}</a>
+                    <a class="col-2 list-bar-item list-bar-success text-center" href="{{ route('promoteBuildNow', ['build' => $build->id]) }}"><i class="fal fa-fw fa-angle-double-up"></i></a>
                     <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteBuild', ['id' => $build->id]) }}"><i class="fal fa-fw fa-trash-alt"></i></a>
                 </div>
             </div>

@@ -75,4 +75,95 @@ class BuildController extends Controller
 
         return redirect()->route( 'manageBuild' );
     }
+    
+    public function promoteNow( Build $build ) {
+        /* This isn't a simple +1 maths exercise
+        * 1 PC      0 => 1 => 2 => 3 =>      5 => 6 => 7 => 8
+        * 2 Mobile  0 =>   => 2 => 3 =>      5 => 6 => 7
+        * 3 Xbox    0 =>   => 2 => 3 => 4 => 5 => 6
+        * 4 Server  0 =>           3 =>                7 => 8
+        * 5 Mixed   0 =>                          6 => 7 => 8
+        * 6 IoT     0 =>           3 =>           6 => 7
+        * 7 Team    0 =>                          6 => 7
+        */
+
+        switch ( $build->platform_id ) {
+            case 1:
+                if ( ( bool ) !isset( $build->skip ) )
+                    $build->skip = Carbon::now();
+                else if ( ( bool ) !isset( $build->fast ) )
+                    $build->fast = Carbon::now();
+                else if ( ( bool ) !isset( $build->slow ) )
+                    $build->slow = Carbon::now();
+                else if ( ( bool ) !isset( $build->preview ) )
+                    $build->preview = Carbon::now();
+                else if ( ( bool ) !isset( $build->pilot ) )
+                    $build->pilot = Carbon::now();
+                else if ( ( bool ) !isset( $build->broad ) )
+                    $build->broad = Carbon::now();
+                else if ( ( bool ) !isset( $build->lts ) )
+                    $build->lts = Carbon::now();
+                break;
+            case 2:
+                if ( ( bool ) !isset( $build->fast ) )
+                    $build->fast = Carbon::now();
+                else if ( ( bool ) !isset( $build->slow ) )
+                    $build->slow = Carbon::now();
+                else if ( ( bool ) !isset( $build->preview ) )
+                    $build->preview = Carbon::now();
+                else if ( ( bool ) !isset( $build->pilot ) )
+                    $build->pilot = Carbon::now();
+                else if ( ( bool ) !isset( $build->broad ) )
+                    $build->broad = Carbon::now();
+                break;
+            case 3:
+                if ( ( bool ) !isset( $build->fast ) )
+                    $build->fast = Carbon::now();
+                else if ( ( bool ) !isset( $build->slow ) )
+                    $build->slow = Carbon::now();
+                else if ( ( bool ) !isset( $build->preview ) )
+                    $build->preview = Carbon::now();
+                else if ( ( bool ) !isset( $build->release ) )
+                    $build->release = Carbon::now();
+                else if ( ( bool ) !isset( $build->pilot ) )
+                    $build->pilot = Carbon::now();
+                break;
+            case 4:
+                if ( ( bool ) !isset( $build->slow ) )
+                    $build->slow = Carbon::now();
+                else if ( ( bool ) !isset( $build->broad ) )
+                    $build->broad = Carbon::now();
+                else if ( ( bool ) !isset( $build->lts ) )
+                    $build->lts = Carbon::now();
+                break;
+            case 5:
+                if ( ( bool ) !isset( $build->pilot ) )
+                    $build->pilot = Carbon::now();
+                else if ( ( bool ) !isset( $build->broad ) )
+                    $build->broad = Carbon::now();
+                else if ( ( bool ) !isset( $build->lts ) )
+                    $build->lts = Carbon::now();
+                break;
+            case 6:
+                if ( ( bool ) !isset( $build->slow ) )
+                    $build->slow = Carbon::now();
+                else if ( ( bool ) !isset( $build->pilot ) )
+                    $build->pilot = Carbon::now();
+                else if ( ( bool ) !isset( $build->broad ) )
+                    $build->broad = Carbon::now();
+                else if ( ( bool ) !isset( $build->lts ) )
+                    $build->lts = Carbon::now();
+                break;
+            case 7:
+                if ( ( bool ) !isset( $build->pilot ) )
+                    $build->pilot = Carbon::now();
+                else if ( ( bool ) !isset( $build->broad ) )
+                    $build->broad = Carbon::now();
+                break;
+        }
+
+        $build->save();
+
+        return redirect()->route( 'manageBuild' );
+    }
 }
