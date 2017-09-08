@@ -18,6 +18,6 @@ class Mobile extends Build
      */
     public function canPromote()
     {
-        return (bool) !isset($this->broad);
+        return ( bool ) !isset( $this->broad );
     }
 }

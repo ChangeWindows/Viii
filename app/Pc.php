@@ -18,6 +18,6 @@ class Pc extends Build
      */
     public function canPromote()
     {
-        return (bool) !isset($this->lts);
+        return ( bool ) !isset( $this->lts );
     }
 }
