@@ -28,4 +28,17 @@ class Server extends Build
     {
         return ( bool ) !isset( $this->lts );
     }
+    
+    /**
+     * @return void
+     */
+    public function promoteNow()
+    {
+        if ( ( bool ) !isset( $build->slow ) )
+            $build->slow = Carbon::now();
+        else if ( ( bool ) !isset( $build->broad ) )
+            $build->broad = Carbon::now();
+        else if ( ( bool ) !isset( $build->lts ) )
+            $build->lts = Carbon::now();
+    }
 }

@@ -28,4 +28,17 @@ class MixedReality extends Build
     {
         return ( bool ) !isset( $this->lts );
     }
+    
+    /**
+     * @return void
+     */
+    public function promoteNow()
+    {
+        if ( ( bool ) !isset( $build->pilot ) )
+            $build->pilot = Carbon::now();
+        else if ( ( bool ) !isset( $build->broad ) )
+            $build->broad = Carbon::now();
+        else if ( ( bool ) !isset( $build->lts ) )
+            $build->lts = Carbon::now();
+    }
 }

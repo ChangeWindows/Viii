@@ -28,4 +28,25 @@ class Pc extends Build
     {
         return ( bool ) !isset( $this->lts );
     }
+
+    /**
+     * @return void
+     */
+    public function promoteNow()
+    {
+        if ( ( bool ) !isset( $build->skip ) )
+            $build->skip = Carbon::now();
+        else if ( ( bool ) !isset( $build->fast ) )
+            $build->fast = Carbon::now();
+        else if ( ( bool ) !isset( $build->slow ) )
+            $build->slow = Carbon::now();
+        else if ( ( bool ) !isset( $build->preview ) )
+            $build->preview = Carbon::now();
+        else if ( ( bool ) !isset( $build->pilot ) )
+            $build->pilot = Carbon::now();
+        else if ( ( bool ) !isset( $build->broad ) )
+            $build->broad = Carbon::now();
+        else if ( ( bool ) !isset( $build->lts ) )
+            $build->lts = Carbon::now();
+    }
 }
