@@ -124,7 +124,7 @@
                         <div class="checkbox"><label><input type="checkbox" name="flight[7][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary"><i class="fal fa-fw fa-plus"></i> Add</button>
+                        <button type="submit" class="btn btn-primary btn-block"><i class="fal fa-fw fa-plus"></i> Add</button>
                     </div>
                 </form>
             </div>

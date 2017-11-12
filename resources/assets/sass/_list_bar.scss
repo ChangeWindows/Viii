@@ -6,7 +6,7 @@
 
         .list-bar-item {
             padding: 10px;
-            background: #fff;
+            background: #f8f8f8;
             margin-bottom: 3px;
 
             &:hover {
@@ -31,19 +31,19 @@
             }
 
             &.list-bar-danger {
-                color: $leak;
+                color: $skip;
 
                 &:hover {
-                    background: $leak;
+                    background: $skip;
                     color: #fff;
                 }
             }
 
             &.list-bar-success {
-                color: $pilot;
+                color: $targeted;
 
                 &:hover {
-                    background: $pilot;
+                    background: $targeted;
                     color: #fff;
                 }
             }

@@ -1,166 +1,3 @@
-.cw-sidebar {
-  padding: 0 !important;
-  min-height: 100vh;
-  max-width: 320px;
-  min-width: 320px;
-}
-
-.cw-sidebar .flexing {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  min-height: 100%;
-}
-
-.cw-sidebar .contrast-40 {
-  min-height: 100%;
-}
-
-.cw-sidebar .contrast-40 .noise {
-  height: 100vh;
-  background-image: url("/moana/public/images/noise.png");
-}
-
-.cw-sidebar .list-group-gap {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.cw-sidebar .logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.cw-sidebar .logo .img-logo {
-  height: 32px;
-  width: auto;
-  margin: 40px 0 30px;
-}
-
-.cw-sidebar .list-group .list-group-item {
-  background: none;
-  border-radius: 0;
-  border: 1px solid transparent;
-  padding: 0;
-}
-
-.cw-sidebar .list-group .list-group-item .fa-fw {
-  padding: 15px 15px 15px 11px;
-  border-left: 5px solid transparent;
-}
-
-.cw-sidebar .list-group .list-group-item .title {
-  padding: 9px 9px 9px 21px;
-}
-
-.cw-sidebar .list-group .list-group-item.active .fa-fw {
-  border-left-color: #0078d7;
-}
-
-@media only screen and (max-width: 1020px) {
-  .cw-sidebar {
-    max-width: 50px;
-    min-width: 50px;
-  }
-
-  .cw-sidebar .logo .img-logo {
-    height: 20px;
-    width: auto;
-    margin: 15px;
-  }
-
-  .cw-sidebar .title {
-    display: none;
-  }
-}
-
-.cw-content {
-  padding: 0 !important;
-  max-width: 100%;
-  min-height: 100%;
-}
-
-.cw-content .jumbotron {
-  background: transparent;
-  margin-bottom: 0;
-}
-
-.cw-content .row-jumbotron {
-  margin: 0;
-}
-
-.cw-content .row-main {
-  margin: 0;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-}
-
-.cw-content .flexing {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  min-height: 100%;
-}
-
-.cw-content .noise {
-  background-image: url("/moana/public/images/noise.png");
-}
-
-.cw-content .content {
-  height: auto;
-}
-
-.cw-content .row-height {
-  margin: 0;
-}
-
-.cw-content .height-25 {
-  height: 25px;
-}
-
-.cw-form {
-  margin-top: 150px;
-  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-}
-
-.cw-form .noise {
-  background-image: url("/moana/public/images/noise.png");
-  padding: 15px;
-}
-
-.cw-form h2 {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 35px;
-}
-
-.cw-form .form-group:last-child {
-  margin-bottom: 0;
-}
-
-.cw-form .col {
-  padding: 0;
-}
-
 .col,
 .col-1,
 .col-10,
@@ -271,11 +108,11 @@ textarea {
 }
 
 .btn.btn-success {
-  background-color: #76b540;
+  background-color: #50c236;
 }
 
 .btn.btn-success:hover {
-  background-color: #659b37;
+  background-color: #44a62e;
 }
 
 .label {
@@ -287,39 +124,39 @@ textarea {
 
 .label.vnext,
 .label.leak {
-  color: #ba3515;
+  color: #e52262;
 }
 
 .label.skip {
-  color: #dc5332;
+  color: #e54822;
 }
 
 .label.fast {
-  color: #f28a11;
+  color: #fb8410;
 }
 
 .label.slow {
-  color: #ffba00;
+  color: #ffc000;
 }
 
 .label.preview {
-  color: #cccc29;
+  color: #c4da0e;
 }
 
 .label.release {
-  color: #b5b540;
+  color: #9dc917;
 }
 
 .label.pilot {
-  color: #76b540;
+  color: #50c236;
 }
 
 .label.broad {
-  color: #40b57b;
+  color: #22ac90;
 }
 
 .label.ltsc {
-  color: #40a3b5;
+  color: #0098df;
 }
 
 .img-responsive.img-platform {
@@ -333,6 +170,7 @@ textarea {
   border-radius: 0;
   padding: 0;
   padding: 30px 20px;
+  background: #f8f8f8;
 }
 
 .jumbotron h1 {
@@ -355,7 +193,7 @@ textarea {
 }
 
 .jumbotron .toolbar .btn.btn-default:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #eee;
 }
 
 .jumbotron .container {
@@ -379,8 +217,13 @@ textarea {
 
 .modal-dialog .modal-content .modal-header .close {
   padding: 12px 10px;
-  margin-top: -35px;
+  margin-top: 0;
+  margin-right: 0;
   margin-bottom: 0;
+}
+
+.modal-dialog .modal-content .modal-header .close:hover {
+  background: #eee;
 }
 
 .modal-dialog .modal-content .modal-header .modal-title {
@@ -412,7 +255,7 @@ textarea {
 
 .list-bar-group .list-bar .list-bar-item {
   padding: 10px;
-  background: #fff;
+  background: #f8f8f8;
   margin-bottom: 3px;
 }
 
@@ -438,20 +281,20 @@ textarea {
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-danger {
-  color: #ba3515;
+  color: #e54822;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-danger:hover {
-  background: #ba3515;
+  background: #e54822;
   color: #fff;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-success {
-  color: #76b540;
+  color: #50c236;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-success:hover {
-  background: #76b540;
+  background: #50c236;
   color: #fff;
 }
 
@@ -585,14 +428,6 @@ textarea {
 }
 
 body {
-  min-height: 100%;
-  background-image: url("/moana/public/images/background.jpg");
-  background-size: cover;
-}
-
-html,
-.container-fluid,
-.cw-row {
   min-height: 100%;
 }
 

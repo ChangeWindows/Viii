@@ -25,11 +25,11 @@
     }
 
     &.release {
-        color: $release;
+        color: $releasepreview;
     }
 
     &.pilot {
-        color: $pilot;
+        color: $targeted;
     }
 
     &.broad {

@@ -12,10 +12,10 @@
     }
 
     &.btn-success {
-        background-color: $pilot;
+        background-color: $targeted;
 
         &:hover {
-            background-color: darken( $pilot, 7% );
+            background-color: darken( $targeted, 7% );
         }
     }
 }

@@ -1,93 +1,90 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }}</title>
+        <title>{{ config('app.name') }}</title>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/font-awesome-core.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/font-awesome-light.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/font-awesome-brands.css') }}" rel="stylesheet">
-</head>
-<body class="light">
-    <div class="container-fluid">
-        <div class="row cw-row">
-            <div class="col-sm-3 col-md-2 cw-sidebar" id="navbar">
-                <div class="contrast-40">
-                    <div class="noise">
-                        <div class="flexing">
-                            <div class="logo">
-                                <a href="{{ route('home') }}"><img class="img-logo" alt="ChangeWindows logo" src="{{ asset('img/logo/logo-light.png') }}"></a>
-                            </div>
-                            <div class="list-group">
-                                <a href="{{ route('home') }}" class="list-group-item {{ Request::is('/') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-home"></i> <span class="title">Timeline</span></a>
-                                <a href="{{ route('milestones') }}" class="list-group-item {{ Request::is('milestones*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-map-signs"></i> <span class="title">Milestones</span></a>
-                                <a href="{{ route('rings') }}" class="list-group-item {{ Request::is('rings*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-bullseye"></i> <span class="title">Rings</span></a>
-                                <a href="{{ route('year') }}" class="list-group-item {{ Request::is('year*') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-calendar-alt"></i> <span class="title">Year in review</span></a>
-                                <a href="http://medium.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-medium"></i> <span class="title">Stories</span></a>
-                                <a href="http://twitter.com/changewindows" class="list-group-item list-group-item-action"><i class="fab fa-fw fa-twitter"></i> <span class="title">Twitter</span></a>
-                            </div>
-                            <div class="list-group-gap"></div>
-                            <div class="list-group">
-                                @auth
-                                    <a href="{{ route('manageHome') }}" class="list-group-item list-group-item-action"><i class="fal fa-fw fa-tachometer-alt"></i> <span class="title">Backstage</span></a>
-                                    <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fal fa-fw fa-sign-out"></i> <span class="title">Sign out</span></a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                @endauth
-                                @guest
-                                    <a href="{{ route('login') }}" class="list-group-item {{ Request::is('login') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-sign-in"></i> <span class="title">Sign in</span></a>
-                                    <a href="{{ route('register') }}" class="list-group-item {{ Request::is('register') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-user-plus"></i> <span class="title">Register</span></a>
-                                @endauth
-                                <a href="{{ route('about') }}" class="list-group-item {{ Request::is('about') ? 'active' : 'list-group-item-action' }}"><i class="fal fa-fw fa-info-circle"></i> <span class="title">About</span></a>
+        <!-- Styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/font-awesome-core.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/font-awesome-light.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/font-awesome-brands.css') }}" rel="stylesheet">
+    </head>
+    <body class="light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbar">
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#cwnav" aria-controls="cwnav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand active" href="backstage">
+                    <span class="hidden-sm-down"><span class="brand">Change<span class="bold">Windows</span></span>
+                </a>
+
+                <div class="collapse navbar-collapse" id="cwnav">
+                    <div class="navbar-nav mr-auto mt-lg-0">
+                        <a class="nav-item nav-link" href="{{ route('milestones') }}">Milestones</a>
+                        <a class="nav-item nav-link" href="{{ route('rings') }}">Rings</a>
+                        <a class="nav-item nav-link" href="{{ route('year') }}">Year</a>
+                        <a class="nav-item nav-link" href="https://medium.com/changewindows">Blog</a>
+                    </div>
+                    <div class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown ellipse">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="ellipses">...</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{ route('about') }}"><i class="fal fa-fw fa-cog"></i> About</a>
+                                <a class="dropdown-item" href="{{ route('privacy') }}"><i class="fal fa-fw fa-cog"></i> Privacy</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="https://twitter.com/changewindows"><i class="fal fa-fw fa-cog"></i> Twitter</a>
+                                <div class="dropdown-divider"></div>
+                                    @auth
+                                        <a class="dropdown-item" href="{{ route('manageBuild') }}"><i class="fal fa-fw fa-cog"></i> Backstage</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();"><i class="fal fa-fw fa-cog"></i>
+                                            Logout
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    @endauth
+                                    @guest
+                                        <a class="dropdown-item" href="{{ route('login') }}"><i class="fal fa-fw fa-cog"></i> Login</a>
+                                        <a class="dropdown-item" href="{{ route('register') }}"><i class="fal fa-fw fa-cog"></i> Register</a>
+                                    @endauth
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col cw-content">
-                <div class="flexing">
-                    <div class="row row-jumbotron contrast-40">
-                        <div class="col noise">
-                            <div class="jumbotron">
-                                @yield( 'jumbotron' )
-                                <div class="toolbar">
-                                    @yield( 'toolbar' )
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row-main contrast-95">
-                        <div class="col noise">
-                            <div class="content container-fluid">
-                                <div class="row">
-                                    @yield( 'content' )
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row-height contrast-40">
-                        <div class="col noise">
-                            <div class="height-25"></div>
-                        </div>
-                    </div>
+        </nav>
+        <div class="jumbotron">
+            <div class="container">
+                @yield( 'jumbotron' )
+                <div class="toolbar">
+                    @yield( 'toolbar' )
                 </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                @yield( 'content' )
             </div>
         </div>
         @yield( 'modals' )
         <script src="{{ asset('js/app.js') }}"></script>
-    </div>
-</body>
+    </body>
 </html>
