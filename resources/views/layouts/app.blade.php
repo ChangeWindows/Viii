@@ -16,9 +16,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/font-awesome-core.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/font-awesome-light.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/font-awesome-brands.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/fontawesome-pro-core.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/fontawesome-pro-light.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/fontawesome-pro-brands.css') }}" rel="stylesheet">
     </head>
     <body class="light">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbar">
@@ -38,9 +38,14 @@
                         <a class="nav-item nav-link" href="https://medium.com/changewindows">Blog</a>
                     </div>
                     <div class="navbar-nav my-lg-0">
-                        <li class="nav-item dropdown ellipse">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="ellipses">...</span>
+                                @auth
+                                    {{ Auth::user()->name }}
+                                @endauth
+                                @guest
+                                    More
+                                @endauth
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('about') }}"><i class="fal fa-fw fa-cog"></i> About</a>

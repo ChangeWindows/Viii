@@ -16,9 +16,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/font-awesome-core.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/font-awesome-light.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/font-awesome-brands.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/fontawesome-pro-core.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/fontawesome-pro-light.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/fontawesome-pro-brands.css') }}" rel="stylesheet">
     </head>
     <body class="light">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -31,22 +31,22 @@
                 <div class="collapse navbar-collapse" id="navbar-toggle">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item {{ Request::is('backstage') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('manageHome') }}"><i class="fal fa-fw fa-tachometer-alt"></i> Backstage</a>
+                            <a class="nav-link" href="{{ route('manageHome') }}">Backstage</a>
                         </li>
                         <li class="nav-item {{ Request::is('backstage/builds*') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('manageBuild') }}"><i class="fal fa-fw fa-industry"></i> Builds</a>
+                            <a class="nav-link" href="{{ route('manageBuild') }}">Builds</a>
                         </li>
                         <li class="nav-item {{ Request::is('backstage/milestones*') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('manageMilestone') }}"><i class="fal fa-fw fa-map-signs"></i> Milestones</a>
+                            <a class="nav-link" href="{{ route('manageMilestone') }}">Milestones</a>
                         </li>
                         <li class="nav-item {{ Request::is('backstage/settings') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('manageSettings') }}"><i class="fal fa-fw fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="{{ route('manageSettings') }}">Settings</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}"><i class="fal fa-fw fa-home"></i> Mainstage</a>
+                            <a class="nav-link" href="{{ route('home') }}">Mainstage</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fal fa-fw fa-sign-out"></i> Sign out</a>
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>

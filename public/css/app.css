@@ -176,19 +176,27 @@ textarea {
 }
 
 .navbar .navbar-brand,
-.navbar .nav-link {
+.navbar .nav-item {
   padding: 10px 0 7px;
   border-bottom: 3px solid transparent;
+  font-size: 20px;
+  margin: 0 20px 0 0;
 }
 
 .navbar .navbar-brand:hover,
-.navbar .nav-link:hover {
+.navbar .nav-item:hover {
   border-bottom-color: #fff;
 }
 
 .navbar .navbar-brand.active,
-.navbar .nav-link.active {
+.navbar .nav-item.active {
   border-bottom-color: #fff;
+}
+
+.navbar .navbar-brand .nav-link,
+.navbar .nav-item .nav-link {
+  padding: 0;
+  margin: 0;
 }
 
 .navbar .navbar-brand {
@@ -206,23 +214,15 @@ textarea {
   position: absolute !important;
 }
 
-.navbar .ellipse .nav-link {
-  letter-spacing: 2px;
-}
-
-.navbar .ellipse .dropdown-toggle::after {
-  display: none;
-}
-
 .jumbotron {
   border-radius: 0;
-  padding: 0;
   padding: 30px 20px;
+  margin-bottom: 10px;
   background: #f8f8f8;
 }
 
 .jumbotron h1 {
-  font-size: 55px;
+  font-size: 50px;
   margin-bottom: 0;
 }
 
