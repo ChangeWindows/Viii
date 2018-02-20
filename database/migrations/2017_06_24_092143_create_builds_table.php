@@ -30,7 +30,6 @@ class CreateBuildsTable extends Migration
             $table->date( 'pilot' )->nullable();
             $table->date( 'broad' )->nullable();
             $table->date( 'lts' )->nullable();
-            $table->text( 'changelog' )->nullable();
         });
     }
 
