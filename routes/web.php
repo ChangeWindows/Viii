@@ -32,6 +32,7 @@ Route::get('privacy', 'AboutController@privacy')->name('privacy');
 Route::get('backstage', 'BackstageController@index')->name('manageHome');
 
 Route::get('backstage/builds', 'BuildController@index')->name('manageBuild');
+Route::get('backstage/builds/{build}', 'BuildController@show')->name('showBuild');
 Route::get('backstage/builds/edit/{build}', 'BuildController@edit')->name('editBuild');
 Route::get('backstage/builds/delete/{build}', 'BuildController@delete')->name('deleteBuild');
 Route::patch('backstage/builds/promoteNow/{build}', 'BuildController@promoteNow')->name('promoteBuildNow');
