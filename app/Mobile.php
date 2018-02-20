@@ -45,4 +45,12 @@ class Mobile extends Build
         else if ( ( bool ) !isset( $build->broad ) )
             $build->broad = Carbon::now();
     }
+
+    /**
+     * @return bool
+     */
+    public function hasRing( $ring )
+    {
+        return in_array( $ring, [ 'fast', 'slow', 'preview', 'targeted', 'broad' ] );
+    }
 }

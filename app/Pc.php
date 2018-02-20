@@ -49,4 +49,12 @@ class Pc extends Build
         else if ( ( bool ) !isset( $build->lts ) )
             $build->lts = Carbon::now();
     }
+
+    /**
+     * @return bool
+     */
+    public function hasRing( $ring )
+    {
+        return in_array( $ring, [ 'skip', 'fast', 'slow', 'preview', 'targeted', 'broad', 'lts' ] );
+    }
 }

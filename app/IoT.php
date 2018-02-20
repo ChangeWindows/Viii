@@ -43,4 +43,12 @@ class IoT extends Build
         else if ( ( bool ) !isset( $build->lts ) )
             $build->lts = Carbon::now();
     }
+
+    /**
+     * @return bool
+     */
+    public function hasRing( $ring )
+    {
+        return in_array( $ring, [ 'slow', 'targeted', 'broad', 'lts' ] );
+    }
 }

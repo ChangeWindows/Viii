@@ -22,7 +22,7 @@
             @endif
             <div class="col-md-3">
                 <div class="row list-bar">
-                    <a class="col-8 list-bar-item list-bar-default" href="{{ route('editBuild', ['id' => $build->id]) }}">{{ $build->getString() }}</a>
+                    <a class="col-8 list-bar-item list-bar-default" href="{{ route('showBuild', ['id' => $build->id]) }}">{{ $build->getString() }}</a>
                     <a class="col-2 list-bar-item list-bar-success text-center" href="{{ route('promoteBuildNow', ['build' => $build->id]) }}"><i class="fal fa-fw fa-angle-double-up"></i></a>
                     <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteBuild', ['id' => $build->id]) }}"><i class="fal fa-fw fa-trash-alt"></i></a>
                 </div>
@@ -94,6 +94,7 @@
                         <label for="ring" class="control-label extra-margin">Server</label>
                         <div class="checkbox"><label><input type="checkbox" name="flight[4][vnext]" value="0"> <span class="label leak">vNext</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[4][slow]" value="3"> <span class="label slow">Preview</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[4][targeted]" value="7"> <span class="label targeted">Semi-Annual Targeted</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[4][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[4][ltsc]" value="8"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
                     </div>

@@ -45,4 +45,12 @@ class Xbox extends Build
         else if ( ( bool ) !isset( $build->targeted ) )
             $build->targeted = Carbon::now();
     }
+
+    /**
+     * @return bool
+     */
+    public function hasRing( $ring )
+    {
+        return in_array( $ring, [ 'fast', 'slow', 'preview', 'release', 'targeted' ] );
+    }
 }
