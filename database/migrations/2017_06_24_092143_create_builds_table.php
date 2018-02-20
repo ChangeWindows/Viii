@@ -27,7 +27,7 @@ class CreateBuildsTable extends Migration
             $table->date( 'slow' )->nullable();
             $table->date( 'preview' )->nullable();
             $table->date( 'release' )->nullable();
-            $table->date( 'pilot' )->nullable();
+            $table->date( 'targeted' )->nullable();
             $table->date( 'broad' )->nullable();
             $table->date( 'lts' )->nullable();
         });

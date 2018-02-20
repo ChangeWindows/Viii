@@ -40,8 +40,8 @@ class Mobile extends Build
             $build->slow = Carbon::now();
         else if ( ( bool ) !isset( $build->preview ) )
             $build->preview = Carbon::now();
-        else if ( ( bool ) !isset( $build->pilot ) )
-            $build->pilot = Carbon::now();
+        else if ( ( bool ) !isset( $build->targeted ) )
+            $build->targeted = Carbon::now();
         else if ( ( bool ) !isset( $build->broad ) )
             $build->broad = Carbon::now();
     }

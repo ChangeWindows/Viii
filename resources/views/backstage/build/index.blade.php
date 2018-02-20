@@ -61,12 +61,6 @@
                             <input type="date" class="form-control" id="release" name="release" aria-describedby="release" placeholder="Date">
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="changelog">Changelog</label>
-                            <textarea class="form-control" id="changelog" name="changelog" aria-describedby="changelog" placeholder="Changelog"></textarea>
-                        </div>
-                    </div>
                     <div class="col-lg-4 col-md-6 col-sm">
                         <label for="ring" class="control-label extra-margin">PC</label>
                         <div class="checkbox"><label><input type="checkbox" name="flight[1][vnext]" value="0"> <span class="label leak">vNext</span></label></div>
@@ -74,7 +68,7 @@
                         <div class="checkbox"><label><input type="checkbox" name="flight[1][fast]" value="2"> <span class="label fast">Fast Ring</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[1][slow]" value="3"> <span class="label slow">Slow Ring</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[1][preview]" value="5"> <span class="label release">Release Preview</span></label></div>
-                        <div class="checkbox"><label><input type="checkbox" name="flight[1][pilot]" value="6"> <span class="label pilot">Semi-Annual Pilot</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[1][targeted]" value="6"> <span class="label targeted">Semi-Annual Targeted</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[1][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[1][ltsc]" value="8"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
                     </div>
@@ -84,7 +78,7 @@
                         <div class="checkbox"><label><input type="checkbox" name="flight[2][fast]" value="2"> <span class="label fast">Fast Ring</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[2][slow]" value="3"> <span class="label slow">Slow Ring</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[2][preview]" value="5"> <span class="label release">Release Preview</span></label></div>
-                        <div class="checkbox"><label><input type="checkbox" name="flight[2][pilot]" value="6"> <span class="label pilot">Semi-Annual Pilot</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[2][targeted]" value="6"> <span class="label targeted">Semi-Annual Targeted</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[2][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm">
@@ -94,7 +88,7 @@
                         <div class="checkbox"><label><input type="checkbox" name="flight[3][slow]" value="3"> <span class="label slow">Beta Ring</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[3][preview]" value="4"> <span class="label preview">Delta Ring</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[3][release]" value="5"> <span class="label release">Omega Ring</span></label></div>
-                        <div class="checkbox"><label><input type="checkbox" name="flight[3][pilot]" value="6"> <span class="label pilot">Production</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[3][targeted]" value="6"> <span class="label targeted">Production</span></label></div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm">
                         <label for="ring" class="control-label extra-margin">Server</label>
@@ -106,7 +100,7 @@
                     <div class="col-lg-4 col-md-6 col-sm">
                         <label for="ring" class="control-label extra-margin">Mixed Reality</label>
                         <div class="checkbox"><label><input type="checkbox" name="flight[5][vnext]" value="0"> <span class="label leak">vNext</span></label></div>
-                        <div class="checkbox"><label><input type="checkbox" name="flight[5][pilot]" value="6"> <span class="label pilot">Semi-Annual Pilot</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[5][targeted]" value="6"> <span class="label targeted">Semi-Annual Targeted</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[5][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[5][ltsc]" value="8"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
                     </div>
@@ -114,13 +108,13 @@
                         <label for="ring" class="control-label extra-margin">IoT</label>
                         <div class="checkbox"><label><input type="checkbox" name="flight[6][vnext]" value="0"> <span class="label leak">vNext</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[6][slow]" value="3"> <span class="label slow">Preview</span></label></div>
-                        <div class="checkbox"><label><input type="checkbox" name="flight[6][pilot]" value="6"> <span class="label pilot">Semi-Annual Pilot</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[6][targeted]" value="6"> <span class="label targeted">Semi-Annual Targeted</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[6][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm">
                         <label for="ring" class="control-label extra-margin">Team</label>
                         <div class="checkbox"><label><input type="checkbox" name="flight[7][vnext]" value="0"> <span class="label leak">vNext</span></label></div>
-                        <div class="checkbox"><label><input type="checkbox" name="flight[7][pilot]" value="6"> <span class="label pilot">Semi-Annual Pilot</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[7][targeted]" value="6"> <span class="label targeted">Semi-Annual Targeted</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[7][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
                     </div>
                     <div class="col-12">

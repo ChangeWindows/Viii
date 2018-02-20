@@ -26,7 +26,7 @@ class Xbox extends Build
      */
     public function canPromote()
     {
-        return ( bool ) !isset( $this->pilot );
+        return ( bool ) !isset( $this->targeted );
     }
     
     /**
@@ -42,7 +42,7 @@ class Xbox extends Build
             $build->preview = Carbon::now();
         else if ( ( bool ) !isset( $build->release ) )
             $build->release = Carbon::now();
-        else if ( ( bool ) !isset( $build->pilot ) )
-            $build->pilot = Carbon::now();
+        else if ( ( bool ) !isset( $build->targeted ) )
+            $build->targeted = Carbon::now();
     }
 }

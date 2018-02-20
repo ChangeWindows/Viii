@@ -23,7 +23,7 @@ class Build extends Model
 
     protected $table = 'builds';
 
-    protected $fillable = ['id', 'major', 'minor', 'build', 'delta', 'platform_id', 'milestone_id', 'vnext', 'skip', 'fast', 'slow', 'preview', 'release', 'pilot', 'broad', 'lts', 'changelog'];
+    protected $fillable = ['id', 'major', 'minor', 'build', 'delta', 'platform_id', 'milestone_id', 'vnext', 'skip', 'fast', 'slow', 'preview', 'release', 'targeted', 'broad', 'lts'];
 
     public $timestamps = false;
     

@@ -47,7 +47,7 @@ class BuildController extends Controller
         $milestone = Milestone::getMilestoneByString( $string );
         
         foreach( request()->get( 'flight' ) as $platform => $ring ) {
-            $flight = [ 'vnext' => null, 'skip' => null, 'fast' => null, 'slow' => null, 'preview' => null, 'release' => null, 'pilot' => null, 'broead' => null, 'lts' => null ];
+            $flight = [ 'vnext' => null, 'skip' => null, 'fast' => null, 'slow' => null, 'preview' => null, 'release' => null, 'targeted' => null, 'broead' => null, 'lts' => null ];
 
             foreach( $ring as $key => $value ) {
                 if ( isset( $value ) )
@@ -55,8 +55,8 @@ class BuildController extends Controller
             }
             
             Build::create( array_merge(
-                request()->only( ['milestone_id', 'changelog'] ),
-                array( 'platform_id' => $platform, 'milestone_id' => $milestone, 'major' => $string['major'], 'minor' => $string['minor'], 'build' => $string['build'], 'delta' => $string['delta'], 'vnext' => $flight['vnext'], 'skip' => $flight['skip'], 'fast' => $flight['fast'], 'slow' => $flight['slow'], 'preview' => $flight['preview'], 'release' => $flight['release'], 'pilot' => $flight['pilot'], 'broad' => $flight['broad'], 'lts' => $flight['lts'] )
+                request()->only( ['milestone_id'] ),
+                array( 'platform_id' => $platform, 'milestone_id' => $milestone, 'major' => $string['major'], 'minor' => $string['minor'], 'build' => $string['build'], 'delta' => $string['delta'], 'vnext' => $flight['vnext'], 'skip' => $flight['skip'], 'fast' => $flight['fast'], 'slow' => $flight['slow'], 'preview' => $flight['preview'], 'release' => $flight['release'], 'targeted' => $flight['targeted'], 'broad' => $flight['broad'], 'lts' => $flight['lts'] )
             ) );
         }
 
