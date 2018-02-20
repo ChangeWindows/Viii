@@ -52,6 +52,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                <form method="POST" action="{{ route('patchBuild') }}" class="row row-p-10">
                     {!! method_field('patch') !!}
                     {{ csrf_field() }}
                     <div class="col-12">
