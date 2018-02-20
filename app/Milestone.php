@@ -39,8 +39,10 @@ class Milestone extends Model
                 $milestone = 'redstone2';
             else if ( $build < 16300 )
                 $milestone = 'redstone3';
-            else
+            else if ( $build < 16600 )
                 $milestone = 'redstone4';
+            else
+                $milestone = 'redstone5';
         }
 
         return $milestone;
