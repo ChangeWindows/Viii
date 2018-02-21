@@ -20,11 +20,14 @@
                     $current_milestone = $build->milestone_id
                 @endphp
             @endif
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="row list-bar">
-                    <a class="col-8 list-bar-item list-bar-default" href="{{ route('showBuild', ['id' => $build->id]) }}">{{ $build->getString() }}</a>
-                    <a class="col-2 list-bar-item list-bar-success text-center" href="{{ route('promoteBuildNow', ['build' => $build->id]) }}"><i class="fal fa-fw fa-angle-double-up"></i></a>
-                    <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteBuild', ['id' => $build->id]) }}"><i class="fal fa-fw fa-trash-alt"></i></a>
+                    <a class="col-12 list-bar-item list-bar-default" href="{{ route('showBuild', ['id' => $build->id]) }}">
+                        <h5>{{ $build->getPlatformName() }}</h5>
+                        <h3>{{ $build->getString() }}</h3>
+                    </a>
+                    <a class="col list-bar-item list-bar-success text-center" href="{{ route('promoteBuildNow', ['build' => $build->id]) }}"><i class="fal fa-fw fa-angle-double-up"></i></a>
+                    <a class="col list-bar-item list-bar-danger text-center" href="{{ route('deleteBuild', ['id' => $build->id]) }}"><i class="fal fa-fw fa-trash-alt"></i></a>
                 </div>
             </div>
         @endforeach

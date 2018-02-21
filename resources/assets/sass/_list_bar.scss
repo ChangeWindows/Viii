@@ -3,11 +3,11 @@
 
     .list-bar {
         padding: 0 12px;
+        margin-bottom: 3px;
 
         .list-bar-item {
             padding: 10px;
             background: #f8f8f8;
-            margin-bottom: 3px;
 
             &:hover {
                 text-decoration: none;
@@ -111,6 +111,19 @@
                 &.list-bar-team {
                     border-left-color: $team;
                 }
+            }
+
+            h3 {
+                font-size: 23px;
+                font-weight: 700;
+                margin: 0;
+            }
+
+            h5 {
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin: 0;
             }
 
             .list-bar-item-row {

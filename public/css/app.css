@@ -300,12 +300,12 @@ textarea {
 
 .list-bar-group .list-bar {
   padding: 0 12px;
+  margin-bottom: 3px;
 }
 
 .list-bar-group .list-bar .list-bar-item {
   padding: 10px;
   background: #f8f8f8;
-  margin-bottom: 3px;
 }
 
 .list-bar-group .list-bar .list-bar-item:hover {
@@ -371,7 +371,7 @@ textarea {
   background: #e75819;
 }
 
-.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-mixed {
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-holographic {
   background: #ff9c00;
 }
 
@@ -404,12 +404,25 @@ textarea {
   border-left-color: #e75819;
 }
 
-.list-bar-group .list-bar .list-bar-item.list-bar-indicate.list-bar-mixed {
+.list-bar-group .list-bar .list-bar-item.list-bar-indicate.list-bar-holographic {
   border-left-color: #ff9c00;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-indicate.list-bar-team {
   border-left-color: #787878;
+}
+
+.list-bar-group .list-bar .list-bar-item h3 {
+  font-size: 23px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.list-bar-group .list-bar .list-bar-item h5 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .list-bar-group .list-bar .list-bar-item .list-bar-item-row {

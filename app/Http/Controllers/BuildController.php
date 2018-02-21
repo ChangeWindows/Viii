@@ -14,8 +14,9 @@ class BuildController extends Controller
     }
     
     public function index() {
-        $builds = Build::orderBy( 'id', 'desc' )
-                ->orderBy( 'milestone_id', 'asc' )
+        $builds = Build::orderBy( 'build', 'desc' )
+                ->orderBy( 'platform_id', 'asc' )
+                ->orderBy( 'milestone_id', 'desc' )
                 ->paginate( 100 );
 
         $current_milestone = "";
