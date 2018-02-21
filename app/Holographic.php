@@ -2,7 +2,7 @@
 
 namespace App;
 
-class MixedReality extends Build
+class Holographic extends Build
 {
     /**
      * @param string $notation
@@ -10,7 +10,7 @@ class MixedReality extends Build
      */
     public function getPlatformName()
     {
-        return 'Mixed Reality';
+        return 'Holographic';
     }
     /**
      * @param string $notation
@@ -18,7 +18,7 @@ class MixedReality extends Build
      */
     public function getPlatformClass()
     {
-        return 'mixed';
+        return 'holographic';
     }
 
     /**

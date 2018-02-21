@@ -16,7 +16,7 @@ class Build extends Model
         2 => \App\Mobile::class,
         3 => \App\Xbox::class,
         4 => \App\Server::class,
-        5 => \App\MixedReality::class,
+        5 => \App\Holographic::class,
         6 => \App\IoT::class,
         7 => \App\Team::class,
     ];
