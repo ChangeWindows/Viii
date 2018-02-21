@@ -70,7 +70,7 @@
                         <div class="checkbox"><label><input type="checkbox" name="flight[1][preview]" value="5"> <span class="label release">Release Preview</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[1][targeted]" value="6"> <span class="label targeted">Semi-Annual Targeted</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[1][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
-                        <div class="checkbox"><label><input type="checkbox" name="flight[1][ltsc]" value="8"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[1][ltsc]" value="8"> <span class="label lts">Long-Term Servicing Channel</span></label></div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm">
                         <label for="ring" class="control-label extra-margin">Mobile</label>
@@ -96,14 +96,14 @@
                         <div class="checkbox"><label><input type="checkbox" name="flight[4][slow]" value="3"> <span class="label slow">Preview</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[4][targeted]" value="7"> <span class="label targeted">Semi-Annual Targeted</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[4][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
-                        <div class="checkbox"><label><input type="checkbox" name="flight[4][ltsc]" value="8"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[4][ltsc]" value="8"> <span class="label lts">Long-Term Servicing Channel</span></label></div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm">
                         <label for="ring" class="control-label extra-margin">Mixed Reality</label>
                         <div class="checkbox"><label><input type="checkbox" name="flight[5][vnext]" value="0"> <span class="label leak">vNext</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[5][targeted]" value="6"> <span class="label targeted">Semi-Annual Targeted</span></label></div>
                         <div class="checkbox"><label><input type="checkbox" name="flight[5][broad]" value="7"> <span class="label broad">Semi-Annual Broad</span></label></div>
-                        <div class="checkbox"><label><input type="checkbox" name="flight[5][ltsc]" value="8"> <span class="label ltsc">Long-Term Servicing Channel</span></label></div>
+                        <div class="checkbox"><label><input type="checkbox" name="flight[5][ltsc]" value="8"> <span class="label lts">Long-Term Servicing Channel</span></label></div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm">
                         <label for="ring" class="control-label extra-margin">IoT</label>

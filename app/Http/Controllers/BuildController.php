@@ -37,7 +37,7 @@ class BuildController extends Controller
         $milestone = Milestone::getMilestoneByString( $string );
         
         foreach( request()->get( 'flight' ) as $platform => $ring ) {
-            $flight = [ 'vnext' => null, 'skip' => null, 'fast' => null, 'slow' => null, 'preview' => null, 'release' => null, 'targeted' => null, 'broead' => null, 'lts' => null ];
+            $flight = [ 'vnext' => null, 'skip' => null, 'fast' => null, 'slow' => null, 'preview' => null, 'release' => null, 'targeted' => null, 'broad' => null, 'lts' => null ];
 
             foreach( $ring as $key => $value ) {
                 if ( isset( $value ) )
