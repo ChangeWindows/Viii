@@ -47,4 +47,6 @@ Route::post('backstage/milestones', 'MilestoneController@store')->name('storeMil
 Route::patch('backstage/milestones', 'MilestoneController@patch')->name('patchMilestone');
 Route::delete('backstage/milestones', 'MilestoneController@destroy')->name('destroyMilestone');
 
+Route::get('backstage/changelogs', 'ChangelogConroller@changelogs')->name('manageChangelog');
+
 Route::get('backstage/settings', 'BackstageController@settings')->name('manageSettings');

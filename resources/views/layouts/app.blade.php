@@ -71,7 +71,7 @@
                                     @endauth
                                 </div>
                             </div>
-                        </div>
+                        </li>
                     </div>
                 </div>
             </div>

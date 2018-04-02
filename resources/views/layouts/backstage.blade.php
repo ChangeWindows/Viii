@@ -23,35 +23,41 @@
     <body class="light">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('home') }}"><span class="brand">Change<span class="bold">Windows</span></span></a>
+                <a class="navbar-brand {{ Request::is('backstage') ? 'active' : '' }}" href="{{ route('manageHome') }}"><span class="brand">Change<span class="bold">Windows</span></span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggle" aria-controls="navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbar-toggle">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item {{ Request::is('backstage') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('manageHome') }}">Backstage</a>
+                    <div class="navbar-nav mr-auto mt-lg-0">
+                        <a class="nav-item nav-link {{ Request::is('backstage/builds*') ? 'active' : '' }}" href="{{ route('manageBuild') }}">Builds</a>
+                        <a class="nav-item nav-link {{ Request::is('backstage/milestones*') ? 'active' : '' }}" href="{{ route('manageMilestone') }}">Milestones</a>
+                        <a class="nav-item nav-link {{ Request::is('backstage/changelogs*') ? 'active' : '' }}" href="{{ route('manageChangelog') }}">Changelogs</a>
+                        <a class="nav-item nav-link {{ Request::is('backstage/settings') ? 'active' : '' }}" href="{{ route('manageSettings') }}">Settings</a>
+                    </div>
+                    <div class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{ route('home') }}"><i class="fal fa-fw fa-home"></i> Mainstage</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('about') }}"><i class="fal fa-fw fa-info"></i> About</a>
+                                <a class="dropdown-item" href="{{ route('privacy') }}"><i class="fal fa-fw fa-eye"></i> Privacy</a>
+                                <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();"><i class="fal fa-fw fa-sign-out"></i>
+                                        Logout
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
+                            </div>
                         </li>
-                        <li class="nav-item {{ Request::is('backstage/builds*') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('manageBuild') }}">Builds</a>
-                        </li>
-                        <li class="nav-item {{ Request::is('backstage/milestones*') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('manageMilestone') }}">Milestones</a>
-                        </li>
-                        <li class="nav-item {{ Request::is('backstage/settings') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('manageSettings') }}">Settings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Mainstage</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </nav>

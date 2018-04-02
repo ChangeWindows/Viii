@@ -68,11 +68,11 @@ class BuildController extends Controller
     }
     
     public function promoteNow( Build $build ) {
-        /* This isn't a simple +1 maths exercise
+        /* This isn't a simple +1 math exercise
         * 1 PC      0 => 1 => 2 => 3 =>      5 => 6 => 7 => 8
-        * 2 Mobile  0 =>   => 2 => 3 =>      5 => 6 => 7
-        * 3 Xbox    0 =>   => 2 => 3 => 4 => 5 => 6
-        * 4 Server  0 =>           3 =>                7 => 8
+        * 2 Mobile  0 =>                     5 => 6 => 7
+        * 3 Xbox    0 =>      2 => 3 => 4 => 5 => 6
+        * 4 Server  0 =>           3 =>           6 => 7 => 8
         * 5 Mixed   0 =>                          6 => 7 => 8
         * 6 IoT     0 =>           3 =>           6 => 7
         * 7 Team    0 =>                          6 => 7
