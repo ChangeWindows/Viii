@@ -28,7 +28,7 @@
         color: $releasepreview;
     }
 
-    &.pilot {
+    &.targeted {
         color: $targeted;
     }
 
@@ -36,7 +36,7 @@
         color: $broad;
     }
 
-    &.ltsc {
+    &.lts {
         color: $ltsc;
     }
 }

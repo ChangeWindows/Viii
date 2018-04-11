@@ -107,9 +107,15 @@ class DatabaseSeeder extends Seeder
             'slow' => '2017-06-22',
             'preview' => '2017-06-22',
             'release' => '2017-06-22',
-            'pilot' => '2017-06-22',
+            'targeted' => '2017-06-22',
             'broad' => '2017-06-22',
-            'lts' => '2017-06-22',
+            'lts' => '2017-06-22'
+        ]);
+
+        DB::table('changelogs')->insert([
+            'build' => '16273',
+            'delta' => '1000',
+            'platform_id' => '1',
             'changelog' => 'Fixes and enhancements'
         ]);
     }

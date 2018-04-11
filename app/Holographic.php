@@ -2,7 +2,7 @@
 
 namespace App;
 
-class MixedReality extends Build
+class Holographic extends Build
 {
     /**
      * @param string $notation
@@ -10,7 +10,7 @@ class MixedReality extends Build
      */
     public function getPlatformName()
     {
-        return 'Mixed Reality';
+        return 'Holographic';
     }
     /**
      * @param string $notation
@@ -18,7 +18,7 @@ class MixedReality extends Build
      */
     public function getPlatformClass()
     {
-        return 'mixed';
+        return 'holographic';
     }
 
     /**
@@ -34,11 +34,19 @@ class MixedReality extends Build
      */
     public function promoteNow()
     {
-        if ( ( bool ) !isset( $build->pilot ) )
-            $build->pilot = Carbon::now();
+        if ( ( bool ) !isset( $build->targeted ) )
+            $build->targeted = Carbon::now();
         else if ( ( bool ) !isset( $build->broad ) )
             $build->broad = Carbon::now();
         else if ( ( bool ) !isset( $build->lts ) )
             $build->lts = Carbon::now();
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasRing( $ring )
+    {
+        return in_array( $ring, [ 'targeted', 'broad', 'lts' ] );
     }
 }

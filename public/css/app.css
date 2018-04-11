@@ -100,19 +100,19 @@ textarea {
 }
 
 .btn.btn-primary {
-  background-color: #0078d7;
+  background-color: #0098df;
 }
 
 .btn.btn-primary:hover {
-  background-color: #0064b3;
+  background-color: #0080bb;
 }
 
 .btn.btn-success {
-  background-color: #50c236;
+  background-color: #46c429;
 }
 
 .btn.btn-success:hover {
-  background-color: #44a62e;
+  background-color: #3ba623;
 }
 
 .label {
@@ -128,11 +128,11 @@ textarea {
 }
 
 .label.skip {
-  color: #e54822;
+  color: #e74018;
 }
 
 .label.fast {
-  color: #fb8410;
+  color: #fb8009;
 }
 
 .label.slow {
@@ -140,22 +140,22 @@ textarea {
 }
 
 .label.preview {
-  color: #c4da0e;
+  color: #c0d700;
 }
 
 .label.release {
-  color: #9dc917;
+  color: #97c800;
 }
 
-.label.pilot {
-  color: #50c236;
+.label.targeted {
+  color: #46c429;
 }
 
 .label.broad {
-  color: #22ac90;
+  color: #10b08f;
 }
 
-.label.ltsc {
+.label.lts {
   color: #0098df;
 }
 
@@ -172,7 +172,7 @@ textarea {
 }
 
 .navbar.bg-primary {
-  background-color: #0078d7 !important;
+  background-color: #0098df !important;
 }
 
 .navbar .navbar-brand,
@@ -234,6 +234,7 @@ textarea {
   background-color: transparent;
   padding: 10px 15px;
   border-radius: 99px;
+  color: #0098df;
 }
 
 .jumbotron .toolbar .btn.btn-default .fa-fw {
@@ -255,7 +256,7 @@ textarea {
 
 .modal-dialog .modal-content {
   border-radius: 0;
-  border: 1px solid #0078d7;
+  border: 1px solid #0098df;
 }
 
 .modal-dialog .modal-content .modal-header {
@@ -290,7 +291,7 @@ textarea {
 }
 
 .brand .bold {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .list-bar-group {
@@ -299,12 +300,12 @@ textarea {
 
 .list-bar-group .list-bar {
   padding: 0 12px;
+  margin-bottom: 3px;
 }
 
 .list-bar-group .list-bar .list-bar-item {
   padding: 10px;
   background: #f8f8f8;
-  margin-bottom: 3px;
 }
 
 .list-bar-group .list-bar .list-bar-item:hover {
@@ -312,16 +313,16 @@ textarea {
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-default {
-  color: #0078d7;
+  color: #0098df;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-default:hover {
-  background: #0078d7;
+  background: #0098df;
   color: #fff;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-grey {
-  color: #0078d7;
+  color: #0098df;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-grey:hover {
@@ -329,20 +330,20 @@ textarea {
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-danger {
-  color: #e54822;
+  color: #e74018;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-danger:hover {
-  background: #e54822;
+  background: #e74018;
   color: #fff;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-success {
-  color: #50c236;
+  color: #46c429;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-success:hover {
-  background: #50c236;
+  background: #46c429;
   color: #fff;
 }
 
@@ -370,7 +371,7 @@ textarea {
   background: #e75819;
 }
 
-.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-mixed {
+.list-bar-group .list-bar .list-bar-item.list-bar-platform.list-bar-holographic {
   background: #ff9c00;
 }
 
@@ -403,12 +404,25 @@ textarea {
   border-left-color: #e75819;
 }
 
-.list-bar-group .list-bar .list-bar-item.list-bar-indicate.list-bar-mixed {
+.list-bar-group .list-bar .list-bar-item.list-bar-indicate.list-bar-holographic {
   border-left-color: #ff9c00;
 }
 
 .list-bar-group .list-bar .list-bar-item.list-bar-indicate.list-bar-team {
   border-left-color: #787878;
+}
+
+.list-bar-group .list-bar .list-bar-item h3 {
+  font-size: 23px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.list-bar-group .list-bar .list-bar-item h5 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .list-bar-group .list-bar .list-bar-item .list-bar-item-row {

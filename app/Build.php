@@ -16,14 +16,14 @@ class Build extends Model
         2 => \App\Mobile::class,
         3 => \App\Xbox::class,
         4 => \App\Server::class,
-        5 => \App\MixedReality::class,
+        5 => \App\Holographic::class,
         6 => \App\IoT::class,
         7 => \App\Team::class,
     ];
 
     protected $table = 'builds';
 
-    protected $fillable = ['id', 'major', 'minor', 'build', 'delta', 'platform_id', 'milestone_id', 'vnext', 'skip', 'fast', 'slow', 'preview', 'release', 'pilot', 'broad', 'lts', 'changelog'];
+    protected $fillable = ['id', 'major', 'minor', 'build', 'delta', 'platform_id', 'milestone_id', 'vnext', 'skip', 'fast', 'slow', 'preview', 'release', 'targeted', 'broad', 'lts'];
 
     public $timestamps = false;
     

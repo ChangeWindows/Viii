@@ -20,7 +20,7 @@
             </style>
             <div class="col-xl-3 col-lg-4 col-md-6 col-12">
                 <div class="row list-bar list-bar-border">
-                    <a class="col-10 list-bar-item list-bar-default {{ $milestone->id }}" href="{{ route('editMilestone', ['id' => $milestone->id]) }}">{{ $milestone->version.' &middot; '.$milestone->name }}</a>
+                    <a class="col-10 list-bar-item list-bar-default {{ $milestone->id }}" href="{{ route('editMilestone', ['id' => $milestone->id]) }}">{{ $milestone->version }} &middot;  {{ $milestone->name }}</a>
                     <a class="col-2 list-bar-item list-bar-danger text-center" href="{{ route('deleteMilestone', ['id' => $milestone->id]) }}"><i class="fal fa-fw fa-trash-alt"></i></a>
                 </div>
             </div>
