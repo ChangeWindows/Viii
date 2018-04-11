@@ -63,6 +63,10 @@ class BuildController extends Controller
         return redirect()->route( 'manageBuild' );
     }
 
+    public function edit( Build $build ) {
+        return view( 'backstage.build.edit', compact( 'build' ) );
+    }
+
     public function patch() {
         $build = Build::find( request( 'id' ) );
         $milestone->fill( request()->only( ['milestone_id'] ) )->save();
