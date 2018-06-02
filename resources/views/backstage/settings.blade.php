@@ -18,10 +18,10 @@
             <h2>About</h2>
             <p>
                 ChangeWindows 5.0-alpha.0<br />
-                Laravel 5.6.3<br />
-                Font Awesome 5.0.6<br />
-                Bootstrap 4.0.0<br />
-                jQuery Slim 3.2.1
+                Laravel 5.6.23<br />
+                Font Awesome 5.0.13<br />
+                Bootstrap 4.1.1<br />
+                jQuery Slim 3.3.1
             </p>
         </div>
     </div>

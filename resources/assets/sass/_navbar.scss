@@ -1,33 +1,44 @@
 .navbar {
-    margin-bottom: 0;
     padding: 0;
+    z-index: 9900;
 
-    &.bg-primary {
-        background-color: $accent !important;
+    &.bg-accent {
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        background-color: rgba(0, 153, 224, .7);
+        //background: url('../assets/noise.png') !important;
     }
     
-    .navbar-brand, .nav-item {
-        padding: 10px 0 7px;
+    .nav-link {
+        color: #fff !important;
+        font-size: 19px;
+        padding: 9.5px 0 7px !important;
+        opacity: .6;
+        transition: .1s ease-in-out;
         border-bottom: 3px solid transparent;
-        font-size: 20px;
-        margin: 0 20px 0 0;
-
+        
         &:hover {
-            border-bottom-color: #fff;
+            opacity: .8;
         }
         
         &.active {
+            background: transparent;
+            opacity: 1;
             border-bottom-color: #fff;
-        }
-
-        .nav-link {
-            padding: 0;
-            margin: 0;
         }
     }
 
     .navbar-brand {
-        font-weight: 300;
+        padding: 9px 0 !important;
+        
+        &:hover {
+            opacity: .8;
+        }
+        
+        &.active {
+            background: transparent;
+            opacity: 1;
+        }
         
         img {
             max-height: 18px;
@@ -36,13 +47,120 @@
             display: inline;
         }
     }
+    
+    .nav-link {        
+        margin-right: 20px;
+    }
+
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
     .navbar-nav .dropdown-menu {
         position: absolute !important;
     }
+
+    .dropdown-menu {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-top: 0;
+        font-size: 15px;
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+            
+        @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+            background-color: rgba(240,240,240,.7);
+        }
+            
+        @supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+            background-color: #dedede;
+        }
+
+        .dropdown-divider {
+            margin: 0 10px;
+            border-top-color: rgba(#000,.1);
+        }
+
+        .dropdown-item {
+            padding: 10px;
+            transition: .1s ease-in-out;
+            color: #292929;
+            
+            &:hover {
+                @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+                    background-color: rgba(#000,.1);
+                }
+                    
+                @supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+                    background-color: #cfcfcf;
+                }
+            }
+
+            &:active {
+                color: #292929;
+            }
+
+            &:focus {
+                color: #292929;
+                background: rgba(0,0,0,.1);
+            }
+
+            &.dropdown-item-patreon {
+                color: #fff;
+                font-weight: 600;
+                text-transform: uppercase;
+
+                @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+                    background: rgba(#f96854,.7) !important;
+                }
+                    
+                @supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+                    background: #f96854 !important;
+                }
+
+                .fa-fw {
+                    color: #052d49;
+                }
+                
+                &:hover {
+                    @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+                        background: rgba(#dd4e3e,.7) !important;
+                    }
+                    
+                    @supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+                        background: #dd4e3e !important;
+                    }
+                }
+
+                &:active {
+                    color: #fff;
+                }
+
+                &.active:focus {
+                    color: #fff !important;
+                }
+            }
+        }
+
+        .disabled {
+            opacity: .5;
+
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
     
     .navbar-toggler {
+        background-color: rgba(0,0,0,.1);
+        border: none;
+        padding: 10px 12px;
+        margin-right: -15px;
+        
         .navbar-toggler-icon {
+            background: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
         }
     }
 }
