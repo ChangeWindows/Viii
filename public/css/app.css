@@ -526,3 +526,24 @@ h2 {
   padding: 20px 30px !important;
 }
 
+body.wip {
+  background: #0098df;
+  color: #fff;
+  text-align: center;
+  margin-top: 200px;
+}
+
+body.wip h2 {
+  margin-top: 150px;
+}
+
+body.wip .btn-secondary {
+  margin-top: 20px;
+  background: #fff;
+  color: #0098df;
+}
+
+body.wip .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+

@@ -20,7 +20,8 @@
         <link href="{{ asset('css/fa-light.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/fa-brands.min.css') }}" rel="stylesheet">
     </head>
-    <body class="light">
+    <body class="light wip">
+        <!--
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbar">
             <div class="container">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#cwnav" aria-controls="cwnav" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,19 +77,9 @@
                 </div>
             </div>
         </nav>
-        <div class="jumbotron">
-            <div class="container">
-                @yield( 'jumbotron' )
-                <div class="toolbar">
-                    @yield( 'toolbar' )
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                @yield( 'content' )
-            </div>
-        </div>
+        -->
+        @yield( 'jumbotron' )
+        @yield( 'content' )
         @yield( 'modals' )
         <script src="{{ asset('js/app.js') }}"></script>
     </body>

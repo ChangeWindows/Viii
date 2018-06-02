@@ -58,3 +58,28 @@ h2 {
 .content {
     padding: 20px 30px !important;
 }
+
+// Work in progress
+body {
+    &.wip {
+        background: $accent;
+        color: #fff;
+
+        text-align: center;
+        margin-top: 200px;
+
+        h2 {
+            margin-top: 150px;
+        }
+
+        .btn-secondary {
+            margin-top: 20px;
+            background: #fff;
+            color: $accent;
+
+            &:hover {
+                background: rgba(255,255,255,.8);
+            }
+        }
+    }
+}
